@@ -1,14 +1,17 @@
 package main
 
 import (
+	"fmt"
 	"github.com/olivere/elastic"
+	"go-crawler-distributed/config"
 	"go-crawler-distributed/mylog"
 	"go-crawler-distributed/persist"
 	"go-crawler-distributed/rpcsupport"
 )
 
 func main() {
-	err := serverRpc(":1234", "dating_profile")
+	err := serverRpc(fmt.Sprintf(":%d", config.ItemSaverPort),
+		config.ElasticIndex)
 	if err != nil {
 		mylog.LogError("persist server: ServeRpc", err)
 		panic(err)

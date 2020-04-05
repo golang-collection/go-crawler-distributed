@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"go-crawler-distributed/config"
 	"go-crawler-distributed/engine"
 	"go-crawler-distributed/persist/client"
 	"go-crawler-distributed/scheduler"
@@ -13,7 +15,8 @@ func main() {
 	//	ParserFunc: parser.ParseCityList,
 	//})
 
-	itemChan, err := client.ItemSaver(":1234")
+	itemChan, err := client.ItemSaver(
+		fmt.Sprintf(":%d", config.ItemSaverPort))
 	if err != nil {
 		panic(err)
 	}

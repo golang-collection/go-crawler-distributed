@@ -2,6 +2,7 @@ package client
 
 import (
 	"fmt"
+	"go-crawler-distributed/config"
 	"go-crawler-distributed/engine"
 	"go-crawler-distributed/mylog"
 	"go-crawler-distributed/rpcsupport"
@@ -24,7 +25,7 @@ func ItemSaver(host string) (chan engine.Item, error) {
 
 			//调用Rpc存储item
 			result := ""
-			err = client.Call("ItemSaverService.Save",
+			err = client.Call(config.ItemSaverRpc,
 				item, &result)
 			if err != nil {
 				mylog.LogError("item saver error", err)
