@@ -3,6 +3,7 @@ package config
 const (
 	//Service ports
 	ItemSaverPort = 1234
+	WorkerPort0   = 9000
 
 	// Parser names
 	ParseCity     = "ParseCity"
@@ -23,5 +24,6 @@ const (
 	Qps = 2
 
 	//Rpc Endpoints
-	ItemSaverRpc = "ItemSaverService.Save"
+	ItemSaverRpc    = "ItemSaverService.Save"
+	CrawlServiceRpc = "CrawlService.Process"
 )
