@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"go-crawler-distributed/config"
 	"go-crawler-distributed/engine"
 	"regexp"
 )
@@ -16,7 +17,7 @@ func ParseCityList(contents []byte, _ string) engine.ParseResult {
 		result.Requests = append(
 			result.Requests, engine.Request{
 				Url:    string(m[1]),
-				Parser: engine.NewFuncParser(ParseCity, "ParseCity"),
+				Parser: engine.NewFuncParser(ParseCity, config.ParseCity),
 			})
 	}
 	return result

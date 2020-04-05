@@ -1,10 +1,9 @@
 package engine
 
-
-type ConcurrentEngine struct{
-	Scheduler Scheduler
+type ConcurrentEngine struct {
+	Scheduler   Scheduler
 	WorkerCount int
-	ItemChan chan Item
+	ItemChan    chan Item
 }
 
 type Scheduler interface {
@@ -20,35 +19,34 @@ type ReadyNotifier interface {
 
 var visitedUrls = make(map[string]bool)
 
-func (e *ConcurrentEngine) Run (seeds ...Request)  {
+func (e *ConcurrentEngine) Run(seeds ...Request) {
 
 	out := make(chan ParseResult)
 	e.Scheduler.Run()
 
-	for i := 0; i < e.WorkerCount; i++{
+	for i := 0; i < e.WorkerCount; i++ {
 		createWorker(e.Scheduler.WorkerChan(), out, e.Scheduler)
 	}
 
-	for _, r := range seeds{
-		if isDuplicate(r.Url){
+	for _, r := range seeds {
+		if isDuplicate(r.Url) {
 			continue
 		}
 		e.Scheduler.Submit(r)
 	}
 
-
 	for {
-		result := <- out
+		result := <-out
 
-		for _, item := range result.Items{
+		for _, item := range result.Items {
 
 			go func() {
 				e.ItemChan <- item
 			}()
 		}
 
-		for _, request := range result.Requests{
-			if isDuplicate(request.Url){
+		for _, request := range result.Requests {
+			if isDuplicate(request.Url) {
 				continue
 			}
 			e.Scheduler.Submit(request)
@@ -56,8 +54,8 @@ func (e *ConcurrentEngine) Run (seeds ...Request)  {
 	}
 }
 
-func isDuplicate(url string) bool{
-	if visitedUrls[url]{
+func isDuplicate(url string) bool {
+	if visitedUrls[url] {
 		return true
 	}
 	visitedUrls[url] = true
@@ -66,12 +64,12 @@ func isDuplicate(url string) bool{
 
 func createWorker(in chan Request, out chan ParseResult, ready ReadyNotifier) {
 	go func() {
-		for{
+		for {
 			// 告诉scheduler当前的worker已经准备好
 			ready.WorkerReady(in)
-			request := <- in
-			result, err := worker(request)
-			if err != nil{
+			request := <-in
+			result, err := Worker(request)
+			if err != nil {
 				continue
 			}
 			out <- result

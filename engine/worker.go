@@ -2,7 +2,7 @@ package engine
 
 import "go-crawler-distributed/fetcher"
 
-func worker(r Request) (ParseResult, error) {
+func Worker(r Request) (ParseResult, error) {
 	//str := fmt.Sprintf("%s", r.Url)
 	//mylog.LogInfo("fetching", str)
 	body, err := fetcher.Fetch(r.Url)
