@@ -3,7 +3,7 @@ package config
 const (
 	//Service ports
 	ItemSaverPort = 1234
-	WorkerPort0   = 9000
+	WorkerPort0   = 24764
 
 	// Parser names
 	ParseCity     = "ParseCity"

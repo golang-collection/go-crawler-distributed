@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"go-crawler-distributed/config"
 	"go-crawler-distributed/engine"
-	"go-crawler-distributed/persist/client"
+	itemSaver "go-crawler-distributed/persist/client"
 	"go-crawler-distributed/scheduler"
+	worker "go-crawler-distributed/worker/client"
 	"go-crawler-distributed/zhenai/parser"
 )
 
@@ -15,8 +16,13 @@ func main() {
 	//	ParserFunc: parser.ParseCityList,
 	//})
 
-	itemChan, err := client.ItemSaver(
+	itemChan, err := itemSaver.ItemSaver(
 		fmt.Sprintf(":%d", config.ItemSaverPort))
+	if err != nil {
+		panic(err)
+	}
+
+	processor, err := worker.CreateProcessor()
 	if err != nil {
 		panic(err)
 	}
@@ -25,7 +31,7 @@ func main() {
 		Scheduler:        &scheduler.QueueScheduler{},
 		WorkerCount:      100,
 		ItemChan:         itemChan,
-		RequestProcessor: engine.Worker,
+		RequestProcessor: processor,
 	}
 
 	e.Run(engine.Request{

@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
+
 	err := rpcsupport.ServeRpc(
-		fmt.Sprintf(":%d", config.WorkerPort0),
-		worker.CrawlService{})
+		fmt.Sprintf(":%d", config.WorkerPort0), worker.CrawlService{})
 	if err != nil {
 		panic(err)
 	}

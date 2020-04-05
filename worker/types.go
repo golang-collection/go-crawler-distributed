@@ -19,7 +19,7 @@ type Request struct {
 	Parser SerializedParser
 }
 
-type ParserResult struct {
+type ParseResult struct {
 	Items    []engine.Item
 	Requests []Request
 }
@@ -35,8 +35,8 @@ func SerializeRequest(r engine.Request) Request {
 	}
 }
 
-func SerializeResult(r engine.ParseResult) ParserResult {
-	result := ParserResult{
+func SerializeResult(r engine.ParseResult) ParseResult {
+	result := ParseResult{
 		Items: r.Items,
 	}
 
@@ -58,7 +58,7 @@ func DeserializeRequest(r Request) (engine.Request, error) {
 	}, nil
 }
 
-func DeserializeResult(r ParserResult) engine.ParseResult {
+func DeserializeResult(r ParseResult) engine.ParseResult {
 	result := engine.ParseResult{
 		Items: r.Items,
 	}
