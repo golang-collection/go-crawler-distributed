@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"go-crawler-distributed/mylog"
 	"go-crawler-distributed/rpcsupport"
 	"go-crawler-distributed/worker"
 )
@@ -20,6 +21,7 @@ func main() {
 	err := rpcsupport.ServeRpc(
 		fmt.Sprintf(":%d", *port), worker.CrawlService{})
 	if err != nil {
+		mylog.LogError("worker.main", err)
 		panic(err)
 	}
 }

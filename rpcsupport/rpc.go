@@ -13,6 +13,7 @@ func ServeRpc(host string,
 	service interface{}) error {
 	err := rpc.Register(service)
 	if err != nil {
+		mylog.LogError("rpcsupport ServeRpc", err)
 		return err
 	}
 	mylog.LogInfo("rpcsupport.rpc.ServeRpc", fmt.Sprintf("listing on %s", host))
