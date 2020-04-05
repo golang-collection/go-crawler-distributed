@@ -10,6 +10,6 @@ func worker(r Request) (ParseResult, error) {
 		return ParseResult{}, err
 	}
 
-	parseResult := r.ParserFunc(body, r.Url)
+	parseResult := r.Parser.Parse(body, r.Url)
 	return parseResult, nil
 }
