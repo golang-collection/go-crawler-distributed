@@ -9,4 +9,6 @@ require (
 	github.com/olivere/elastic v6.2.29+incompatible
 	github.com/pkg/errors v0.9.1
 	go.uber.org/zap v1.14.1
+	golang.org/x/net v0.0.0-20190620200207-3b0461eec859
+	golang.org/x/text v0.3.0
 )

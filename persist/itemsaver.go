@@ -6,28 +6,28 @@ import (
 	"github.com/olivere/elastic"
 	"github.com/pkg/errors"
 	"go-crawler-distributed/engine"
-	"gobasis/src/web-fundation/crawler/mylog"
+	"go-crawler-distributed/mylog"
 )
 
 func ItemSaver(index string) (chan engine.Item, error) {
 	client, err := elastic.NewClient(elastic.SetSniff(false))
 
-	if err != nil{
+	if err != nil {
 		return nil, err
 	}
 
-	out:= make(chan engine.Item)
+	out := make(chan engine.Item)
 
 	go func() {
 		itemCount := 0
 		for {
-			item := <- out
+			item := <-out
 			str := fmt.Sprintf("%d %v", itemCount, item)
 			mylog.LogInfo("ItemSaver", str)
 			itemCount++
 
-			err := save(client, item, index)
-			if err != nil{
+			err := Save(client, item, index)
+			if err != nil {
 				mylog.LogError("item saver error", err)
 			}
 		}
@@ -38,8 +38,7 @@ func ItemSaver(index string) (chan engine.Item, error) {
 
 func Save(client *elastic.Client, item engine.Item, index string) error {
 
-
-	if item.Type == ""{
+	if item.Type == "" {
 		return errors.New("must supply type")
 	}
 
@@ -48,14 +47,14 @@ func Save(client *elastic.Client, item engine.Item, index string) error {
 		Type(item.Type).
 		BodyJson(item)
 
-	if item.Id != ""{
+	if item.Id != "" {
 		indexService.Id(item.Id)
 	}
 
 	_, err := indexService.
 		Do(context.Background())
 
-	if err != nil{
+	if err != nil {
 		return err
 	}
 
