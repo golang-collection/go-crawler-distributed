@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"github.com/olivere/elastic"
 	"go-crawler-distributed/config"
@@ -9,8 +10,16 @@ import (
 	"go-crawler-distributed/rpcsupport"
 )
 
+var port = flag.Int("port", 0, "the port for me to listen on")
+
 func main() {
-	err := serverRpc(fmt.Sprintf(":%d", config.ItemSaverPort),
+	flag.Parse()
+	if *port == 0 {
+		fmt.Println("must specify a port")
+		return
+	}
+
+	err := serverRpc(fmt.Sprintf(":%d", *port),
 		config.ElasticIndex)
 	if err != nil {
 		mylog.LogError("persist server: ServeRpc", err)
