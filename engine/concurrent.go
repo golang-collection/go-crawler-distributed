@@ -65,13 +65,15 @@ func isDuplicate(url string) bool {
 	return false
 }
 
-func (e *ConcurrentEngine) createWorker(in chan Request, out chan ParseResult, ready ReadyNotifier) {
+func (e *ConcurrentEngine) createWorker(
+	in chan Request,
+	out chan ParseResult, ready ReadyNotifier) {
 	go func() {
 		for {
-			// 告诉scheduler当前的worker已经准备好
 			ready.WorkerReady(in)
 			request := <-in
-			result, err := e.RequestProcessor(request)
+			result, err := e.RequestProcessor(
+				request)
 			if err != nil {
 				continue
 			}

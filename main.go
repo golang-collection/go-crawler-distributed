@@ -78,8 +78,8 @@ func createClientPool(
 	out := make(chan *rpc.Client)
 	go func() {
 		for {
-			for _, client := range clients {
-				out <- client
+			for _, c := range clients {
+				out <- c
 			}
 		}
 	}()

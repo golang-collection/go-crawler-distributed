@@ -92,6 +92,8 @@ func deserializeParser(p SerializedParser) (engine.Parser, error) {
 			return nil, fmt.Errorf("invalid "+
 				"arg: %v", p.Args)
 		}
+	case config.NilParser:
+		return engine.NilParser{}, nil
 	default:
 		return nil, errors.New(
 			"unknown parser name")

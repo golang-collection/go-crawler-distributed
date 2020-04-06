@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"go-crawler-distributed/config"
 	"go-crawler-distributed/engine"
 	"go-crawler-distributed/model"
 	"regexp"
@@ -36,7 +37,9 @@ var guessRe = regexp.MustCompile(
 var idUrlRe = regexp.MustCompile(
 	`.*album\.zhenai\.com/u/([\d]+)`)
 
-func parseProfile(contents []byte, url string, name string) engine.ParseResult {
+func parseProfile(
+	contents []byte, url string,
+	name string) engine.ParseResult {
 	profile := model.Profile{}
 	profile.Name = name
 
@@ -80,27 +83,33 @@ func parseProfile(contents []byte, url string, name string) engine.ParseResult {
 	result := engine.ParseResult{
 		Items: []engine.Item{
 			{
-				Url:     url,
-				Type:    "zhenai",
-				Id:      extractString([]byte(url), idUrlRe),
+				Url:  url,
+				Type: "zhenai",
+				Id: extractString(
+					[]byte(url), idUrlRe),
 				Payload: profile,
 			},
 		},
 	}
 
-	matches := guessRe.FindAllSubmatch(contents, -1)
+	matches := guessRe.FindAllSubmatch(
+		contents, -1)
 	for _, m := range matches {
-		result.Requests = append(result.Requests, engine.Request{
-			Url:    string(m[1]),
-			Parser: NewProfileParser(string(m[2])),
-		})
+		result.Requests = append(result.Requests,
+			engine.Request{
+				Url: string(m[1]),
+				Parser: NewProfileParser(
+					string(m[2])),
+			})
 	}
 
 	return result
 }
 
-func extractString(contents []byte, re *regexp.Regexp) string {
+func extractString(
+	contents []byte, re *regexp.Regexp) string {
 	match := re.FindSubmatch(contents)
+
 	if len(match) >= 2 {
 		return string(match[1])
 	} else {
@@ -112,15 +121,19 @@ type ProfileParser struct {
 	userName string
 }
 
-func (p *ProfileParser) Parse(contents []byte, url string) engine.ParseResult {
+func (p *ProfileParser) Parse(
+	contents []byte,
+	url string) engine.ParseResult {
 	return parseProfile(contents, url, p.userName)
 }
 
-func (p *ProfileParser) Serialize() (name string, args interface{}) {
-	return "ProfileParser", p.userName
+func (p *ProfileParser) Serialize() (
+	name string, args interface{}) {
+	return config.ParseProfile, p.userName
 }
 
-func NewProfileParser(name string) *ProfileParser {
+func NewProfileParser(
+	name string) *ProfileParser {
 	return &ProfileParser{
 		userName: name,
 	}
