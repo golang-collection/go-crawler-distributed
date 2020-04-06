@@ -1,15 +1,16 @@
 package main
 
 import (
+	"errors"
 	"flag"
-	"fmt"
+	"go-crawler-distributed/config"
 	"go-crawler-distributed/engine"
-	"go-crawler-distributed/mylog"
-	itemSaver "go-crawler-distributed/persist/client"
+	"go-crawler-distributed/persist/client"
 	"go-crawler-distributed/rpcsupport"
 	"go-crawler-distributed/scheduler"
 	worker "go-crawler-distributed/worker/client"
 	"go-crawler-distributed/zhenai/parser"
+	"log"
 	"net/rpc"
 	"strings"
 )
@@ -20,24 +21,23 @@ var (
 
 	workerHosts = flag.String(
 		"worker_hosts", "",
-		"workrt hosts(comma separated)")
+		"worker hosts (comma separated)")
 )
 
 func main() {
-	//engine.SimpleEngine{}.Run(engine.Request{
-	//	Url:        "http://localhost:8080/mock/www.zhenai.com/zhenghun",
-	//	ParserFunc: parser.ParseCityList,
-	//})
-
 	flag.Parse()
-	itemChan, err := itemSaver.ItemSaver(
-		fmt.Sprintf(":%d", *itemSaverHost))
+
+	itemChan, err := client.ItemSaver(
+		*itemSaverHost)
 	if err != nil {
 		panic(err)
 	}
 
-	pool := createClientPool(
+	pool, err := createClientPool(
 		strings.Split(*workerHosts, ","))
+	if err != nil {
+		panic(err)
+	}
 
 	processor := worker.CreateProcessor(pool)
 
@@ -52,31 +52,36 @@ func main() {
 		Url: "http://localhost:8080/mock/www.zhenai.com/zhenghun",
 		Parser: engine.NewFuncParser(
 			parser.ParseCityList,
-			"ParseCityList"),
+			config.ParseCityList),
 	})
-
 }
 
-func createClientPool(host []string) chan *rpc.Client {
+func createClientPool(
+	hosts []string) (chan *rpc.Client, error) {
 	var clients []*rpc.Client
-	for _, h := range host {
+	for _, h := range hosts {
 		c, err := rpcsupport.NewClient(h)
-		if err != nil {
+		if err == nil {
 			clients = append(clients, c)
-			mylog.LogInfo("main.createClientPool", fmt.Sprintf("connect %s", h))
+			log.Printf("Connected to %s", h)
 		} else {
-			mylog.LogError("main.createClientPool", err)
+			log.Printf(
+				"Error connecting to %s: %v",
+				h, err)
 		}
 	}
-	out := make(chan *rpc.Client)
 
+	if len(clients) == 0 {
+		return nil, errors.New(
+			"no connections available")
+	}
+	out := make(chan *rpc.Client)
 	go func() {
 		for {
-			for _, c := range clients {
-				out <- c
+			for _, client := range clients {
+				out <- client
 			}
 		}
 	}()
-
-	return out
+	return out, nil
 }

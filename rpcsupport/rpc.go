@@ -35,7 +35,7 @@ func ServeRpc(host string,
 }
 
 func NewClient(host string) (*rpc.Client, error) {
-	conn, err := net.Dial("tcp", ":1234")
+	conn, err := net.Dial("tcp", host)
 	if err != nil {
 		return nil, err
 	}

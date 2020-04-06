@@ -21,6 +21,7 @@ func main() {
 
 	err := serverRpc(fmt.Sprintf(":%d", *port),
 		config.ElasticIndex)
+
 	if err != nil {
 		mylog.LogError("persist server: ServeRpc", err)
 		panic(err)

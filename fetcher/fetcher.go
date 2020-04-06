@@ -2,6 +2,7 @@ package fetcher
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"go-crawler-distributed/mylog"
 	"golang.org/x/net/html/charset"
@@ -27,7 +28,7 @@ func Fetch(url string) ([]byte, error) {
 
 	if resp.StatusCode != http.StatusOK {
 		//logger.Error("mylog", zap.String("err", err.Error()))
-		mylog.LogError("statusOK", err)
+		mylog.LogError("fetcher.statusOK", errors.New("statusok Error"))
 		return nil, fmt.Errorf("wrong status code: %d", resp.StatusCode)
 	}
 

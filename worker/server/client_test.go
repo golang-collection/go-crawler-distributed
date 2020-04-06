@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-crawler-distributed/config"
+	"go-crawler-distributed/mylog"
 	"go-crawler-distributed/rpcsupport"
 	"go-crawler-distributed/worker"
 	"testing"
@@ -10,7 +11,7 @@ import (
 )
 
 func TestCrawlService(t *testing.T) {
-	const host = ":24764"
+	const host = ":9000"
 	go func() {
 		err := rpcsupport.ServeRpc(
 			host, worker.CrawlService{})
@@ -22,6 +23,7 @@ func TestCrawlService(t *testing.T) {
 
 	client, err := rpcsupport.NewClient(host)
 	if err != nil {
+		mylog.LogError("persist.client_test", err)
 		panic(err)
 	}
 
@@ -32,6 +34,7 @@ func TestCrawlService(t *testing.T) {
 			Args: "安静的雪",
 		},
 	}
+
 	var result worker.ParseResult
 	err = client.Call(
 		config.CrawlServiceRpc, req, &result)
