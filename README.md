@@ -35,3 +35,6 @@ RPC服务：jsonrpc
 
 channel到分布式：docker/libchan，NATS streaming，gocircuit
 
+
+## crawlab
+分布式爬虫管理平台，支持任何语言和框架 https://crawlab.cn
