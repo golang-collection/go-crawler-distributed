@@ -1,87 +1,72 @@
 package main
 
 import (
-	"errors"
-	"flag"
-	"go-crawler-distributed/config"
-	"go-crawler-distributed/engine"
-	"go-crawler-distributed/persist/client"
-	"go-crawler-distributed/rpcsupport"
-	"go-crawler-distributed/scheduler"
-	worker "go-crawler-distributed/worker/client"
-	"go-crawler-distributed/zhenai/parser"
+	"bufio"
+	"fmt"
+	"github.com/PuerkitoBio/goquery"
+	"golang.org/x/net/html/charset"
+	"golang.org/x/text/encoding"
+	"golang.org/x/text/transform"
+	"io"
+	"io/ioutil"
 	"log"
-	"net/rpc"
+	"net/http"
+	"regexp"
 	"strings"
 )
 
-var (
-	itemSaverHost = flag.String(
-		"itemsaver_host", "", "itemsaver host")
-
-	workerHosts = flag.String(
-		"worker_hosts", "",
-		"worker hosts (comma separated)")
-)
+/**
+* @Author: super
+* @Date: 2020-08-12 16:06
+* @Description:
+**/
 
 func main() {
-	flag.Parse()
+	resp, err := http.Get("https://s.weibo.com/weibo/%2523%25E8%25AE%25B2%25E7%25BB%2599%25E5%25A5%25B3%25E6%259C%258B%25E5%258F%258B%25E7%259A%2584%25E7%259D%25A1%25E5%2589%258D%25E5%25B0%258F%25E6%2595%2585%25E4%25BA%258B%2523?topnav=1&wvr=6&b=1")
+	if err != nil {
+		panic("error")
+	}
+	defer resp.Body.Close()
 
-	itemChan, err := client.ItemSaver(
-		*itemSaverHost)
+	if resp.StatusCode != http.StatusOK {
+		fmt.Println(resp.StatusCode)
+		return
+	}
+
+	e := determineEncoding(resp.Body)
+
+	utf8Reader := transform.NewReader(resp.Body, e.NewDecoder())
+
+	all, err := ioutil.ReadAll(utf8Reader)
 	if err != nil {
 		panic(err)
 	}
+	printStory(all)
 
-	pool, err := createClientPool(
-		strings.Split(*workerHosts, ","))
-	if err != nil {
-		panic(err)
-	}
-
-	processor := worker.CreateProcessor(pool)
-
-	e := engine.ConcurrentEngine{
-		Scheduler:        &scheduler.QueueScheduler{},
-		WorkerCount:      100,
-		ItemChan:         itemChan,
-		RequestProcessor: processor,
-	}
-
-	e.Run(engine.Request{
-		Url: "http://localhost:8080/mock/www.zhenai.com/zhenghun",
-		Parser: engine.NewFuncParser(
-			parser.ParseCityList,
-			config.ParseCityList),
-	})
 }
 
-func createClientPool(
-	hosts []string) (chan *rpc.Client, error) {
-	var clients []*rpc.Client
-	for _, h := range hosts {
-		c, err := rpcsupport.NewClient(h)
-		if err == nil {
-			clients = append(clients, c)
-			log.Printf("Connected to %s", h)
-		} else {
-			log.Printf(
-				"Error connecting to %s: %v",
-				h, err)
-		}
+//自动判断编码
+func determineEncoding(r io.Reader) encoding.Encoding {
+	bytes, err := bufio.NewReader(r).Peek(1024)
+	if err != nil {
+		panic(err)
+	}
+	e, _, _ := charset.DetermineEncoding(bytes, "")
+	return e
+}
+
+func printStory(contents []byte) {
+	re := regexp.MustCompile(`<p class="txt" node-type="feed_list_content_full" nick-name=[^"]*"([^"]+)" style="display: none">`)
+	matches := re.FindAllSubmatch(contents, -1)
+
+	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	if len(clients) == 0 {
-		return nil, errors.New(
-			"no connections available")
-	}
-	out := make(chan *rpc.Client)
-	go func() {
-		for {
-			for _, c := range clients {
-				out <- c
-			}
-		}
-	}()
-	return out, nil
+	result := dom.Find("p[style]")
+	result.Each(func(i int, selection *goquery.Selection) {
+		fmt.Println(string(matches[i][1]) + ":" + selection.Text())
+	})
+
 }
