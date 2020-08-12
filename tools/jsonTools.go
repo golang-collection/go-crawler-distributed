@@ -1,8 +1,8 @@
 package tools
 
 import (
-	"GORM/model"
 	"encoding/json"
+	"go-crawler-distributed/model"
 )
 
 /**
@@ -11,19 +11,19 @@ import (
 * @Description:
 **/
 
-func ActivityToJson(activity *model.Activity) (string, error) {
-	str, err := json.Marshal(activity)
+func ActivityToJson(story *model.Story) (string, error) {
+	str, err := json.Marshal(story)
 	if err != nil {
 		return "", err
 	}
 	return string(str), nil
 }
 
-func JsonToActivity(str string) (*model.Activity, error) {
-	activity := &model.Activity{}
-	err := json.Unmarshal([]byte(str), activity)
+func JsonToActivity(str string) (*model.Story, error) {
+	story := &model.Story{}
+	err := json.Unmarshal([]byte(str), story)
 	if err != nil {
 		return nil, err
 	}
-	return activity, nil
+	return story, nil
 }

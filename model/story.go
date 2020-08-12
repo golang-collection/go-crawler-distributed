@@ -8,6 +8,6 @@ package model
 
 type Story struct {
 	StoryID int    `gorm:"column:story_id" gorm:"PRIMARY_KEY" json:"story_id"`
-	author  string `gorm:"column:author" json:"author"`
-	story   string `gorm:"column:story" gorm:"type:text" json:"story"`
+	Author  string `gorm:"column:author" json:"author"`
+	Story   string `gorm:"column:story" gorm:"type:text" json:"story"`
 }

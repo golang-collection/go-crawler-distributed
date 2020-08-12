@@ -1,4 +1,4 @@
-package conn
+package db
 
 /**
 * @Author: super
@@ -16,34 +16,42 @@ import (
 func SelectStoryById(id int) (*model.Story, error) {
 	db := tools.GetDB()
 
-	activity := &model.Story{}
+	story := &model.Story{}
 
-	result := db.Where("activity_id = ?", id).Find(activity)
+	result := db.Where("story_id = ?", id).Find(story)
 	if result.RecordNotFound() {
 		return nil, errors.New("wrong id")
 	}
 
-	return activity, nil
+	return story, nil
 }
 
 func SelectStoryRandom() (*model.Story, error) {
 	db := tools.GetDB()
 
-	activity := &model.Story{}
+	story := &model.Story{}
 
-	result := db.Take(activity)
+	// 原生 SQL
+	rows, err := db.Raw("select story_id, author, story from stories ORDER BY RAND() LIMIT 1").Rows()
+	if err != nil {
+		return nil, errors.New("random select fail")
+	}
+	defer rows.Close()
 
-	if result.RecordNotFound() {
-		return nil, errors.New("empty table")
+	for rows.Next() {
+		err = rows.Scan(&story.StoryID, &story.Author, &story.Story)
+		if err != nil {
+			return nil, errors.New("random select fail")
+		}
 	}
 
-	return activity, nil
+	return story, err
 }
 
-func InsertStory(activity *model.Story) error {
+func InsertStory(story *model.Story) error {
 	db := tools.GetDB()
 
-	result := db.Create(activity)
+	result := db.Create(story)
 
 	if result.RowsAffected == int64(0) {
 		return errors.New("insert error")
@@ -52,10 +60,10 @@ func InsertStory(activity *model.Story) error {
 	return nil
 }
 
-func UpdateStory(activity *model.Story) error {
+func UpdateStory(story *model.Story) error {
 	db := tools.GetDB()
 
-	result := db.Model(activity).Where("activity_id = ?", activity.Story).Updates(activity)
+	result := db.Model(story).Where("story_id = ?", story.StoryID).Updates(story)
 
 	if result.RowsAffected == int64(0) {
 		return errors.New("update error")
@@ -67,7 +75,7 @@ func UpdateStory(activity *model.Story) error {
 func DeleteStory(id int) error {
 	db := tools.GetDB()
 
-	result := db.Where("activity_id = ?", id).Delete(model.Story{})
+	result := db.Where("story_id = ?", id).Delete(model.Story{})
 
 	if result.RowsAffected == int64(0) {
 		return errors.New("delete error")
