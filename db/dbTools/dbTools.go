@@ -1,4 +1,4 @@
-package tools
+package dbtools
 
 import (
 	"github.com/jinzhu/gorm"

@@ -3,18 +3,18 @@ package db
 /**
 * @Author: super
 * @Date: 2020-08-11 16:09
-* @Description: gorm自动映射操作activities表
+* @Description: gorm自动映射操作stories表
 **/
 
 import (
 	"errors"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	tools "go-crawler-distributed/dbTools"
+	"go-crawler-distributed/db/dbTools"
 	"go-crawler-distributed/model"
 )
 
 func SelectStoryById(id int) (*model.Story, error) {
-	db := tools.GetDB()
+	db := dbtools.GetDB()
 
 	story := &model.Story{}
 
@@ -27,7 +27,7 @@ func SelectStoryById(id int) (*model.Story, error) {
 }
 
 func SelectStoryRandom() (*model.Story, error) {
-	db := tools.GetDB()
+	db := dbtools.GetDB()
 
 	story := &model.Story{}
 
@@ -49,7 +49,7 @@ func SelectStoryRandom() (*model.Story, error) {
 }
 
 func InsertStory(story *model.Story) error {
-	db := tools.GetDB()
+	db := dbtools.GetDB()
 
 	result := db.Create(story)
 
@@ -61,7 +61,7 @@ func InsertStory(story *model.Story) error {
 }
 
 func UpdateStory(story *model.Story) error {
-	db := tools.GetDB()
+	db := dbtools.GetDB()
 
 	result := db.Model(story).Where("story_id = ?", story.StoryID).Updates(story)
 
@@ -73,7 +73,7 @@ func UpdateStory(story *model.Story) error {
 }
 
 func DeleteStory(id int) error {
-	db := tools.GetDB()
+	db := dbtools.GetDB()
 
 	result := db.Where("story_id = ?", id).Delete(model.Story{})
 
@@ -85,7 +85,7 @@ func DeleteStory(id int) error {
 }
 
 func CountStory() (int, error) {
-	db := tools.GetDB()
+	db := dbtools.GetDB()
 
 	var count int
 
