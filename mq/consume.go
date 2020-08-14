@@ -11,8 +11,8 @@ import (
 * @Description:
 **/
 func main() {
-	testOne := mqTools.NewRabbitMQRouting("testRouting", "testOne")
-	messages := testOne.BindConsumerRouting()
+	testOne := mqTools.NewRabbitMQSimple("testOne")
+	messages := testOne.GetMsgs()
 
 	forever := make(chan bool)
 

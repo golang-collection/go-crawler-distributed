@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-crawler-distributed/db"
+	"strconv"
 )
 
 /**
@@ -12,9 +12,7 @@ import (
 **/
 
 func main() {
-	story, err := db.SelectStoryRandom()
-	if err != nil {
-		return
+	for i := 0; i <= 100; i++ {
+		fmt.Println("bbbbbbb" + strconv.Itoa(i) + "aaaaaaa")
 	}
-	fmt.Println(story)
 }
