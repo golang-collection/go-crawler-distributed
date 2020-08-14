@@ -29,7 +29,9 @@ func ParseBookList(contents []byte, queueName string) {
 		href, _ := selection.Attr("href")
 		fmt.Printf("Fetching: %s\n", href)
 
-		//将解析到的图像详细信息URL放到消息队列
+		//TODO redis去重
+
+		//将解析到的图书详细信息URL放到消息队列
 		bookDetailURL.PublishSimple(href)
 
 	})

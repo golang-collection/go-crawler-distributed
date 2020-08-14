@@ -6,6 +6,7 @@ import (
 	"go-crawler-distributed/crawer/fetcher"
 	"go-crawler-distributed/mq/mqTools"
 	"log"
+	"time"
 )
 
 /**
@@ -21,9 +22,12 @@ func main() {
 
 	go func() {
 		for d := range messages {
-			log.Printf("Fetching BookDetail: %s", d.Body)
-			contents, _ := fetcher.Fetch(string(d.Body))
-			parser.ParseBookDetail(contents, crawerConfig.BOOK_DETAIL)
+			go func() {
+				log.Printf("Fetching BookDetail: %s", d.Body)
+				contents, _ := fetcher.Fetch(string(d.Body))
+				parser.ParseBookDetail(contents, crawerConfig.BOOK_DETAIL)
+			}()
+			time.Sleep(5 * time.Second)
 		}
 	}()
 

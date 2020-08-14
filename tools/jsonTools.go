@@ -11,19 +11,19 @@ import (
 * @Description:
 **/
 
-func ActivityToJson(story *model.Story) (string, error) {
-	str, err := json.Marshal(story)
+func BookToJson(book *model.Book) (string, error) {
+	str, err := json.Marshal(book)
 	if err != nil {
 		return "", err
 	}
 	return string(str), nil
 }
 
-func JsonToActivity(str string) (*model.Story, error) {
-	story := &model.Story{}
-	err := json.Unmarshal([]byte(str), story)
+func JsonToBook(str string) (*model.Book, error) {
+	book := &model.Book{}
+	err := json.Unmarshal([]byte(str), book)
 	if err != nil {
 		return nil, err
 	}
-	return story, nil
+	return book, nil
 }

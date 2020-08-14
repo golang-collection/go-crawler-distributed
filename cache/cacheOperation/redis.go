@@ -1,4 +1,4 @@
-package cache
+package cacheOperation
 
 import (
 	"github.com/garyburd/redigo/redis"
