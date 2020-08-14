@@ -15,7 +15,7 @@ import (
 * @Description:
 **/
 func main() {
-	bookDetailURL := mqTools.NewRabbitMQSimple(crawerConfig.BOOK_DETAIL_URL)
+	bookDetailURL := mqTools.NewRabbitMQSimple(crawerConfig.BookDetailUrl)
 	messages := bookDetailURL.GetMsgs()
 
 	forever := make(chan bool)
@@ -23,9 +23,10 @@ func main() {
 	go func() {
 		for d := range messages {
 			go func() {
-				log.Printf("Fetching BookDetail: %s", d.Body)
-				contents, _ := fetcher.Fetch(string(d.Body))
-				parser.ParseBookDetail(contents, crawerConfig.BOOK_DETAIL)
+				url := string(d.Body)
+				log.Printf("Fetching BookDetail: %s", url)
+				contents, _ := fetcher.Fetch(url)
+				parser.ParseBookDetail(contents, crawerConfig.BookDetail, url)
 			}()
 			time.Sleep(5 * time.Second)
 		}

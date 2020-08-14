@@ -15,7 +15,7 @@ import (
 **/
 
 func main() {
-	bookDetailURL := mqTools.NewRabbitMQSimple(crawerConfig.BOOK_DETAIL)
+	bookDetailURL := mqTools.NewRabbitMQSimple(crawerConfig.BookDetail)
 	messages := bookDetailURL.GetMsgs()
 
 	forever := make(chan bool)
@@ -25,6 +25,7 @@ func main() {
 			go func() {
 				log.Printf("Storage BookDetail: %s", d.Body)
 				book, err := tools.JsonToBook(string(d.Body))
+
 				err = DBOperation.InsertBook(book)
 				if err != nil {
 					log.Fatalln(err)

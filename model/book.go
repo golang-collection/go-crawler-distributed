@@ -1,5 +1,7 @@
 package model
 
+import "fmt"
+
 /**
 * @Author: super
 * @Date: 2020-08-14 15:29
@@ -23,4 +25,30 @@ type Book struct {
 	OriginalName string  `gorm:"column:original_name" json:"original_name"`
 	Comments     int     `gorm:"column:comments" json:"comments"`
 	CommentUrl   string  `gorm:"column:comment_url" json:"comment_url"`
+	Url          string  `gorm:"column:url" json:"url"`
+}
+
+func (book Book) String() string {
+	return fmt.Sprintf("book_id: %d\n"+
+		"title: %s\n"+
+		"sub_title: %s\n"+
+		"img: %s\n"+
+		"author: %s\n"+
+		"publish: %s\n"+
+		"producer: %s\n"+
+		"publish_year: %s\n"+
+		"pages: %d\n"+
+		"price: %f\n"+
+		"layout: %s\n"+
+		"series: %s\n"+
+		"isbn: %s\n"+
+		"score: %f\n"+
+		"original_name: %s\n"+
+		"comments: %d\n"+
+		"comment_url: %s\n"+
+		"url: %s",
+		book.BookID, book.Title, book.SubTitle, book.Img,
+		book.Author, book.Publish, book.Producer, book.PublishYear,
+		book.Pages, book.Price, book.Layout, book.Series, book.ISBN,
+		book.Score, book.OriginalName, book.Comments, book.CommentUrl, book.Url)
 }

@@ -5,5 +5,6 @@ package crawerConfig
 * @Date: 2020-08-14 16:08
 * @Description:
 **/
-const BOOK_DETAIL_URL = "bookDetailURL"
-const BOOK_DETAIL = "bookDetail"
+const BookDetailUrl = "bookDetailURL"
+const BookDetail = "bookDetail"
+const TagUrl = "tagURL"
