@@ -20,9 +20,6 @@ import (
 var re = regexp.MustCompile(`<span class="pl"[^>]*>([^<]+)</span[^>]*>([^<]+)<`)
 var re1 = regexp.MustCompile(`<span class="pl"[^>]*>([^<]+)</span>[^>]*>([^<]+)<`)
 
-//`<span class="pl"[^>]*>([^<]+)</span>[^>]*>([^<]+)<`
-//`<span class="pl"[^>]*>([^<]+)<\w*[^>]*>([^<]+)<br/>`
-
 func ParseBookDetail(contents []byte, queueName string, url string) {
 
 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
