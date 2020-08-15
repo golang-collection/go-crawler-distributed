@@ -12,19 +12,8 @@ import (
 * @Description:
 **/
 func main() {
-	//var wg sync.WaitGroup
-	//wg.Add(200)
-	//
-	//for i := 0; i <= 980; i = i + 20 {
-	//	go func() {
-	//		//`https://book.douban.com/tag/`
-	//		contents, _ := fetcher.Fetch("https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4?start=" + strconv.Itoa(i) + "&type=T")
-	//		parser.ParseTagList(contents, crawerConfig.TAG_URL)
-	//		wg.Done()
-	//	}()
-	//	time.Sleep(5 * time.Second)
-	//}
-	//wg.Wait()
+	//交叉编译
+	//CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go
 	url := "https://book.douban.com/tag/"
 	contents, _ := fetcher.Fetch(url)
 	parser.ParseTagList(contents, crawerConfig.TagUrl, url)

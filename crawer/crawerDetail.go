@@ -21,6 +21,7 @@ func main() {
 	forever := make(chan bool)
 
 	go func() {
+		log.Println("Ready to fetching BookDetail")
 		for d := range messages {
 			go func() {
 				url := string(d.Body)

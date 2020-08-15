@@ -21,6 +21,7 @@ func main() {
 	forever := make(chan bool)
 
 	go func() {
+		log.Println("Ready to storage BookDetail")
 		for d := range messages {
 			go func() {
 				log.Printf("Storage BookDetail: %s", d.Body)
