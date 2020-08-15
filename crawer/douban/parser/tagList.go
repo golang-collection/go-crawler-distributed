@@ -26,7 +26,6 @@ func ParseTagList(contents []byte, queueName string, url string) {
 	result := dom.Find("table[class=tagCol]").Find("a")
 	href := ""
 	result.Each(func(i int, selection *goquery.Selection) {
-		//TODO redis去重
 		href = url + selection.Text()
 		fmt.Printf("Fetching: %s\n", href)
 

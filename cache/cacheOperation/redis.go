@@ -51,3 +51,13 @@ func ElementIsInSet(key string, value string) (bool, error) {
 	}
 	return false, err
 }
+
+func GetAllElementFromSet(key string) ([]string, error) {
+	c := cacheTools.GetConn()
+	return redis.Strings(c.Do("smembers", key))
+}
+
+func DelAllElementFromSet(key string) (int, error) {
+	c := cacheTools.GetConn()
+	return redis.Int(c.Do("DEL", key))
+}

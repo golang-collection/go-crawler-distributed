@@ -19,6 +19,8 @@ import (
 **/
 var re = regexp.MustCompile(`<span class="pl"[^>]*>([^<]+)</span[^>]*>([^<]+)<`)
 var re1 = regexp.MustCompile(`<span class="pl"[^>]*>([^<]+)</span>[^>]*>([^<]+)<`)
+var DateRe = regexp.MustCompile(`([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))`)
+var priceRe = regexp.MustCompile(`[0-9]+[.]?[0-9]*`)
 
 func ParseBookDetail(contents []byte, queueName string, url string) {
 
@@ -53,8 +55,11 @@ func ParseBookDetail(contents []byte, queueName string, url string) {
 		case k == "ISBN:":
 			book.ISBN = v
 		case k == "出版年:":
-			//TODO 有的包含数字
-			if len(v) < 10 {
+			dateMatch := DateRe.FindAllSubmatch([]byte(v), -1)
+			if len(dateMatch) == 0 {
+				v = "2006-01-02"
+			}
+			if v == "" {
 				v = "2006-01-02"
 			}
 			book.PublishYear = v
@@ -63,8 +68,12 @@ func ParseBookDetail(contents []byte, queueName string, url string) {
 		case k == "原作名:":
 			book.OriginalName = v
 		case k == "定价:":
-			//TODO 有的没有元
-			v = v[:len(v)-3]
+			priceMatch := priceRe.Find([]byte(v))
+			if len(priceMatch) == 0 {
+				v = "0"
+			} else {
+				v = string(priceMatch)
+			}
 			p, _ := strconv.ParseFloat(v, 64)
 			book.Price = p
 		case k == "装帧:":
