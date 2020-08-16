@@ -3,7 +3,8 @@ package main
 import (
 	"go-crawler-distributed/crawer/crawerConfig"
 	"go-crawler-distributed/crawer/douban/parser"
-	"go-crawler-distributed/crawer/fetcher"
+	"go-crawler-distributed/crawer/worker"
+	"log"
 )
 
 /**
@@ -12,9 +13,18 @@ import (
 * @Description:
 **/
 func main() {
-	//交叉编译
-	//CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go
 	url := "https://book.douban.com/tag/"
-	contents, _ := fetcher.Fetch(url)
-	parser.ParseTagList(contents, crawerConfig.TagUrl, url)
+
+	funcParser := worker.NewFuncParser(parser.ParseTagList, crawerConfig.TagUrl, "tags")
+
+	log.Printf("Fetching "+funcParser.Name+": %s", url)
+
+	r := worker.Request{
+		Url:    url,
+		Parser: funcParser,
+	}
+	worker.Worker(r)
+
+	//contents, _ := fetcher.Fetch(url)
+	//parser.ParseTagList(contents, crawerConfig.TagUrl, url)
 }

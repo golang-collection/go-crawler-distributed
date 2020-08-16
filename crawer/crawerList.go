@@ -3,7 +3,7 @@ package main
 import (
 	"go-crawler-distributed/crawer/crawerConfig"
 	"go-crawler-distributed/crawer/douban/parser"
-	"go-crawler-distributed/crawer/fetcher"
+	"go-crawler-distributed/crawer/worker"
 	"go-crawler-distributed/mq/mqTools"
 	"log"
 	"strconv"
@@ -22,16 +22,26 @@ func main() {
 
 	forever := make(chan bool)
 
+	funcParser := worker.NewFuncParser(parser.ParseBookList, crawerConfig.BookDetailUrl, "tagList")
+
 	go func() {
-		log.Println("Ready to fetching tagList")
+		log.Println("Ready to fetching " + funcParser.Name)
 		for d := range messages {
 			go func() {
 				url := string(d.Body)
-				log.Printf("Fetching tagList: %s", url)
+				log.Printf("Fetching "+funcParser.Name+": %s", url)
 				for i := 0; i <= 1000; i = i + 20 {
 					go func() {
-						contents, _ := fetcher.Fetch(url + "?start=" + strconv.Itoa(i) + "&type=T")
-						parser.ParseBookList(contents, crawerConfig.BookDetailUrl)
+						url := url + "?start=" + strconv.Itoa(i) + "&type=T"
+
+						r := worker.Request{
+							Url:    url,
+							Parser: funcParser,
+						}
+						worker.Worker(r)
+
+						//contents, _ := fetcher.Fetch(url + "?start=" + strconv.Itoa(i) + "&type=T")
+						//parser.ParseBookList(contents, crawerConfig.BookDetailUrl, "")
 					}()
 					time.Sleep(5 * time.Second)
 				}

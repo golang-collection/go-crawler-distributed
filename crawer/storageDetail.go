@@ -2,9 +2,9 @@ package main
 
 import (
 	"go-crawler-distributed/crawer/crawerConfig"
-	"go-crawler-distributed/db/DBOperation"
+	"go-crawler-distributed/crawer/douban/storage"
+	"go-crawler-distributed/crawer/persistence"
 	"go-crawler-distributed/mq/mqTools"
-	"go-crawler-distributed/tools"
 	"log"
 )
 
@@ -20,17 +20,29 @@ func main() {
 
 	forever := make(chan bool)
 
+	funcStorage := persistence.FuncStorage{
+		Name:      "BookDetail",
+		ParseFunc: storage.ParseAndStorage,
+	}
+
 	go func() {
-		log.Println("Ready to storage BookDetail")
+		log.Println("Ready to storage " + funcStorage.Name)
 		for d := range messages {
 			go func() {
-				log.Printf("Storage BookDetail: %s", d.Body)
-				book, err := tools.JsonToBook(string(d.Body))
+				log.Printf("Storage "+funcStorage.Name+": %s", d.Body)
 
-				err = DBOperation.InsertBook(book)
+				err := funcStorage.ParseFunc(d.Body)
 				if err != nil {
 					log.Fatalln(err)
 				}
+
+				//book, err := tools.JsonToBook(string(d.Body))
+				//
+				//err = DBOperation.InsertBook(book)
+				//if err != nil {
+				//	log.Fatalln(err)
+				//}
+
 			}()
 		}
 	}()
