@@ -35,9 +35,6 @@ func main() {
 				}
 
 				worker.Worker(r)
-
-				//contents, _ := fetcher.Fetch(url)
-				//parser.ParseBookDetail(contents, crawerConfig.BookDetail, url)
 			}()
 			time.Sleep(5 * time.Second)
 		}

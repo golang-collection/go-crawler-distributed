@@ -35,14 +35,6 @@ func main() {
 				if err != nil {
 					log.Fatalln(err)
 				}
-
-				//book, err := tools.JsonToBook(string(d.Body))
-				//
-				//err = DBOperation.InsertBook(book)
-				//if err != nil {
-				//	log.Fatalln(err)
-				//}
-
 			}()
 		}
 	}()

@@ -39,9 +39,6 @@ func main() {
 							Parser: funcParser,
 						}
 						worker.Worker(r)
-
-						//contents, _ := fetcher.Fetch(url + "?start=" + strconv.Itoa(i) + "&type=T")
-						//parser.ParseBookList(contents, crawerConfig.BookDetailUrl, "")
 					}()
 					time.Sleep(5 * time.Second)
 				}

@@ -24,7 +24,4 @@ func main() {
 		Parser: funcParser,
 	}
 	worker.Worker(r)
-
-	//contents, _ := fetcher.Fetch(url)
-	//parser.ParseTagList(contents, crawerConfig.TagUrl, url)
 }
