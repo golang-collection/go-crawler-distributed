@@ -19,7 +19,7 @@ var pool *redis.Pool
 func newRedisPool() *redis.Pool {
 	return &redis.Pool{
 		MaxIdle:     50,
-		MaxActive:   30,
+		MaxActive:   100,
 		IdleTimeout: 300 * time.Second,
 		Dial: func() (redis.Conn, error) {
 			conn, err := redis.Dial("tcp", config.RedisHost)

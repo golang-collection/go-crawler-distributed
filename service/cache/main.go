@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"github.com/micro/go-micro/v2"
-	"time"
 	"go-crawler-distributed/service/cache/proto"
 	"go-crawler-distributed/service/cache/server"
+	"log"
+	"time"
 )
 
 /**
@@ -27,6 +27,6 @@ func main() {
 
 	// 运行服务
 	if err := service.Run(); err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 }

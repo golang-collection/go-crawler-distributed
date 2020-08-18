@@ -40,6 +40,7 @@ func (cache *CacheStruct) GetString(ctx context.Context, req *proto.Request, res
 
 func (cache *CacheStruct) AddElementToSet(ctx context.Context, req *proto.Request, res *proto.IntResponse) error {
 	c := cacheTools.GetConn()
+	defer c.Close()
 
 	result, err := redis.Int(c.Do("sadd", req.Key, req.Value))
 	if err != nil {
@@ -51,14 +52,17 @@ func (cache *CacheStruct) AddElementToSet(ctx context.Context, req *proto.Reques
 
 func (cache *CacheStruct) ElementIsInSet(ctx context.Context, req *proto.Request, res *proto.BoolResponse) error {
 	c := cacheTools.GetConn()
+	defer c.Close()
+
 	result, err := redis.Int(c.Do("sismember", req.Key, req.Value))
 	if err != nil {
 		return err
 	}
-	if result == 1 {
-		return err
+	if result == 1{
+		res.Result = true
+	}else{
+		res.Result = false
 	}
-	res.Result = true
 	return nil
 }
 

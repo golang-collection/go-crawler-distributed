@@ -33,7 +33,7 @@ func main() {
 
 				err := funcStorage.ParseFunc(d.Body)
 				if err != nil {
-					log.Fatalln(err)
+					log.Println(err)
 				}
 			}()
 		}
