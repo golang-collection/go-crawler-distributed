@@ -3,7 +3,7 @@ package mqTools
 import (
 	"fmt"
 	"github.com/streadway/amqp"
-	"go-crawler-distributed/config"
+	"go-crawler-distributed/service/watchConfig"
 	"log"
 )
 
@@ -30,14 +30,18 @@ type RabbitMQ struct {
 // 创建RabbitMQ实例
 func NewRabbitMQ(queuqName string,
 	exchange string, key string) *RabbitMQ {
+
+	rabbitMQUrl, err := watchConfig.GetRabbitMQUrl()
+	if err != nil{
+		panic(err)
+	}
 	rabbitmq := &RabbitMQ{
 		QueueName: queuqName,
 		Exchange:  exchange,
 		Key:       key,
-		Mqurl:     config.MQURL,
+		Mqurl:     rabbitMQUrl,
 	}
 	//创建rabbitmq连接
-	var err error
 	rabbitmq.conn, err = amqp.Dial(rabbitmq.Mqurl)
 	rabbitmq.FailOnErr(err, "创建连接错误")
 	rabbitmq.Channel, err = rabbitmq.conn.Channel()

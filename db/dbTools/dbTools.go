@@ -3,7 +3,7 @@ package dbtools
 import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"go-crawler-distributed/config"
+	"go-crawler-distributed/service/watchConfig"
 )
 
 /**
@@ -17,7 +17,11 @@ var _db *gorm.DB
 func init() {
 	//连接MYSQL, 获得DB类型实例，用于后面的数据库读写操作。
 	var err error
-	_db, err = gorm.Open("mysql", config.MYSQL_URL)
+	mysqlURL, err := watchConfig.GetMysqlUrl()
+	if err != nil{
+		panic(err)
+	}
+	_db, err = gorm.Open("mysql", mysqlURL)
 	if err != nil {
 		panic("连接数据库失败, error=" + err.Error())
 	}
