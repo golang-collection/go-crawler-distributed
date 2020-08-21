@@ -41,9 +41,9 @@ func GetRabbitMQUrl() (string, error) {
 	if err != nil {             // Handle errors reading the config file
 		return "", err
 	}
-	mqHost := viper.GetString("mysql.host")
-	mqUser := viper.GetString("mysql.user")
-	mqPassword := viper.GetString("mysql.password")
+	mqHost := viper.GetString("rabbitmq.host")
+	mqUser := viper.GetString("rabbitmq.user")
+	mqPassword := viper.GetString("rabbitmq.password")
 	mqURL := "amqp://" + mqUser + ":" + mqPassword + "@"+mqHost+"/"
 	return mqURL, nil
 }

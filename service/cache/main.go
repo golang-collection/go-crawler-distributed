@@ -4,7 +4,8 @@ import (
 	"github.com/micro/go-micro/v2"
 	"go-crawler-distributed/service/cache/proto"
 	"go-crawler-distributed/service/cache/server"
-	"log"
+	"go-crawler-distributed/unifiedLog"
+	"go.uber.org/zap"
 	"time"
 )
 
@@ -13,6 +14,8 @@ import (
 * @Date: 2020-08-17 20:21
 * @Description:
 **/
+
+var logger = unifiedLog.GetLogger()
 
 func main() {
 	service := micro.NewService(
@@ -27,6 +30,6 @@ func main() {
 
 	// 运行服务
 	if err := service.Run(); err != nil {
-		log.Println(err)
+		logger.Error("cache service error", zap.Error(err))
 	}
 }

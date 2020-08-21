@@ -5,7 +5,8 @@ import (
 	"go-crawler-distributed/crawer/douban/storage"
 	"go-crawler-distributed/crawer/persistence"
 	"go-crawler-distributed/mq/mqTools"
-	"log"
+	"go-crawler-distributed/unifiedLog"
+	"go.uber.org/zap"
 )
 
 /**
@@ -13,6 +14,8 @@ import (
 * @Date: 2020-08-14 16:27
 * @Description:
 **/
+var logger = unifiedLog.GetLogger()
+
 
 func main() {
 	bookDetailURL := mqTools.NewRabbitMQSimple(crawerConfig.BookDetail)
@@ -25,15 +28,16 @@ func main() {
 		ParseFunc: storage.ParseAndStorage,
 	}
 
+
 	go func() {
-		log.Println("Ready to storage " + funcStorage.Name)
+		logger.Info("Ready to storage", zap.String("name", funcStorage.Name))
 		for d := range messages {
 			go func() {
-				log.Printf("Storage "+funcStorage.Name+": %s", d.Body)
+				logger.Info("storage", zap.String(funcStorage.Name, string(d.Body)))
 
 				err := funcStorage.ParseFunc(d.Body)
 				if err != nil {
-					log.Println(err)
+					logger.Error("storage parse error", zap.Error(err))
 				}
 			}()
 		}

@@ -4,6 +4,8 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"go-crawler-distributed/service/watchConfig"
+	"go-crawler-distributed/unifiedLog"
+	"go.uber.org/zap"
 )
 
 /**
@@ -13,16 +15,18 @@ import (
 **/
 
 var _db *gorm.DB
+var logger = unifiedLog.GetLogger()
 
 func init() {
 	//连接MYSQL, 获得DB类型实例，用于后面的数据库读写操作。
 	var err error
 	mysqlURL, err := watchConfig.GetMysqlUrl()
 	if err != nil{
-		panic(err)
+		logger.Error("init mysql error", zap.String("err", err.Error()))
 	}
 	_db, err = gorm.Open("mysql", mysqlURL)
 	if err != nil {
+		logger.Error("conn mysql error", zap.String("err", err.Error()))
 		panic("连接数据库失败, error=" + err.Error())
 	}
 

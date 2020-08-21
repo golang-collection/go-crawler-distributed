@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"github.com/streadway/amqp"
 	"go-crawler-distributed/service/watchConfig"
-	"log"
+	"go-crawler-distributed/unifiedLog"
+	"go.uber.org/zap"
 )
 
 /**
@@ -12,6 +13,8 @@ import (
 * @Date: 2020-08-13 08:44
 * @Description:
 **/
+
+var logger = unifiedLog.GetLogger()
 
 type RabbitMQ struct {
 	conn    *amqp.Connection
@@ -33,8 +36,10 @@ func NewRabbitMQ(queuqName string,
 
 	rabbitMQUrl, err := watchConfig.GetRabbitMQUrl()
 	if err != nil{
+		logger.Error("get rabbitmq url error", zap.Error(err))
 		panic(err)
 	}
+	fmt.Println(rabbitMQUrl)
 	rabbitmq := &RabbitMQ{
 		QueueName: queuqName,
 		Exchange:  exchange,
@@ -58,7 +63,7 @@ func (r *RabbitMQ) Destory() {
 //自定义错误处理函数
 func (r *RabbitMQ) FailOnErr(err error, message string) {
 	if err != nil {
-		log.Fatalf("%s:%s\n", message, err)
+		logger.Error(message, zap.Error(err))
 		panic(fmt.Sprintf("%s:%s", message, err))
 	}
 }

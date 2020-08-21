@@ -5,7 +5,7 @@ import (
 	"go-crawler-distributed/crawer/douban/parser"
 	"go-crawler-distributed/crawer/worker"
 	"go-crawler-distributed/mq/mqTools"
-	"log"
+	"go.uber.org/zap"
 	"strconv"
 	"time"
 )
@@ -25,11 +25,11 @@ func main() {
 	funcParser := worker.NewFuncParser(parser.ParseBookList, crawerConfig.BookDetailUrl, "tagList")
 
 	go func() {
-		log.Println("Ready to fetching " + funcParser.Name)
+		logger.Info("Ready to fetching", zap.String("parser name", funcParser.Name))
 		for d := range messages {
 			go func() {
 				url := string(d.Body)
-				log.Printf("Fetching "+funcParser.Name+": %s", url)
+				logger.Info("fetching", zap.String(funcParser.Name, url))
 				for i := 0; i <= 1000; i = i + 20 {
 					go func() {
 						url := url + "?start=" + strconv.Itoa(i) + "&type=T"

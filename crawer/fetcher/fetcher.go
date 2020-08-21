@@ -3,13 +3,14 @@ package fetcher
 import (
 	"bufio"
 	"fmt"
+	"go-crawler-distributed/unifiedLog"
+	"go.uber.org/zap"
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/unicode"
 	"golang.org/x/text/transform"
 	"io"
 	"io/ioutil"
-	"log"
 	"net/http"
 )
 
@@ -18,6 +19,9 @@ import (
 * @Date: 2020-08-14 13:47
 * @Description:
 **/
+
+var logger = unifiedLog.GetLogger()
+
 
 func Fetch(url string) ([]byte, error) {
 	client := &http.Client{}
@@ -48,7 +52,7 @@ func Fetch(url string) ([]byte, error) {
 func determineEncoding(r io.Reader) encoding.Encoding {
 	bytes, err := bufio.NewReader(r).Peek(1024)
 	if err != nil {
-		log.Printf("Fetch error: %v", err)
+		logger.Error("determine coder error", zap.Error(err))
 		//默认UTF8编码
 		return unicode.UTF8
 	}

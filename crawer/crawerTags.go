@@ -4,7 +4,7 @@ import (
 	"go-crawler-distributed/crawer/crawerConfig"
 	"go-crawler-distributed/crawer/douban/parser"
 	"go-crawler-distributed/crawer/worker"
-	"log"
+	"go.uber.org/zap"
 )
 
 /**
@@ -17,7 +17,8 @@ func main() {
 
 	funcParser := worker.NewFuncParser(parser.ParseTagList, crawerConfig.TagUrl, "tags")
 
-	log.Printf("Fetching "+funcParser.Name+": %s", url)
+
+    logger.Info("fetching", zap.String(funcParser.Name, url))
 
 	r := worker.Request{
 		Url:    url,

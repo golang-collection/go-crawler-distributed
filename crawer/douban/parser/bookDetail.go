@@ -6,6 +6,8 @@ import (
 	"go-crawler-distributed/model"
 	"go-crawler-distributed/mq/mqTools"
 	"go-crawler-distributed/tools"
+	"go-crawler-distributed/unifiedLog"
+	"go.uber.org/zap"
 	"log"
 	"regexp"
 	"strconv"
@@ -22,11 +24,13 @@ var re1 = regexp.MustCompile(`<span class="pl"[^>]*>([^<]+)</span>[^>]*>([^<]+)<
 var DateRe = regexp.MustCompile(`([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))`)
 var priceRe = regexp.MustCompile(`[0-9]+[.]?[0-9]*`)
 
+var logger = unifiedLog.GetLogger()
+
 func ParseBookDetail(contents []byte, queueName string, url string) {
 
 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
 	if err != nil {
-		log.Fatal(err)
+		logger.Error("new doc reader error", zap.Error(err))
 	}
 
 	//初始化消息队列
@@ -123,17 +127,13 @@ func ParseBookDetail(contents []byte, queueName string, url string) {
 	result = dom.Find("div[class=indent]+p")
 	commentUrl, _ := result.Children().Attr("href")
 	book.CommentUrl = commentUrl
-	//fmt.Println(commentUrl)
-
-	//fmt.Println(book)
 
 	//Book结构体转json
 	bookJson, err := tools.BookToJson(book)
 	if err != nil {
-		log.Fatalln(err)
+		logger.Error("book to json error", zap.Error(err))
 	} else {
 		//将解析到的图书详细信息URL放到消息队列
 		bookDetail.PublishSimple(bookJson)
-		fmt.Println(bookJson)
 	}
 }

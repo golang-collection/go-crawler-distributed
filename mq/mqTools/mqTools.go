@@ -2,7 +2,7 @@ package mqTools
 
 import (
 	"github.com/streadway/amqp"
-	"log"
+	"go.uber.org/zap"
 )
 
 /**
@@ -34,7 +34,7 @@ func (r *RabbitMQ) PublishSimple(message string) {
 		nil,
 	)
 	if err != nil {
-		log.Fatalln(err)
+		logger.Error("queue declare error", zap.Error(err))
 	}
 
 	//2. 发送消息到队列中
@@ -52,7 +52,7 @@ func (r *RabbitMQ) PublishSimple(message string) {
 		},
 	)
 	if err != nil {
-		log.Fatalln(err)
+		logger.Error("queue publish error", zap.Error(err))
 	}
 }
 
@@ -73,7 +73,7 @@ func (r *RabbitMQ) GetMsgs() <-chan amqp.Delivery {
 		nil,
 	)
 	if err != nil {
-		log.Fatalln(err)
+		logger.Error("queue declare error", zap.Error(err))
 	}
 
 	//接受消息
@@ -93,7 +93,7 @@ func (r *RabbitMQ) GetMsgs() <-chan amqp.Delivery {
 		nil,
 	)
 	if err != nil {
-		log.Fatalln(err)
+		logger.Error("queue consume error", zap.Error(err))
 	}
 
 	return msgs

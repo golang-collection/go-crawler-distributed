@@ -11,6 +11,7 @@ require (
 	github.com/micro/go-micro/v2 v2.9.1
 	github.com/spf13/viper v1.7.1
 	github.com/streadway/amqp v1.0.0
+	go.uber.org/zap v1.13.0
 	golang.org/x/net v0.0.0-20200520182314-0ba52f642ac2
 	golang.org/x/text v0.3.2
 	google.golang.org/protobuf v1.23.0
