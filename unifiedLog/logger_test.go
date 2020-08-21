@@ -1,6 +1,10 @@
 package unifiedLog
 
-import "testing"
+import (
+	"errors"
+	"go.uber.org/zap"
+	"testing"
+)
 
 /**
 * @Author: super
@@ -11,5 +15,7 @@ import "testing"
 func TestGetLogger(t *testing.T) {
 	logger := GetLogger()
 	logger.Info("hello")
-	logger.Error("hello")
+	logger.Error("hello", zap.Error(errors.New("hello eroor")))
+	logger.Debug("hello", zap.Error(errors.New("hello eroor")))
+	logger.Warn("hello")
 }

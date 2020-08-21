@@ -2,6 +2,8 @@ package watchConfig
 
 import (
 	"github.com/spf13/viper"
+	"go-crawler-distributed/unifiedLog"
+	"go.uber.org/zap"
 )
 
 /**
@@ -10,15 +12,17 @@ import (
 * @Description:
 **/
 
+var logger = unifiedLog.GetLogger()
+
 func init() {
 	viper.SetConfigFile("service/watchConfig/config/config.json") //文件名
+	err := viper.ReadInConfig() // 会查找和读取配置文件
+	if err != nil {             // Handle errors reading the config file
+		logger.Error("viper read config error", zap.Error(err))
+	}
 }
 
 func GetMysqlUrl() (string, error) {
-	err := viper.ReadInConfig() // 会查找和读取配置文件
-	if err != nil {             // Handle errors reading the config file
-		return "", err
-	}
 	mysqlHost := viper.GetString("mysql.host")
 	mysqlUser := viper.GetString("mysql.user")
 	mysqlPassword := viper.GetString("mysql.password")
@@ -28,19 +32,11 @@ func GetMysqlUrl() (string, error) {
 }
 
 func GetRedisUrl() (string, error) {
-	err := viper.ReadInConfig() // 会查找和读取配置文件
-	if err != nil {             // Handle errors reading the config file
-		return "", err
-	}
 	redisURL := viper.GetString("redis.host")
 	return redisURL, nil
 }
 
 func GetRabbitMQUrl() (string, error) {
-	err := viper.ReadInConfig() // 会查找和读取配置文件
-	if err != nil {             // Handle errors reading the config file
-		return "", err
-	}
 	mqHost := viper.GetString("rabbitmq.host")
 	mqUser := viper.GetString("rabbitmq.user")
 	mqPassword := viper.GetString("rabbitmq.password")

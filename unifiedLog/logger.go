@@ -1,6 +1,8 @@
 package unifiedLog
 
-import "go.uber.org/zap"
+import (
+	"go.uber.org/zap"
+)
 
 /**
 * @Author: super
@@ -12,6 +14,9 @@ var logger *zap.Logger
 
 func init(){
 	logger, _ = zap.NewProduction()
+	//config := zap.NewDevelopmentConfig()
+	//config.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
+	//logger, _ = config.Build()
 	defer logger.Sync()
 }
 

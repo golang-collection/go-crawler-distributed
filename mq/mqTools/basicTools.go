@@ -39,7 +39,6 @@ func NewRabbitMQ(queuqName string,
 		logger.Error("get rabbitmq url error", zap.Error(err))
 		panic(err)
 	}
-	fmt.Println(rabbitMQUrl)
 	rabbitmq := &RabbitMQ{
 		QueueName: queuqName,
 		Exchange:  exchange,
