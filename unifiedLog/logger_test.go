@@ -15,7 +15,7 @@ import (
 func TestGetLogger(t *testing.T) {
 	logger := GetLogger()
 	logger.Info("hello")
-	logger.Error("hello", zap.Error(errors.New("hello eroor")))
-	logger.Debug("hello", zap.Error(errors.New("hello eroor")))
+	logger.Error("hello", zap.Error(errors.New("hello error")))
+	logger.Debug("hello", zap.Error(errors.New("hello error")))
 	logger.Warn("hello")
 }
