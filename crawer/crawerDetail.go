@@ -8,6 +8,7 @@ import (
 	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
 	"sync"
+	"time"
 )
 
 /**
@@ -42,6 +43,7 @@ func main() {
 
 				worker.Worker(r)
 			}(d.Body)
+			time.Sleep(time.Second * 2)
 		}
 		wg.Wait()
 	}()

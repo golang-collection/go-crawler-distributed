@@ -9,6 +9,7 @@ import (
 	"go.uber.org/zap"
 	"strconv"
 	"sync"
+	"time"
 )
 
 /**
@@ -36,12 +37,13 @@ func main() {
 				wg.Add(1)
 				url := string(data)
 				unifiedLog.GetLogger().Info("fetching", zap.String(funcParser.Name, url))
+				minWg := sync.WaitGroup{}
 				for i := 0; i <= 1000; i = i + 20 {
 					go func(i int) {
 						defer func() {
-							wg.Done()
+							minWg.Done()
 						}()
-						wg.Add(1)
+						minWg.Add(1)
 						url := url + "?start=" + strconv.Itoa(i) + "&type=T"
 
 						r := worker.Request{
@@ -50,8 +52,11 @@ func main() {
 						}
 						worker.Worker(r)
 					}(i)
+					time.Sleep(time.Second * 2)
 				}
+				minWg.Wait()
 			}(d.Body)
+			time.Sleep(time.Second * 2)
 		}
 		wg.Wait()
 	}()
