@@ -14,6 +14,7 @@ import (
 * @Date: 2020-08-14 16:27
 * @Description:
 **/
+
 var logger = unifiedLog.GetLogger()
 
 
@@ -32,14 +33,14 @@ func main() {
 	go func() {
 		logger.Info("Ready to storage", zap.String("name", funcStorage.Name))
 		for d := range messages {
-			go func() {
-				logger.Info("storage", zap.String(funcStorage.Name, string(d.Body)))
+			go func(data []byte) {
+				logger.Info("storage", zap.String(funcStorage.Name, string(data)))
 
-				err := funcStorage.ParseFunc(d.Body)
+				err := funcStorage.ParseFunc(data)
 				if err != nil {
 					logger.Error("storage parse error", zap.Error(err))
 				}
-			}()
+			}(d.Body)
 		}
 	}()
 

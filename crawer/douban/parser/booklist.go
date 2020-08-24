@@ -1,13 +1,10 @@
 package parser
 
 import (
-	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"go-crawler-distributed/cache/client"
 	"go-crawler-distributed/mq/mqTools"
-	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
-	"log"
 	"strings"
 )
 
@@ -16,7 +13,6 @@ import (
 * @Date: 2020-08-14 13:54
 * @Description:
 **/
-var logger = unifiedLog.GetLogger()
 
 
 func ParseBookList(contents []byte, queueName string, _ string) {

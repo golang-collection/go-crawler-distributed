@@ -1,0 +1,1 @@
+{"level":"error","ts":1598254991.077433,"msg":"viper read config error","error":"open service/watchConfig/config/config.json: no such file or directory"}

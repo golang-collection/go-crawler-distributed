@@ -5,9 +5,10 @@ import (
 	"go-crawler-distributed/crawer/douban/parser"
 	"go-crawler-distributed/crawer/worker"
 	"go-crawler-distributed/mq/mqTools"
+	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
 	"strconv"
-	"time"
+	"sync"
 )
 
 /**
@@ -25,13 +26,22 @@ func main() {
 	funcParser := worker.NewFuncParser(parser.ParseBookList, crawerConfig.BookDetailUrl, "tagList")
 
 	go func() {
-		logger.Info("Ready to fetching", zap.String("parser name", funcParser.Name))
+		wg := sync.WaitGroup{}
+		unifiedLog.GetLogger().Info("Ready to fetching", zap.String("parser name", funcParser.Name))
 		for d := range messages {
-			go func() {
-				url := string(d.Body)
-				logger.Info("fetching", zap.String(funcParser.Name, url))
+			go func(data []byte) {
+				defer func() {
+					wg.Done()
+				}()
+				wg.Add(1)
+				url := string(data)
+				unifiedLog.GetLogger().Info("fetching", zap.String(funcParser.Name, url))
 				for i := 0; i <= 1000; i = i + 20 {
-					go func() {
+					go func(i int) {
+						defer func() {
+							wg.Done()
+						}()
+						wg.Add(1)
 						url := url + "?start=" + strconv.Itoa(i) + "&type=T"
 
 						r := worker.Request{
@@ -39,12 +49,11 @@ func main() {
 							Parser: funcParser,
 						}
 						worker.Worker(r)
-					}()
-					time.Sleep(5 * time.Second)
+					}(i)
 				}
-			}()
-			time.Sleep(5 * time.Second)
+			}(d.Body)
 		}
+		wg.Wait()
 	}()
 
 	<-forever

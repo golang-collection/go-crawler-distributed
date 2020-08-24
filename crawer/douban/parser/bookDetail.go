@@ -1,14 +1,11 @@
 package parser
 
 import (
-	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"go-crawler-distributed/model"
 	"go-crawler-distributed/mq/mqTools"
 	"go-crawler-distributed/tools"
-	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
-	"log"
 	"regexp"
 	"strconv"
 	"strings"
@@ -24,7 +21,6 @@ var re1 = regexp.MustCompile(`<span class="pl"[^>]*>([^<]+)</span>[^>]*>([^<]+)<
 var DateRe = regexp.MustCompile(`([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))`)
 var priceRe = regexp.MustCompile(`[0-9]+[.]?[0-9]*`)
 
-var logger = unifiedLog.GetLogger()
 
 func ParseBookDetail(contents []byte, queueName string, url string) {
 
