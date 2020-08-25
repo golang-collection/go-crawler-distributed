@@ -11,8 +11,22 @@
 </div>
 This project is a distributed crawler and supports the secondary development of personalized customized page parser. The overall project adopts micro-service architecture and realizes container-oriented deployment through Docker.
 
-# Parser
+# 目录结构
 
+- cache redis操作
+- crawler 处理爬虫相关逻辑
+- db mysql操作
+- deploy go build脚本
+- model 结构体定义
+- mq 消息队列操作
+- runtime 日志文件
+- service 微服务
+    - cache redis微服务，grpc操作
+    - watchConfig 配置相关
+- tools 小工具
+- unifiedLog 统一日志操作
+
+# Parser
 
 1. [douban](./crawer/douban)
 
@@ -69,6 +83,10 @@ Then execute the command below, and the project will start up. Open the browser 
 docker-compose up
 ```
 
+### Direct
+```bash
+
+```
 
 
 # Appendix
