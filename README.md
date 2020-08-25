@@ -9,8 +9,14 @@
 <a href="https://github.com/golang-collection/go-crawler-distributed/blob/master/LICENSE">     <img border="0" src="https://img.shields.io/github/license/golang-collection/go-crawler-distributed" /> </a>
 <a href="https://github.com/golang-collection/Urban-computing-papers/blob/master/wechat.md">     <img border="0" src="https://camo.githubusercontent.com/013c283843363c72b1463af208803bfbd5746292/687474703a2f2f6a617977636a6c6f76652e6769746875622e696f2f73622f69636f2f7765636861742e737667" /> </a>
 </div>
+
+---
+
+Github：[https://github.com/golang-collection/go-crawler-distributed](https://github.com/golang-collection/go-crawler-distributed)
+
 This project is a distributed crawler and supports the secondary development of personalized customized page parser. The overall project adopts micro-service architecture and realizes container-oriented deployment through Docker.
 
+该项目为分布式爬虫，支持个性化定制页面解析器二次开发，项目整体采用微服务架构，并通过Docker实现容器化部署。
 # 目录结构
 
 - cache redis操作
