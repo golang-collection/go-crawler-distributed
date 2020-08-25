@@ -11,6 +11,11 @@
 </div>
 This project is a distributed crawler and supports the secondary development of personalized customized page parser. The overall project adopts micro-service architecture and realizes container-oriented deployment through Docker.
 
+# Parser
+
+
+1. [douban](./crawer/douban)
+
 # Framework
 
 ![framework](./img/framework.png)
@@ -26,21 +31,12 @@ This project is a distributed crawler and supports the secondary development of 
 - Direct Deploy
 - Docker(Recommand)
 
-### Pre-requisite (Docker)
+### Pre-requisite
 
-- Docker 18.03+
-- Redis 5.x+
-- MySQL
-- Docker Compose 1.24+
-- ElasticSearch
-
-### Pre-requisite (Direct Deploy)
-
-- Go 1.12+
-- Node 8.12+
-- Redis 5.x+
-- MySQL
-- RabbitMQ
+- Go 1.13.6
+- Redis 6.0
+- MySQL 5.7
+- RabbitMQ management
 - ElasticSearch
 
 ## Quick Start
@@ -49,7 +45,7 @@ Please open the command line prompt and execute the command below. Make sure you
 
 ```
 git clone https://github.com/Knowledge-Precipitation-Tribe/go-crawler-distributed
-cd crawlab
+cd go-crawler-distributed
 docker-compose up -d
 ```
 

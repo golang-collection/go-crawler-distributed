@@ -31,11 +31,9 @@ func ParseBookList(contents []byte, queueName string, _ string) {
 		logger.Info("fetching", zap.String("url", href))
 
 		//redis去重
-		//boolean, _ := cacheOperation.ElementIsInSet(queueName, href)
 		boolean, _ := client.ElementIsInSet(queueName, href)
 		if !boolean {
 			//不再redis中就添加
-			//_, _ = cacheOperation.AddElementToSet(queueName, href)
 			_, _ = client.AddElementToSet(queueName, href)
 			//将解析到的图书详细信息URL放到消息队列
 			bookDetailURL.PublishSimple(href)

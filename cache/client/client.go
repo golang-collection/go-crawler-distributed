@@ -2,6 +2,7 @@ package client
 
 import (
 	"context"
+	"fmt"
 	"github.com/micro/go-micro/v2"
 	"go-crawler-distributed/service/cache/proto"
 )
@@ -41,6 +42,7 @@ func init(){
 func AddElementToSet(key string, value string) (int32 ,error) {
 	res, err :=  redisOP.AddElementToSet(context.TODO(), &proto.Request{Key: key, Value:value})
 	if err != nil{
+		fmt.Println(err)
 		return -1, err
 	}
 	return res.Result, err
@@ -49,7 +51,8 @@ func AddElementToSet(key string, value string) (int32 ,error) {
 func ElementIsInSet(key string, value string) (bool, error){
 	rsp, err := redisOP.ElementIsInSet(context.TODO(), &proto.Request{Key: key, Value:value})
 	if err != nil {
-		return true, err
+		fmt.Println(err)
+		return false, err
 	}
 	return rsp.Result, err
 }
