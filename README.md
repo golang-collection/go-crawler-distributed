@@ -16,7 +16,9 @@ This project is a distributed crawler and supports the secondary development of 
 - cache redis操作
 - crawler 处理爬虫相关逻辑
 - db mysql操作
-- deploy go build脚本
+- deploy 脚本
+    - deploy 部署脚本
+    - deployScript go build脚本
 - model 结构体定义
 - mq 消息队列操作
 - runtime 日志文件
@@ -25,6 +27,30 @@ This project is a distributed crawler and supports the secondary development of 
     - watchConfig 配置相关
 - tools 小工具
 - unifiedLog 统一日志操作
+
+# 配置文件
+需要定制自己的配置文件
+在service/watchConfig/config下创建config.json文件
+配置样例
+```json
+{
+  "mysql": {
+    "user": "",
+    "password": "",
+    "host": "",
+    "db_name": ""
+  },
+  "redis": {
+    "host": ""
+  },
+  "rabbitmq": {
+    "user": "",
+    "password": "",
+    "host": ""
+  }
+}
+```
+
 
 # Parser
 
@@ -84,8 +110,9 @@ docker-compose up
 ```
 
 ### Direct
-```bash
 
+```bash
+bash go-crawler-distributed/deploy/deploy/start-all-direct.sh
 ```
 
 
