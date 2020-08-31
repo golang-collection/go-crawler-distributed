@@ -1,10 +1,10 @@
 FROM centos:7
 
-COPY bin/crawlDetail /app/
+COPY bin/crawl_detail /app/
 COPY config.json /app/config/
 
-RUN chmod 777 /app/crawlDetail
+RUN chmod 777 /app/crawl_detail
 
 WORKDIR /app
 
-ENTRYPOINT ["./crawlDetail"]
+ENTRYPOINT ["./crawl_detail"]

@@ -1,10 +1,10 @@
 FROM centos:7
 
-COPY bin/crawlTags /app/
+COPY bin/crawl_tags /app/
 COPY config.json /app/config/
 
-RUN chmod 777 /app/crawlTags
+RUN chmod 777 /app/crawl_tags
 
 WORKDIR /app
 
-ENTRYPOINT ["./crawlTags"]
+ENTRYPOINT ["./crawl_tags"]

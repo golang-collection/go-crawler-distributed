@@ -1,10 +1,10 @@
 FROM centos:7
 
-COPY bin/storageDetail /app/
+COPY bin/storage_detail /app/
 COPY config.json /app/config/
 
-RUN chmod 777 /app/storageDetail
+RUN chmod 777 /app/storage_detail
 
 WORKDIR /app
 
-ENTRYPOINT ["./storageDetail"]
+ENTRYPOINT ["./storage_detail"]

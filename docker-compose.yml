@@ -11,13 +11,15 @@ services:
     build:
       context: deploy/service/crawl_list
       dockerfile: Dockerfile
+    depends_on:
+      - cache
 
-  craw_tags:
+  crawl_tags:
     build:
       context: deploy/service/crawl_tags
       dockerfile: Dockerfile
 
-  craw_detail:
+  crawl_detail:
     build:
       context: deploy/service/crawl_detail
       dockerfile: Dockerfile
