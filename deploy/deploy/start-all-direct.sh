@@ -9,13 +9,11 @@ crawl_list
 crawl_tags
 "
 
-# cache service
-go run ${ROOT_DIR}/service/cache/main.go
-echo -e "\033[32m启动完成: \033[0m cache service"
+cd ${ROOT_DIR}
 
 # 编译service可执行文件
 run_service() {
-    go run ${ROOT_DIR}/crawer/$1.go
+    go run ${ROOT_DIR}/service/$1/main.go
     echo -e "\033[32m启动完成: \033[0m $1"
 }
 

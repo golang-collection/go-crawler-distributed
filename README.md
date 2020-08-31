@@ -14,30 +14,44 @@
 
 Github：[https://github.com/golang-collection/go-crawler-distributed](https://github.com/golang-collection/go-crawler-distributed)
 
-This project is a distributed crawler and supports the secondary development of personalized customized page parser. The overall project adopts micro-service architecture and realizes container-oriented deployment through Docker.
+Distributed crawler projects, the project supports personalization page parser secondary development, the whole project using micro service architecture, messages are sent asynchronously through message queues, Use the following framework: redigo, gorm, goquery, easyjson, viper, closer, zap, go-micro, and containable deployment is realized through Docker, intermediate crawler nodes support horizontal expansion.
 
-该项目为分布式爬虫，支持个性化定制页面解析器二次开发，项目整体采用微服务架构，并通过Docker实现容器化部署。
+分布式爬虫项目，本项目支持个性化定制页面解析器二次开发，项目整体采用微服务架构，通过消息队列实现消息的异步发送，使用到的框架包括：redigo, gorm, goquery, easyjson, viper, amqp, zap, go-micro，并通过Docker实现容器化部署，中间爬虫节点支持水平拓展。
+
 # 目录结构
 
-- cache redis操作
+- cache redis相关操作
+- config 存放配置文件
 - crawler 处理爬虫相关逻辑
+    - douban 豆瓣网页解析
+    - fetcher 网页抓取
+    - persistence 定义用于保存数据的结构体
+    - worker 具体的工作逻辑，通过它实现代码的解耦
+    - crawlOperation 除存储外统一爬虫处理模块
 - db mysql操作
 - deploy 脚本
-    - deploy 部署脚本
-    - deployScript go build脚本
+    - buildScript 部署脚本
+    - deploy 直接启动项目的脚本
+    - dockerBuildScript 构建docker镜像
+    - service 用于存放服务的Dockerfile
 - model 结构体定义
 - mq 消息队列操作
 - runtime 日志文件
 - service 微服务
-    - cache redis微服务，grpc操作
+    - cache redis微服务通过grpc操作
+      - proto 定义grpc的proto文件
+      - server 定义grpc的服务端
     - watchConfig 配置相关
+    - crawl_tags 用于爬取豆瓣的[tags](https://book.douban.com/tag/)，此页面为爬虫的起始界面
+    - crawl_list 用于爬取豆瓣的[list](https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+    - crawl_detail 用于爬取豆瓣的图书具体内容[detail](https://book.douban.com/subject/25955474/)
+    - storage_detail 用于存储豆瓣的图书具体内容
 - tools 小工具
 - unifiedLog 统一日志操作
 
 # 配置文件
-需要定制自己的配置文件
-在service/watchConfig/config下创建config.json文件
-配置样例
+You need to customize your configuration. Create the config.json file under the config folder in the project root directory.
+The sample of config.json.
 ```json
 {
   "mysql": {
@@ -57,10 +71,10 @@ This project is a distributed crawler and supports the secondary development of 
 }
 ```
 
-
 # Parser
 
-1. [douban](./crawer/douban)
+## [douban](./crawer/douban)
+Parser：[parser](./crawler/douban/parser)uses css selectors for page parsing.
 
 # Framework
 
@@ -72,55 +86,93 @@ This project is a distributed crawler and supports the secondary development of 
 
 # Installation
 
-将项目部署到本地或云端提供以下两种方式：
+Deploying projects locally or in the cloud provides two ways:
 
 - Direct Deploy
-- Docker(Recommand)
+- Docker(Recommended)
 
-### Pre-requisite
+# Pre-requisite
 
 - Go 1.13.6
 - Redis 6.0
 - MySQL 5.7
 - RabbitMQ management
 - ElasticSearch
+- Others [go.mod](./go.mod)
 
-## Quick Start
+*If you do not have the dependencies, you can quickly deploy through [Docker Compose](./dependencies/docker-compose.yml). By doing so, you don't even have to configure RabbitMQ , Redis, MySQL and ElasticSearch.*
+
+# Quick Start
 
 Please open the command line prompt and execute the command below. Make sure you have installed `docker-compose` in advance.
 
-```
+```bash
 git clone https://github.com/Knowledge-Precipitation-Tribe/go-crawler-distributed
-cd go-crawler-distributed
+cd go-crawler-distributed/deploy/buildScript
+bash linux_build
+cd ../../
 docker-compose up -d
 ```
 
 Next, you can look into the `docker-compose.yml` (with detailed config params).
 
-## Run
+# Run
 
-### Docker
+## Docker
 
-Please use `docker-compose` to one-click to start up. By doing so, you don't even have to configure RabbitMQ , Reds, MySQ,ElasticSearch. Create a file named `docker-compose.yml` and input the code below.
+Please use `docker-compose` to one-click to start up. Create a file named `docker-compose.yml` and input the code below.
 
-```
-version: '3.3'
+```yaml
+version: "3"
+
 services:
-  
+
+  cache:
+    build:
+      context: deploy/service/cache
+      dockerfile: Dockerfile
+
+  crawl_list:
+    build:
+      context: deploy/service/crawl_list
+      dockerfile: Dockerfile
+    depends_on:
+      - cache
+
+  crawl_tags:
+    build:
+      context: deploy/service/crawl_tags
+      dockerfile: Dockerfile
+
+  crawl_detail:
+    build:
+      context: deploy/service/crawl_detail
+      dockerfile: Dockerfile
+
+  storage_detail:
+    build:
+      context: deploy/service/storage_detail
+      dockerfile: Dockerfile  
 ```
 
-Then execute the command below, and the project will start up. Open the browser and enter `http://localhost:8080` to see the UI interface.
-
-```
-docker-compose up
-```
-
-### Direct
+Then execute the command below, and the project will start up. 
 
 ```bash
-bash go-crawler-distributed/deploy/deploy/start-all-direct.sh
+docker-compose up -d
 ```
 
+If you want to start multiple crawler nodes you can use the following command.
+
+```bash
+docker-compose up --scale crawl_list=3 -d
+```
+
+## Direct
+
+```bash
+cd deploy/deploy/
+bash start-all-direct.sh
+```
 
 # Appendix
 
