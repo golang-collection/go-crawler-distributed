@@ -1,6 +1,6 @@
 package worker
 
-import "go-crawler-distributed/crawer/fetcher"
+import "go-crawler-distributed/crawler/fetcher"
 
 /**
 * @Author: super

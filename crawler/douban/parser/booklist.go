@@ -14,8 +14,7 @@ import (
 * @Description:
 **/
 
-
-func ParseBookList(contents []byte, queueName string, _ string) {
+func ParseBookList(contents []byte, queueName string, url string) {
 
 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
 	if err != nil {

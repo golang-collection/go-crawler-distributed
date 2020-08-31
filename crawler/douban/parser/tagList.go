@@ -5,7 +5,10 @@ import (
 	"go-crawler-distributed/mq/mqTools"
 	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
+	"strconv"
 	"strings"
+	"sync"
+	"time"
 )
 
 /**
@@ -27,13 +30,21 @@ func ParseTagList(contents []byte, queueName string, url string) {
 
 	result := dom.Find("table[class=tagCol]").Find("a")
 	href := ""
+	var wg sync.WaitGroup
 	result.Each(func(i int, selection *goquery.Selection) {
 		href = url + selection.Text()
-		logger.Info("fetching", zap.String("url", href))
+		for i := 0; i <= 1000; i = i + 20 {
+			wg.Add(1)
+			go func(i int) {
+				defer wg.Done()
+				url := url + "?start=" + strconv.Itoa(i) + "&type=T"
+				logger.Info("fetching", zap.String("url", url))
 
-		//将解析到的图书详细信息URL放到消息队列
-		bookDetailURL.PublishSimple(href)
-
+				//将解析到的图书详细信息URL放到消息队列
+				bookDetailURL.PublishSimple(href)
+			}(i)
+			time.Sleep(time.Second * 2)
+		}
 	})
-
+	wg.Wait()
 }
