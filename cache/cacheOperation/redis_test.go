@@ -2,7 +2,7 @@ package cacheOperation
 
 import (
 	"fmt"
-	"go-crawler-distributed/crawer/crawerConfig"
+	"go-crawler-distributed/crawler/crawerConfig"
 	"testing"
 )
 

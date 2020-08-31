@@ -1,0 +1,1 @@
+{"level":"error","ts":1598872168.061215,"msg":"viper read config error","error":"open config/config.json: no such file or directory"}
