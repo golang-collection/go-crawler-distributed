@@ -11,12 +11,9 @@ import (
 
 /**
 * @Author: super
-* @Date: 2020-08-14 16:27
+* @Date: 2020-08-31 16:52
 * @Description:
 **/
-
-var logger = unifiedLog.GetLogger()
-
 
 func main() {
 	bookDetailURL := mqTools.NewRabbitMQSimple(crawerConfig.BookDetail)
@@ -29,14 +26,14 @@ func main() {
 	}
 
 
-	logger.Info("Ready to storage", zap.String("name", funcStorage.Name))
+	unifiedLog.GetLogger().Info("Ready to storage", zap.String("name", funcStorage.Name))
 	for d := range messages {
 		go func(data []byte) {
-			logger.Info("storage", zap.String(funcStorage.Name, string(data)))
+			unifiedLog.GetLogger().Info("storage", zap.String(funcStorage.Name, string(data)))
 
 			err := funcStorage.ParseFunc(data)
 			if err != nil {
-				logger.Error("storage parse error", zap.Error(err))
+				unifiedLog.GetLogger().Error("storage parse error", zap.Error(err))
 			}
 		}(d.Body)
 	}

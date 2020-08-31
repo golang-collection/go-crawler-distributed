@@ -2,16 +2,17 @@
 ROOT_DIR=/Users/super/develop/go-crawler-distributed
 
 services="
+cache
 storageDetail
-crawerDetail
-crawerList
-crawerTags
+crawlDetail
+crawlList
+crawlTags
 "
 
 # 编译service可执行文件
 build_service() {
     rm -f ${ROOT_DIR}/deploy/win/bin/
-    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -a -installsuffix cgo -o ${ROOT_DIR}/deploy/win/bin/$1.exe ${ROOT_DIR}/crawer/$1.go
+    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -a -installsuffix cgo -o ${ROOT_DIR}/deploy/win/bin/$1.exe ${ROOT_DIR}/service/$1/main.go
     echo -e "\033[32m编译完成: \033[0m ${ROOT_DIR}/deploy/win/bin/"
 }
 

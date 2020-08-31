@@ -15,7 +15,7 @@ import (
 var logger = unifiedLog.GetLogger()
 
 func init() {
-	viper.SetConfigFile("service/watchConfig/config/config.json") //文件名
+	viper.SetConfigFile("config/config.json") //文件名
 	err := viper.ReadInConfig() // 会查找和读取配置文件
 	if err != nil {             // Handle errors reading the config file
 		logger.Error("viper read config error", zap.Error(err))
