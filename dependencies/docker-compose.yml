@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elastic-data:/data
+    environment:
+      - discovery.type=single-node
+
+  rabbitmq:
+    image: rabbitmq:management
+    hostname: myrabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+
+volumes:
+  elastic-data:
+  rabbitmq-data:
+  redis-data:
