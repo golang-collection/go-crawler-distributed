@@ -23017,3 +23017,861 @@
 {"level":"info","ts":1598861118.2468128,"msg":"fetching","url":"https://book.douban.com/tag/?start=520&type=T"}
 {"level":"info","ts":1598861120.247103,"msg":"fetching","url":"https://book.douban.com/tag/?start=540&type=T"}
 {"level":"info","ts":1598861122.251193,"msg":"fetching","url":"https://book.douban.com/tag/?start=560&type=T"}
+{"level":"info","ts":1598861124.2522812,"msg":"fetching","url":"https://book.douban.com/tag/?start=580&type=T"}
+{"level":"info","ts":1598861126.2526112,"msg":"fetching","url":"https://book.douban.com/tag/?start=600&type=T"}
+{"level":"info","ts":1598861128.253539,"msg":"fetching","url":"https://book.douban.com/tag/?start=620&type=T"}
+{"level":"info","ts":1598861130.253818,"msg":"fetching","url":"https://book.douban.com/tag/?start=640&type=T"}
+{"level":"info","ts":1598861132.255046,"msg":"fetching","url":"https://book.douban.com/tag/?start=660&type=T"}
+{"level":"info","ts":1598861134.259788,"msg":"fetching","url":"https://book.douban.com/tag/?start=680&type=T"}
+{"level":"info","ts":1598861136.263386,"msg":"fetching","url":"https://book.douban.com/tag/?start=700&type=T"}
+{"level":"info","ts":1598861138.267912,"msg":"fetching","url":"https://book.douban.com/tag/?start=720&type=T"}
+{"level":"info","ts":1598861140.268739,"msg":"fetching","url":"https://book.douban.com/tag/?start=740&type=T"}
+{"level":"info","ts":1598861142.272226,"msg":"fetching","url":"https://book.douban.com/tag/?start=760&type=T"}
+{"level":"info","ts":1598861144.273251,"msg":"fetching","url":"https://book.douban.com/tag/?start=780&type=T"}
+{"level":"info","ts":1598861146.273667,"msg":"fetching","url":"https://book.douban.com/tag/?start=800&type=T"}
+{"level":"info","ts":1598861148.273888,"msg":"fetching","url":"https://book.douban.com/tag/?start=820&type=T"}
+{"level":"info","ts":1598861150.275372,"msg":"fetching","url":"https://book.douban.com/tag/?start=840&type=T"}
+{"level":"info","ts":1598861152.2755141,"msg":"fetching","url":"https://book.douban.com/tag/?start=860&type=T"}
+{"level":"info","ts":1598861154.275637,"msg":"fetching","url":"https://book.douban.com/tag/?start=880&type=T"}
+{"level":"info","ts":1598861156.280399,"msg":"fetching","url":"https://book.douban.com/tag/?start=900&type=T"}
+{"level":"info","ts":1598861158.284211,"msg":"fetching","url":"https://book.douban.com/tag/?start=920&type=T"}
+{"level":"info","ts":1598861160.285408,"msg":"fetching","url":"https://book.douban.com/tag/?start=940&type=T"}
+{"level":"info","ts":1598861162.288028,"msg":"fetching","url":"https://book.douban.com/tag/?start=960&type=T"}
+{"level":"info","ts":1598861164.288676,"msg":"fetching","url":"https://book.douban.com/tag/?start=980&type=T"}
+{"level":"info","ts":1598861166.2890508,"msg":"fetching","url":"https://book.douban.com/tag/?start=1000&type=T"}
+{"level":"info","ts":1598861168.2918231,"msg":"fetching","url":"https://book.douban.com/tag/?start=0&type=T"}
+{"level":"info","ts":1598861170.29291,"msg":"fetching","url":"https://book.douban.com/tag/?start=20&type=T"}
+{"level":"info","ts":1598861172.293356,"msg":"fetching","url":"https://book.douban.com/tag/?start=40&type=T"}
+{"level":"info","ts":1598861174.296841,"msg":"fetching","url":"https://book.douban.com/tag/?start=60&type=T"}
+{"level":"info","ts":1598861176.297854,"msg":"fetching","url":"https://book.douban.com/tag/?start=80&type=T"}
+{"level":"info","ts":1598861178.299077,"msg":"fetching","url":"https://book.douban.com/tag/?start=100&type=T"}
+{"level":"info","ts":1598861498.042084,"msg":"fetching","tags":"https://book.douban.com/tag/"}
+{"level":"info","ts":1598861588.9968152,"msg":"fetching","tags":"https://book.douban.com/tag/"}
+{"level":"info","ts":1598861589.389293,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=0&type=T"}
+{"level":"info","ts":1598861589.412461,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=20&type=T"}
+{"level":"info","ts":1598861589.435175,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=40&type=T"}
+{"level":"info","ts":1598861589.458962,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=60&type=T"}
+{"level":"info","ts":1598861589.480764,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=80&type=T"}
+{"level":"info","ts":1598861589.501035,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=100&type=T"}
+{"level":"info","ts":1598861589.524657,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=120&type=T"}
+{"level":"info","ts":1598861589.5465128,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=140&type=T"}
+{"level":"info","ts":1598861589.5698051,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=160&type=T"}
+{"level":"info","ts":1598861589.5948648,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=180&type=T"}
+{"level":"info","ts":1598861589.614951,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=200&type=T"}
+{"level":"info","ts":1598861589.63641,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=220&type=T"}
+{"level":"info","ts":1598861589.660065,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=240&type=T"}
+{"level":"info","ts":1598861589.6805272,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=260&type=T"}
+{"level":"info","ts":1598861589.704062,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=280&type=T"}
+{"level":"info","ts":1598861589.724214,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=300&type=T"}
+{"level":"info","ts":1598861589.746181,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=320&type=T"}
+{"level":"info","ts":1598861589.766307,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=340&type=T"}
+{"level":"info","ts":1598861589.7866628,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=360&type=T"}
+{"level":"info","ts":1598861589.8074539,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=380&type=T"}
+{"level":"info","ts":1598861589.8303108,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=400&type=T"}
+{"level":"info","ts":1598861589.8504908,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=420&type=T"}
+{"level":"info","ts":1598861589.8743072,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=440&type=T"}
+{"level":"info","ts":1598861589.8992581,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=460&type=T"}
+{"level":"info","ts":1598861589.919431,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=480&type=T"}
+{"level":"info","ts":1598861589.939687,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=500&type=T"}
+{"level":"info","ts":1598861589.95978,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=520&type=T"}
+{"level":"info","ts":1598861589.9804108,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=540&type=T"}
+{"level":"error","ts":1598861589.984331,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861589.984331,"msg":"queue declare error","error":"Exception (505) Reason: \"UNEXPECTED_FRAME - expected content header for class 60, got non content header frame instead\""}
+{"level":"error","ts":1598861589.984357,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861589.984433,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861589.984378,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861589.9844081,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.00287,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=560&type=T"}
+{"level":"error","ts":1598861590.002912,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.002968,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.025863,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=580&type=T"}
+{"level":"error","ts":1598861590.025919,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.025957,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.046238,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=600&type=T"}
+{"level":"error","ts":1598861590.046282,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.046313,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.069833,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=620&type=T"}
+{"level":"error","ts":1598861590.069876,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.069924,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.0903249,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=640&type=T"}
+{"level":"error","ts":1598861590.0903711,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.090401,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.110453,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=660&type=T"}
+{"level":"error","ts":1598861590.110497,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.110531,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.131976,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=680&type=T"}
+{"level":"error","ts":1598861590.1320179,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.1320472,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.156009,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=700&type=T"}
+{"level":"error","ts":1598861590.156037,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.156061,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.176264,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=720&type=T"}
+{"level":"error","ts":1598861590.176307,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.1763358,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.198349,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=740&type=T"}
+{"level":"error","ts":1598861590.198394,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.198425,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.2231271,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=760&type=T"}
+{"level":"error","ts":1598861590.2231839,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.223232,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.2432551,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=780&type=T"}
+{"level":"error","ts":1598861590.2433002,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.243331,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.263644,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=800&type=T"}
+{"level":"error","ts":1598861590.263693,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.2637608,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.283995,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=820&type=T"}
+{"level":"error","ts":1598861590.284039,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.2840698,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.304747,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=840&type=T"}
+{"level":"error","ts":1598861590.3047948,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.304828,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.326693,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=860&type=T"}
+{"level":"error","ts":1598861590.32674,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.326772,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.346768,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=880&type=T"}
+{"level":"error","ts":1598861590.346808,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.346842,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.370612,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=900&type=T"}
+{"level":"error","ts":1598861590.370656,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.370688,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.3915179,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=920&type=T"}
+{"level":"error","ts":1598861590.391558,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.391587,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.415112,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=940&type=T"}
+{"level":"error","ts":1598861590.415178,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.415217,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.4351768,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=960&type=T"}
+{"level":"error","ts":1598861590.435216,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.435245,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.458594,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=980&type=T"}
+{"level":"error","ts":1598861590.458643,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.458689,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.482642,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=1000&type=T"}
+{"level":"error","ts":1598861590.482686,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.4827158,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.507506,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=0&type=T"}
+{"level":"error","ts":1598861590.5075772,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.507648,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.5324259,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=20&type=T"}
+{"level":"error","ts":1598861590.532469,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.5325,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.552672,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=40&type=T"}
+{"level":"error","ts":1598861590.552726,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.552768,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.573128,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=60&type=T"}
+{"level":"error","ts":1598861590.5731719,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.573206,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.5964491,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=80&type=T"}
+{"level":"error","ts":1598861590.596493,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.596529,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.61984,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=100&type=T"}
+{"level":"error","ts":1598861590.6198819,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.619915,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.644866,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=120&type=T"}
+{"level":"error","ts":1598861590.64492,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.644961,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.6698492,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=140&type=T"}
+{"level":"error","ts":1598861590.669884,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.669912,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.6948612,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=160&type=T"}
+{"level":"error","ts":1598861590.694908,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.694943,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.719902,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=180&type=T"}
+{"level":"error","ts":1598861590.719944,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.719978,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.744861,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=200&type=T"}
+{"level":"error","ts":1598861590.7449129,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.744949,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.769854,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=220&type=T"}
+{"level":"error","ts":1598861590.7698932,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.769928,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.794879,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=240&type=T"}
+{"level":"error","ts":1598861590.7949498,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.7950022,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.81506,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=260&type=T"}
+{"level":"error","ts":1598861590.815129,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.8151832,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.835238,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=280&type=T"}
+{"level":"error","ts":1598861590.8353121,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.83537,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.855568,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=300&type=T"}
+{"level":"error","ts":1598861590.855635,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.855703,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.875631,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=320&type=T"}
+{"level":"error","ts":1598861590.8756852,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.875721,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.8958988,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=340&type=T"}
+{"level":"error","ts":1598861590.895943,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.895974,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.919863,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=360&type=T"}
+{"level":"error","ts":1598861590.9199119,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.919949,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.944847,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=380&type=T"}
+{"level":"error","ts":1598861590.944893,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.9449239,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.969861,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=400&type=T"}
+{"level":"error","ts":1598861590.9699159,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.9699478,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861590.99486,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=420&type=T"}
+{"level":"error","ts":1598861590.9949188,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861590.994964,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.019865,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=440&type=T"}
+{"level":"error","ts":1598861591.0199082,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.019951,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.044852,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=460&type=T"}
+{"level":"error","ts":1598861591.044907,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.044964,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.0666702,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=480&type=T"}
+{"level":"error","ts":1598861591.066745,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.066807,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.087185,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=500&type=T"}
+{"level":"error","ts":1598861591.08725,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.087295,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.111233,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=520&type=T"}
+{"level":"error","ts":1598861591.111296,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.11134,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.1322591,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=540&type=T"}
+{"level":"error","ts":1598861591.1323252,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.132373,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.153266,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=560&type=T"}
+{"level":"error","ts":1598861591.153323,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.153365,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.175373,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=580&type=T"}
+{"level":"error","ts":1598861591.175458,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.175516,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.200224,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=600&type=T"}
+{"level":"error","ts":1598861591.2002828,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.2003279,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.220269,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=620&type=T"}
+{"level":"error","ts":1598861591.220331,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.220394,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.240376,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=640&type=T"}
+{"level":"error","ts":1598861591.240438,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.2404852,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.261419,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=660&type=T"}
+{"level":"error","ts":1598861591.2614982,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.261557,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.281721,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=680&type=T"}
+{"level":"error","ts":1598861591.2818391,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.281914,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.3068109,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=700&type=T"}
+{"level":"error","ts":1598861591.3068979,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.306964,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.330442,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=720&type=T"}
+{"level":"error","ts":1598861591.3305311,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.3305979,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.355119,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=740&type=T"}
+{"level":"error","ts":1598861591.355192,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.355247,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.37534,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=760&type=T"}
+{"level":"error","ts":1598861591.3754041,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.375455,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.3957481,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=780&type=T"}
+{"level":"error","ts":1598861591.3958101,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.3958569,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.419926,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=800&type=T"}
+{"level":"error","ts":1598861591.420042,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.4201071,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.440089,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=820&type=T"}
+{"level":"error","ts":1598861591.4401972,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.440269,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.4637508,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=840&type=T"}
+{"level":"error","ts":1598861591.463912,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.463975,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.4844449,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=860&type=T"}
+{"level":"error","ts":1598861591.484517,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.4845939,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.5084538,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=880&type=T"}
+{"level":"error","ts":1598861591.508536,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.508626,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.532971,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=900&type=T"}
+{"level":"error","ts":1598861591.533022,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.533062,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.556959,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=920&type=T"}
+{"level":"error","ts":1598861591.557009,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.5570471,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.5778618,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=940&type=T"}
+{"level":"error","ts":1598861591.5779252,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.577973,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.599232,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=960&type=T"}
+{"level":"error","ts":1598861591.5993578,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.5994098,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.6237178,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=980&type=T"}
+{"level":"error","ts":1598861591.623778,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.623821,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.643866,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=1000&type=T"}
+{"level":"error","ts":1598861591.643935,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.6439931,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.6689842,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=0&type=T"}
+{"level":"error","ts":1598861591.669101,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.669152,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.68914,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=20&type=T"}
+{"level":"error","ts":1598861591.689215,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.6892748,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.709837,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=40&type=T"}
+{"level":"error","ts":1598861591.709912,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.709974,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.731403,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=60&type=T"}
+{"level":"error","ts":1598861591.731456,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.731488,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.751492,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=80&type=T"}
+{"level":"error","ts":1598861591.751541,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.751575,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.774219,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=100&type=T"}
+{"level":"error","ts":1598861591.774288,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.774367,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.794817,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=120&type=T"}
+{"level":"error","ts":1598861591.7948759,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.794915,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.815167,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=140&type=T"}
+{"level":"error","ts":1598861591.8152351,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.815286,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.837685,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=160&type=T"}
+{"level":"error","ts":1598861591.837748,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.837825,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.8582458,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=180&type=T"}
+{"level":"error","ts":1598861591.858309,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.8583622,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.878894,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=200&type=T"}
+{"level":"error","ts":1598861591.878945,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.878994,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.899128,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=220&type=T"}
+{"level":"error","ts":1598861591.8992052,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.899264,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.920398,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=240&type=T"}
+{"level":"error","ts":1598861591.920471,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.920528,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.945045,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=260&type=T"}
+{"level":"error","ts":1598861591.945099,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.9451368,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.96995,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=280&type=T"}
+{"level":"error","ts":1598861591.970007,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.97004,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861591.9906309,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=300&type=T"}
+{"level":"error","ts":1598861591.990686,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861591.990724,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.010973,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=320&type=T"}
+{"level":"error","ts":1598861592.011025,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.011061,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.031747,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=340&type=T"}
+{"level":"error","ts":1598861592.031807,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.031856,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.055011,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=360&type=T"}
+{"level":"error","ts":1598861592.055084,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.0551412,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.07952,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=380&type=T"}
+{"level":"error","ts":1598861592.079592,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.079649,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.1006951,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=400&type=T"}
+{"level":"error","ts":1598861592.100768,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.100826,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.121173,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=420&type=T"}
+{"level":"error","ts":1598861592.121244,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.1213021,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.1433222,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=440&type=T"}
+{"level":"error","ts":1598861592.1433961,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.143453,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.166525,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=460&type=T"}
+{"level":"error","ts":1598861592.1665988,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.166667,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.187466,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=480&type=T"}
+{"level":"error","ts":1598861592.18755,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.1876018,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.2101738,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=500&type=T"}
+{"level":"error","ts":1598861592.2102342,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.2102778,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.2329652,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=520&type=T"}
+{"level":"error","ts":1598861592.233043,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.233142,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.257014,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=540&type=T"}
+{"level":"error","ts":1598861592.2571032,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.257164,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.2820852,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=560&type=T"}
+{"level":"error","ts":1598861592.282149,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.282204,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.3029718,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=580&type=T"}
+{"level":"error","ts":1598861592.303046,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.303115,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.324448,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=600&type=T"}
+{"level":"error","ts":1598861592.324554,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.324629,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.3495638,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=620&type=T"}
+{"level":"error","ts":1598861592.349663,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.349737,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.371105,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=640&type=T"}
+{"level":"error","ts":1598861592.3712158,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.3713121,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.395051,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=660&type=T"}
+{"level":"error","ts":1598861592.39511,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.395157,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.419938,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=680&type=T"}
+{"level":"error","ts":1598861592.4200141,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.420096,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.44013,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=700&type=T"}
+{"level":"error","ts":1598861592.440191,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.440237,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.4601972,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=720&type=T"}
+{"level":"error","ts":1598861592.460245,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.460285,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.4824388,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=740&type=T"}
+{"level":"error","ts":1598861592.482514,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.482573,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.502817,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=760&type=T"}
+{"level":"error","ts":1598861592.5028858,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.50295,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.527483,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=780&type=T"}
+{"level":"error","ts":1598861592.527563,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.527623,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.54832,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=800&type=T"}
+{"level":"error","ts":1598861592.548404,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.548463,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.569962,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=820&type=T"}
+{"level":"error","ts":1598861592.570038,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.570096,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.595005,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=840&type=T"}
+{"level":"error","ts":1598861592.595065,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.595171,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.619971,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=860&type=T"}
+{"level":"error","ts":1598861592.620023,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.620068,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.644974,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=880&type=T"}
+{"level":"error","ts":1598861592.645119,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.645235,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.669909,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=900&type=T"}
+{"level":"error","ts":1598861592.6699588,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.6699939,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.6903338,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=920&type=T"}
+{"level":"error","ts":1598861592.690379,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.690413,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.7135549,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=940&type=T"}
+{"level":"error","ts":1598861592.713592,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.713621,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.7345731,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=960&type=T"}
+{"level":"error","ts":1598861592.734615,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.734644,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.754826,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=980&type=T"}
+{"level":"error","ts":1598861592.754849,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.754873,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.779739,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=1000&type=T"}
+{"level":"error","ts":1598861592.7797718,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.7798011,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.7998788,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=0&type=T"}
+{"level":"error","ts":1598861592.799912,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.79994,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.819961,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=20&type=T"}
+{"level":"error","ts":1598861592.820008,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.820043,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.844907,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=40&type=T"}
+{"level":"error","ts":1598861592.844954,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.844985,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.865929,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=60&type=T"}
+{"level":"error","ts":1598861592.8659751,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.866004,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.890296,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=80&type=T"}
+{"level":"error","ts":1598861592.890341,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.890383,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.910697,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=100&type=T"}
+{"level":"error","ts":1598861592.9107368,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.910771,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.931486,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=120&type=T"}
+{"level":"error","ts":1598861592.931531,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.931576,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.952532,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=140&type=T"}
+{"level":"error","ts":1598861592.9526389,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.952737,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.975223,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=160&type=T"}
+{"level":"error","ts":1598861592.975303,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.975374,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861592.995928,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=180&type=T"}
+{"level":"error","ts":1598861592.996004,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861592.9960582,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.019959,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=200&type=T"}
+{"level":"error","ts":1598861593.020017,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.020067,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.044957,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=220&type=T"}
+{"level":"error","ts":1598861593.045017,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.045078,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.069946,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=240&type=T"}
+{"level":"error","ts":1598861593.0700061,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.070053,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.09494,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=260&type=T"}
+{"level":"error","ts":1598861593.0950038,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.095052,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.115794,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=280&type=T"}
+{"level":"error","ts":1598861593.1158679,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.1159208,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.1403599,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=300&type=T"}
+{"level":"error","ts":1598861593.1404328,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.1404889,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.165479,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=320&type=T"}
+{"level":"error","ts":1598861593.165542,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.165598,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.1860402,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=340&type=T"}
+{"level":"error","ts":1598861593.186112,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.186165,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.208022,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=360&type=T"}
+{"level":"error","ts":1598861593.2080991,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.208171,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.2314198,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=380&type=T"}
+{"level":"error","ts":1598861593.231504,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.231571,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.2518919,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=400&type=T"}
+{"level":"error","ts":1598861593.251948,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.252032,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.276337,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=420&type=T"}
+{"level":"error","ts":1598861593.276405,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.276454,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.300111,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=440&type=T"}
+{"level":"error","ts":1598861593.300176,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.300224,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.3237271,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=460&type=T"}
+{"level":"error","ts":1598861593.3237839,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.323835,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.344079,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=480&type=T"}
+{"level":"error","ts":1598861593.344151,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.3442051,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.365293,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=500&type=T"}
+{"level":"error","ts":1598861593.365365,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.3654242,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.386324,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=520&type=T"}
+{"level":"error","ts":1598861593.386396,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.386464,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.4074612,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=540&type=T"}
+{"level":"error","ts":1598861593.407535,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.4075918,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.430308,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=560&type=T"}
+{"level":"error","ts":1598861593.4304042,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.4304729,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.451564,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=580&type=T"}
+{"level":"error","ts":1598861593.4516249,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.45167,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.4765708,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=600&type=T"}
+{"level":"error","ts":1598861593.476646,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.476691,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.496747,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=620&type=T"}
+{"level":"error","ts":1598861593.496843,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.4969091,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.5170949,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=640&type=T"}
+{"level":"error","ts":1598861593.517178,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.517292,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.540894,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=660&type=T"}
+{"level":"error","ts":1598861593.5409532,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.540998,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.56381,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=680&type=T"}
+{"level":"error","ts":1598861593.563874,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.563936,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.585093,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=700&type=T"}
+{"level":"error","ts":1598861593.585164,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.585223,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.608428,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=720&type=T"}
+{"level":"error","ts":1598861593.6085,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.608554,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.632191,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=740&type=T"}
+{"level":"error","ts":1598861593.632278,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.632362,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.654343,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=760&type=T"}
+{"level":"error","ts":1598861593.654402,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.6544461,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.679256,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=780&type=T"}
+{"level":"error","ts":1598861593.679314,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.6793869,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.6993139,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=800&type=T"}
+{"level":"error","ts":1598861593.6993659,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.69941,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.723683,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=820&type=T"}
+{"level":"error","ts":1598861593.723736,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.7237709,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.7470348,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=840&type=T"}
+{"level":"error","ts":1598861593.747088,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.747124,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.767076,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=860&type=T"}
+{"level":"error","ts":1598861593.767147,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.7672052,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.787162,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=880&type=T"}
+{"level":"error","ts":1598861593.787207,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.78724,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.8072782,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=900&type=T"}
+{"level":"error","ts":1598861593.807323,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.807353,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.827372,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=920&type=T"}
+{"level":"error","ts":1598861593.827421,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.827453,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.8474398,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=940&type=T"}
+{"level":"error","ts":1598861593.8474848,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.84753,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.87125,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=960&type=T"}
+{"level":"error","ts":1598861593.871302,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.871337,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.8951108,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=980&type=T"}
+{"level":"error","ts":1598861593.8951669,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.8952231,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.919959,"msg":"fetching","url":"https://book.douban.com/tag/经典?start=1000&type=T"}
+{"level":"error","ts":1598861593.920019,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.920059,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.94497,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=0&type=T"}
+{"level":"error","ts":1598861593.945038,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.945089,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.9699452,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=20&type=T"}
+{"level":"error","ts":1598861593.970007,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.970051,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861593.9949708,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=40&type=T"}
+{"level":"error","ts":1598861593.995019,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861593.995063,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.019945,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=60&type=T"}
+{"level":"error","ts":1598861594.02003,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.020096,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.04124,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=80&type=T"}
+{"level":"error","ts":1598861594.041286,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.041335,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.0637472,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=100&type=T"}
+{"level":"error","ts":1598861594.0637991,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.0638368,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.084547,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=120&type=T"}
+{"level":"error","ts":1598861594.084613,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.0846772,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.1070201,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=140&type=T"}
+{"level":"error","ts":1598861594.107085,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.1071339,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.130903,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=160&type=T"}
+{"level":"error","ts":1598861594.13095,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.1309838,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.1549509,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=180&type=T"}
+{"level":"error","ts":1598861594.155029,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.155082,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.174995,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=200&type=T"}
+{"level":"error","ts":1598861594.175057,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.175104,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.1976,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=220&type=T"}
+{"level":"error","ts":1598861594.197654,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.197696,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.21767,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=240&type=T"}
+{"level":"error","ts":1598861594.2177181,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.217751,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.238754,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=260&type=T"}
+{"level":"error","ts":1598861594.238801,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.238837,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.25897,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=280&type=T"}
+{"level":"error","ts":1598861594.2590258,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.259073,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.280756,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=300&type=T"}
+{"level":"error","ts":1598861594.280807,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.280839,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.301045,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=320&type=T"}
+{"level":"error","ts":1598861594.3011,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.3011541,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.321405,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=340&type=T"}
+{"level":"error","ts":1598861594.3214579,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.321496,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.3414981,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=360&type=T"}
+{"level":"error","ts":1598861594.3415601,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.341603,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.3655071,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=380&type=T"}
+{"level":"error","ts":1598861594.36557,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.365609,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.390325,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=400&type=T"}
+{"level":"error","ts":1598861594.390371,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.3904068,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.410681,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=420&type=T"}
+{"level":"error","ts":1598861594.410741,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.410785,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.433711,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=440&type=T"}
+{"level":"error","ts":1598861594.43376,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.4338,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.4537642,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=460&type=T"}
+{"level":"error","ts":1598861594.4538088,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.453844,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.4753861,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=480&type=T"}
+{"level":"error","ts":1598861594.4754329,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.475472,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.495455,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=500&type=T"}
+{"level":"error","ts":1598861594.495504,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.4955368,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.515529,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=520&type=T"}
+{"level":"error","ts":1598861594.515583,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.515625,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.5360792,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=540&type=T"}
+{"level":"error","ts":1598861594.53613,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.536181,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.557245,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=560&type=T"}
+{"level":"error","ts":1598861594.557295,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.5573351,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.577334,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=580&type=T"}
+{"level":"error","ts":1598861594.577388,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.577429,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.600951,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=600&type=T"}
+{"level":"error","ts":1598861594.6010199,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.601074,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.622731,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=620&type=T"}
+{"level":"error","ts":1598861594.6228049,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.622889,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.645102,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=640&type=T"}
+{"level":"error","ts":1598861594.645149,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.645184,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.6655328,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=660&type=T"}
+{"level":"error","ts":1598861594.66558,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.66561,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.685814,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=680&type=T"}
+{"level":"error","ts":1598861594.685858,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.685889,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.7073998,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=700&type=T"}
+{"level":"error","ts":1598861594.707443,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.7074728,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.7319129,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=720&type=T"}
+{"level":"error","ts":1598861594.7319639,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.732012,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.752626,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=740&type=T"}
+{"level":"error","ts":1598861594.7526689,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.7527092,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.7740889,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=760&type=T"}
+{"level":"error","ts":1598861594.7741408,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.774204,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.7986119,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=780&type=T"}
+{"level":"error","ts":1598861594.798657,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.798738,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.819125,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=800&type=T"}
+{"level":"error","ts":1598861594.8191721,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.819208,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.8425422,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=820&type=T"}
+{"level":"error","ts":1598861594.842587,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.8426208,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861594.865872,"msg":"fetching","url":"https://book.douban.com/tag/中国文学?start=840&type=T"}
+{"level":"error","ts":1598861594.865925,"msg":"queue declare error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"error","ts":1598861594.8659682,"msg":"queue publish error","error":"Exception (504) Reason: \"channel/connection is not open\""}
+{"level":"info","ts":1598861620.083369,"msg":"fetching","tags":"https://book.douban.com/tag/"}
+{"level":"info","ts":1598861620.4237618,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=0&type=T"}
+{"level":"info","ts":1598861620.525578,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=20&type=T"}
+{"level":"info","ts":1598861620.625708,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=40&type=T"}
+{"level":"info","ts":1598861620.730633,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=60&type=T"}
+{"level":"info","ts":1598861620.831042,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=80&type=T"}
+{"level":"info","ts":1598861620.934344,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=100&type=T"}
+{"level":"info","ts":1598861621.034446,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=120&type=T"}
+{"level":"info","ts":1598861621.139532,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=140&type=T"}
+{"level":"info","ts":1598861621.243038,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=160&type=T"}
+{"level":"info","ts":1598861621.346897,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=180&type=T"}
+{"level":"info","ts":1598861621.447576,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=200&type=T"}
+{"level":"info","ts":1598861621.548619,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=220&type=T"}
+{"level":"info","ts":1598861621.651815,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=240&type=T"}
+{"level":"info","ts":1598861621.754855,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=260&type=T"}
+{"level":"info","ts":1598861621.8551948,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=280&type=T"}
+{"level":"info","ts":1598861621.9557161,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=300&type=T"}
+{"level":"info","ts":1598861622.056756,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=320&type=T"}
+{"level":"info","ts":1598861622.1609,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=340&type=T"}
+{"level":"info","ts":1598861622.261709,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=360&type=T"}
+{"level":"info","ts":1598861622.365264,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=380&type=T"}
+{"level":"info","ts":1598861622.466662,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=400&type=T"}
+{"level":"info","ts":1598861622.5710452,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=420&type=T"}
+{"level":"info","ts":1598861622.672054,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=440&type=T"}
+{"level":"info","ts":1598861622.774158,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=460&type=T"}
+{"level":"info","ts":1598861622.876087,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=480&type=T"}
+{"level":"info","ts":1598861622.976254,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=500&type=T"}
+{"level":"info","ts":1598861623.076792,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=520&type=T"}
+{"level":"info","ts":1598861623.178151,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=540&type=T"}
+{"level":"info","ts":1598861623.280279,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=560&type=T"}
+{"level":"info","ts":1598861623.381739,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=580&type=T"}
+{"level":"info","ts":1598861623.4827971,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=600&type=T"}
+{"level":"info","ts":1598861623.58306,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=620&type=T"}
+{"level":"info","ts":1598861623.685424,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=640&type=T"}
+{"level":"info","ts":1598861623.785939,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=660&type=T"}
+{"level":"info","ts":1598861623.8864572,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=680&type=T"}
+{"level":"info","ts":1598861623.990477,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=700&type=T"}
+{"level":"info","ts":1598861624.091488,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=720&type=T"}
+{"level":"info","ts":1598861624.191923,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=740&type=T"}
+{"level":"info","ts":1598861624.2970262,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=760&type=T"}
+{"level":"info","ts":1598861624.39764,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=780&type=T"}
+{"level":"info","ts":1598861624.502559,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=800&type=T"}
+{"level":"info","ts":1598861624.6047459,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=820&type=T"}
+{"level":"info","ts":1598861624.709551,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=840&type=T"}
+{"level":"info","ts":1598861624.8102899,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=860&type=T"}
+{"level":"info","ts":1598861624.9138088,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=880&type=T"}
+{"level":"info","ts":1598861625.013948,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=900&type=T"}
+{"level":"info","ts":1598861625.11417,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=920&type=T"}
+{"level":"info","ts":1598861625.216961,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=940&type=T"}
+{"level":"info","ts":1598861625.3212469,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=960&type=T"}
+{"level":"info","ts":1598861625.4218519,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=980&type=T"}
+{"level":"info","ts":1598861625.524534,"msg":"fetching","url":"https://book.douban.com/tag/小说?start=1000&type=T"}
+{"level":"info","ts":1598861625.625528,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=0&type=T"}
+{"level":"info","ts":1598861625.729106,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=20&type=T"}
+{"level":"info","ts":1598861625.829563,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=40&type=T"}
+{"level":"info","ts":1598861625.929732,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=60&type=T"}
+{"level":"info","ts":1598861626.0303628,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=80&type=T"}
+{"level":"info","ts":1598861626.1323001,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=100&type=T"}
+{"level":"info","ts":1598861626.234896,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=120&type=T"}
+{"level":"info","ts":1598861626.340014,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=140&type=T"}
+{"level":"info","ts":1598861626.4450932,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=160&type=T"}
+{"level":"info","ts":1598861626.549376,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=180&type=T"}
+{"level":"info","ts":1598861626.650838,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=200&type=T"}
+{"level":"info","ts":1598861626.7510679,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=220&type=T"}
+{"level":"info","ts":1598861626.8512902,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=240&type=T"}
+{"level":"info","ts":1598861626.9528372,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=260&type=T"}
+{"level":"info","ts":1598861627.056256,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=280&type=T"}
+{"level":"info","ts":1598861627.161358,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=300&type=T"}
+{"level":"info","ts":1598861627.262,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=320&type=T"}
+{"level":"info","ts":1598861627.363062,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=340&type=T"}
+{"level":"info","ts":1598861627.4631622,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=360&type=T"}
+{"level":"info","ts":1598861627.563197,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=380&type=T"}
+{"level":"info","ts":1598861627.6632938,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=400&type=T"}
+{"level":"info","ts":1598861627.766434,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=420&type=T"}
+{"level":"info","ts":1598861627.870982,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=440&type=T"}
+{"level":"info","ts":1598861627.971787,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=460&type=T"}
+{"level":"info","ts":1598861628.072012,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=480&type=T"}
+{"level":"info","ts":1598861628.175073,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=500&type=T"}
+{"level":"info","ts":1598861628.2753448,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=520&type=T"}
+{"level":"info","ts":1598861628.375529,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=540&type=T"}
+{"level":"info","ts":1598861628.477949,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=560&type=T"}
+{"level":"info","ts":1598861628.578124,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=580&type=T"}
+{"level":"info","ts":1598861628.6783931,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=600&type=T"}
+{"level":"info","ts":1598861628.778486,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=620&type=T"}
+{"level":"info","ts":1598861628.878956,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=640&type=T"}
+{"level":"info","ts":1598861628.979507,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=660&type=T"}
+{"level":"info","ts":1598861629.079905,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=680&type=T"}
+{"level":"info","ts":1598861629.180439,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=700&type=T"}
+{"level":"info","ts":1598861629.280519,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=720&type=T"}
+{"level":"info","ts":1598861629.3817291,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=740&type=T"}
+{"level":"info","ts":1598861629.48251,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=760&type=T"}
+{"level":"info","ts":1598861629.5851562,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=780&type=T"}
+{"level":"info","ts":1598861629.685614,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=800&type=T"}
+{"level":"info","ts":1598861629.787908,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=820&type=T"}
+{"level":"info","ts":1598861629.88837,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=840&type=T"}
+{"level":"info","ts":1598861629.988715,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=860&type=T"}
+{"level":"info","ts":1598861630.090244,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=880&type=T"}
+{"level":"info","ts":1598861630.1905742,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=900&type=T"}
+{"level":"info","ts":1598861630.290913,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=920&type=T"}
+{"level":"info","ts":1598861630.391315,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=940&type=T"}
+{"level":"info","ts":1598861630.491785,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=960&type=T"}
+{"level":"info","ts":1598861630.5920799,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=980&type=T"}
+{"level":"info","ts":1598861630.693581,"msg":"fetching","url":"https://book.douban.com/tag/外国文学?start=1000&type=T"}
+{"level":"info","ts":1598861630.793797,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=0&type=T"}
+{"level":"info","ts":1598861630.8982458,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=20&type=T"}
+{"level":"info","ts":1598861631.002951,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=40&type=T"}
+{"level":"info","ts":1598861631.103141,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=60&type=T"}
+{"level":"info","ts":1598861631.203805,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=80&type=T"}
+{"level":"info","ts":1598861631.306009,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=100&type=T"}
+{"level":"info","ts":1598861631.410837,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=120&type=T"}
+{"level":"info","ts":1598861631.5149398,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=140&type=T"}
+{"level":"info","ts":1598861631.615596,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=160&type=T"}
+{"level":"info","ts":1598861631.7184079,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=180&type=T"}
+{"level":"info","ts":1598861631.823457,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=200&type=T"}
+{"level":"info","ts":1598861631.923496,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=220&type=T"}
+{"level":"info","ts":1598861632.023697,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=240&type=T"}
+{"level":"info","ts":1598861632.1256828,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=260&type=T"}
+{"level":"info","ts":1598861632.2266629,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=280&type=T"}
+{"level":"info","ts":1598861632.326988,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=300&type=T"}
+{"level":"info","ts":1598861632.427377,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=320&type=T"}
+{"level":"info","ts":1598861632.530725,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=340&type=T"}
+{"level":"info","ts":1598861632.6332731,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=360&type=T"}
+{"level":"info","ts":1598861632.734074,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=380&type=T"}
+{"level":"info","ts":1598861632.837656,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=400&type=T"}
+{"level":"info","ts":1598861632.9381802,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=420&type=T"}
+{"level":"info","ts":1598861633.0384362,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=440&type=T"}
+{"level":"info","ts":1598861633.1391559,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=460&type=T"}
+{"level":"info","ts":1598861633.2399411,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=480&type=T"}
+{"level":"info","ts":1598861633.3405719,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=500&type=T"}
+{"level":"info","ts":1598861633.441461,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=520&type=T"}
+{"level":"info","ts":1598861633.541922,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=540&type=T"}
+{"level":"info","ts":1598861633.646341,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=560&type=T"}
+{"level":"info","ts":1598861633.749397,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=580&type=T"}
+{"level":"info","ts":1598861633.852847,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=600&type=T"}
+{"level":"info","ts":1598861633.953664,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=620&type=T"}
+{"level":"info","ts":1598861634.05467,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=640&type=T"}
+{"level":"info","ts":1598861634.1568158,"msg":"fetching","url":"https://book.douban.com/tag/文学?start=660&type=T"}

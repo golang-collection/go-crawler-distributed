@@ -37,13 +37,14 @@ func ParseTagList(contents []byte, queueName string, url string) {
 			wg.Add(1)
 			go func(i int) {
 				defer wg.Done()
-				url := url + "?start=" + strconv.Itoa(i) + "&type=T"
+				url := href + "?start=" + strconv.Itoa(i) + "&type=T"
 				logger.Info("fetching", zap.String("url", url))
 
 				//将解析到的图书详细信息URL放到消息队列
+				//不加延迟会出现问题
 				bookDetailURL.PublishSimple(href)
 			}(i)
-			time.Sleep(time.Second * 2)
+			time.Sleep(time.Millisecond * 100)
 		}
 	})
 	wg.Wait()

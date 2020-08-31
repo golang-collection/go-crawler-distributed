@@ -1,4 +1,4 @@
-package crawler
+package main
 
 import (
 	"go-crawler-distributed/crawler"
@@ -12,6 +12,6 @@ import (
 * @Description:
 **/
 
-func CrawlList() {
+func main() {
 	crawler.Crawl(crawerConfig.TagUrl, crawerConfig.BookDetailUrl, "tagList", parser.ParseBookList)
 }

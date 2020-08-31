@@ -1,6 +1,7 @@
 package crawler
 
 import (
+	"go-crawler-distributed/crawler/crawerConfig"
 	"go-crawler-distributed/crawler/worker"
 	"go-crawler-distributed/mq/mqTools"
 	"go-crawler-distributed/unifiedLog"
@@ -14,11 +15,15 @@ import (
 * @Description:
 **/
 
+//sourceMQ: 配置从哪里读取消息
+//targetMQ: 配置将解析好的消息发送到什么位置
+//name: 当前工作节点的名称
+//function: 页面的具体解析函数
 func Crawl(sourceMQ string, targetMQ string, name string, function worker.ParserFunc){
 	funcParser := worker.NewFuncParser(function, targetMQ, name)
 	if sourceMQ == ""{
 		//代表开始模块
-		url := "https://book.douban.com/tag/"
+		url := crawerConfig.StartUrl
 		doCrawler(url, funcParser)
 	}else{
 		mq := mqTools.NewRabbitMQSimple(sourceMQ)

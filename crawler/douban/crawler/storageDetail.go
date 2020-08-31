@@ -1,4 +1,4 @@
-package crawler
+package main
 
 import (
 	"go-crawler-distributed/crawler/crawerConfig"
@@ -18,7 +18,7 @@ import (
 var logger = unifiedLog.GetLogger()
 
 
-func StorageDetail() {
+func main() {
 	bookDetailURL := mqTools.NewRabbitMQSimple(crawerConfig.BookDetail)
 	messages := bookDetailURL.GetMsgs()
 
