@@ -18,3 +18,5 @@ config/
 # vendor/
 
 bin/
+
+config.json

@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  cache:
+    build:
+      context: deploy/service/cache
+      dockerfile: Dockerfile
+
+  crawl_list:
+    build:
+      context: deploy/service/crawl_list
+      dockerfile: Dockerfile
+
+  craw_tags:
+    build:
+      context: deploy/service/crawl_tags
+      dockerfile: Dockerfile
+
+  craw_detail:
+    build:
+      context: deploy/service/crawl_detail
+      dockerfile: Dockerfile
+
+  storage_detail:
+    build:
+      context: deploy/service/storage_detail
+      dockerfile: Dockerfile

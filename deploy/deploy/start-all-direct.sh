@@ -2,10 +2,11 @@
 ROOT_DIR=/Users/super/develop/go-crawler-distributed
 
 services="
-storageDetail
-crawerDetail
-crawerList
-crawerTags
+cache
+storage_detail
+crawl_detail
+crawl_list
+crawl_tags
 "
 
 # cache service

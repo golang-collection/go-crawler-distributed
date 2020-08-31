@@ -3,10 +3,10 @@ ROOT_DIR=/Users/super/develop/go-crawler-distributed
 
 services="
 cache
-storageDetail
-crawlDetail
-crawlList
-crawlTags
+storage_detail
+crawl_detail
+crawl_list
+crawl_tags
 "
 
 # 编译service可执行文件
