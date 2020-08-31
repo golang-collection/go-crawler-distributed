@@ -2,7 +2,7 @@ package storage
 
 import (
 	"go-crawler-distributed/db/DBOperation"
-	"go-crawler-distributed/tools"
+	"go-crawler-distributed/model"
 )
 
 /**
@@ -13,7 +13,8 @@ import (
 
 func ParseAndStorage(contents []byte) error {
 
-	book, err := tools.JsonToBook(string(contents))
+	book := &model.Book{}
+	err := book.UnmarshalJSON(contents)
 	if err != nil {
 		return err
 	}

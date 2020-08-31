@@ -8,6 +8,7 @@ require (
 	github.com/golang/protobuf v1.4.2
 	github.com/google/go-cmp v0.5.0 // indirect
 	github.com/jinzhu/gorm v1.9.15
+	github.com/mailru/easyjson v0.7.6
 	github.com/micro/go-micro/v2 v2.9.1
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	github.com/spf13/viper v1.7.1

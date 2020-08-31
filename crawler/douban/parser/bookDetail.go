@@ -4,7 +4,6 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"go-crawler-distributed/model"
 	"go-crawler-distributed/mq/mqTools"
-	"go-crawler-distributed/tools"
 	"go.uber.org/zap"
 	"regexp"
 	"strconv"
@@ -125,10 +124,11 @@ func ParseBookDetail(contents []byte, queueName string, url string) {
 	book.CommentUrl = commentUrl
 
 	//Book结构体转json
-	bookJson, err := tools.BookToJson(book)
+	bytes, err := book.MarshalJSON()
 	if err != nil {
 		logger.Error("book to json error", zap.Error(err))
 	} else {
+		bookJson := string(bytes)
 		//将解析到的图书详细信息URL放到消息队列
 		bookDetail.PublishSimple(bookJson)
 	}
