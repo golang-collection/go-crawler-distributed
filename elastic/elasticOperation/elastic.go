@@ -2,8 +2,7 @@ package elasticOperation
 
 import (
 	"context"
-	"fmt"
-	"go-crawler-distributed/crawler/meituan/config"
+	"go-crawler-distributed/crawler/meituan/conf"
 	"go-crawler-distributed/elastic/elasticTools"
 	"go-crawler-distributed/model"
 	"go-crawler-distributed/unifiedLog"
@@ -21,18 +20,16 @@ func IndexExist(index string){
 	client := elasticTools.GetClient()
 
 	exist, err := client.IndexExists(index).Do(context.Background())
-	fmt.Println(exist)
 	if err != nil{
 		unifiedLog.GetLogger().Error("elastic index exist error", zap.Error(err))
 		return
 	}
 	if !exist{
-		result, err := client.CreateIndex(index).BodyString(config.Mapping).Do(context.Background())
+		_, err := client.CreateIndex(index).BodyString(conf.Mapping).Do(context.Background())
 		if err != nil{
 			unifiedLog.GetLogger().Error("elastic create index error", zap.Error(err))
 			return
 		}
-		fmt.Println(result)
 	}
 }
 
