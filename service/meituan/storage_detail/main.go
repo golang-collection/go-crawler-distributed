@@ -9,6 +9,7 @@ import (
 	"go-crawler-distributed/service/watchConfig"
 	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
+	"time"
 )
 
 /**
@@ -41,5 +42,6 @@ func main() {
 				unifiedLog.GetLogger().Error("storage parse error", zap.Error(err))
 			}
 		}(d.Body)
+		time.Sleep(time.Millisecond * 100)
 	}
 }
