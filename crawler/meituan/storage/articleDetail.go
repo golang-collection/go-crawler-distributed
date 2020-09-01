@@ -14,15 +14,14 @@ import (
 
 
 
-func StorageArticle(data interface{}) error {
-
-	article := data.(*model.Article)
-	index, _ := watchConfig.GetElasticIndex()
-
-	_, err := elasticOperation.SaveInfo(index, article)
-	if err != nil{
+func StorageArticle(contents []byte) error {
+	article := &model.Article{}
+	err := article.UnmarshalJSON(contents)
+	if err != nil {
 		return err
 	}
 
-	return nil
+	index, _ := watchConfig.GetElasticIndex()
+	_, err = elasticOperation.SaveInfo(index, article)
+	return err
 }

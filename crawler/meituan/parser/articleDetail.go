@@ -2,7 +2,9 @@ package parser
 
 import (
 	"github.com/PuerkitoBio/goquery"
+	"go-crawler-distributed/model"
 	"go-crawler-distributed/mq/mqTools"
+	"go-crawler-distributed/tools"
 	"go.uber.org/zap"
 	"strings"
 )
@@ -20,15 +22,34 @@ func ParseArticleDetail(contents []byte, queueName string, url string) {
 	}
 
 	//初始化消息队列
-	articleUrlList := mqTools.NewRabbitMQSimple(queueName)
+	articleDetail := mqTools.NewRabbitMQSimple(queueName)
+	article := &model.Article{}
 
 	result := dom.Find("a[rel=bookmark]")
+	article.Url = url
+
+	title := result.Text()
+	article.Title = title
+
+	s, err := tools.ZipString(contents)
+	if err != nil{
+		logger.Error("zipString error", zap.Error(err))
+	}
+	article.Content = s
+
+	result = dom.Find("a[rel=tag]")
 	result.Each(func(i int, selection *goquery.Selection) {
-		href, exist := selection.Attr("href")
-		if exist{
-			//将解析到的图书详细信息URL放到消息队列
-			//不加延迟会出现问题
-			articleUrlList.PublishSimple(href)
-		}
+		tag := selection.Text()
+		article.Genres = append(article.Genres, tag)
 	})
+
+	//Article结构体转json
+	bytes, err := article.MarshalJSON()
+	if err != nil {
+		logger.Error("article to json error", zap.Error(err))
+	} else {
+		bookJson := string(bytes)
+		//将解析到的图书详细信息URL放到消息队列
+		articleDetail.PublishSimple(bookJson)
+	}
 }

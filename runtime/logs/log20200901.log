@@ -468,3 +468,6 @@
 {"level":"info","ts":1598961025.6059258,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2013/12/09/meituan-flume-log-system-optimization.html"}
 {"level":"info","ts":1598961025.624752,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2013/12/05/meituan-datawarehouse-evolution.html"}
 {"level":"info","ts":1598961025.64185,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2013/12/04/yui3-practice.html"}
+{"level":"info","ts":1598962831.757746,"caller":"crawler/crawlOperation.go:31","msg":"Ready to fetching","parser name":"ArticleDetail"}
+{"level":"info","ts":1598962831.75912,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/08/20/kdd-cup-debiasing-practice.html"}
+{"level":"info","ts":1598962833.7614248,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/08/20/mt-bert-in-document.html"}

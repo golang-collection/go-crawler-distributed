@@ -11,10 +11,7 @@ import (
 * @Description:
 **/
 
-func ParseAndStorage(data interface{}) error {
-
-	contents := data.([]byte)
-
+func ParseAndStorage(contents []byte) error {
 	book := &model.Book{}
 	err := book.UnmarshalJSON(contents)
 	if err != nil {
