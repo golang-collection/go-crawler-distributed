@@ -4,7 +4,9 @@ import (
 	"go-crawler-distributed/crawler/crawerConfig"
 	"go-crawler-distributed/crawler/meituan/storage"
 	"go-crawler-distributed/crawler/persistence"
+	"go-crawler-distributed/elastic/elasticOperation"
 	"go-crawler-distributed/mq/mqTools"
+	"go-crawler-distributed/service/watchConfig"
 	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
 )
@@ -24,6 +26,9 @@ func main() {
 		Name:      "ArticleDetail",
 		ParseFunc: storage.StorageArticle,
 	}
+
+	index, _ := watchConfig.GetElasticIndex()
+	elasticOperation.IndexExist(index)
 
 
 	unifiedLog.GetLogger().Info("Ready to storage", zap.String("name", funcStorage.Name))

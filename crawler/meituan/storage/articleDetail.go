@@ -18,7 +18,6 @@ func StorageArticle(data interface{}) error {
 
 	article := data.(*model.Article)
 	index, _ := watchConfig.GetElasticIndex()
-	elasticOperation.IndexExist(index)
 
 	_, err := elasticOperation.SaveInfo(index, article)
 	if err != nil{
