@@ -48,8 +48,8 @@ func ParseArticleDetail(contents []byte, queueName string, url string) {
 	if err != nil {
 		logger.Error("article to json error", zap.Error(err))
 	} else {
-		bookJson := string(bytes)
+		articleJson := string(bytes)
 		//将解析到的图书详细信息URL放到消息队列
-		articleDetail.PublishSimple(bookJson)
+		articleDetail.PublishSimple(articleJson)
 	}
 }
