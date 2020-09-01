@@ -10,7 +10,7 @@ import (
 /**
 * @Author: super
 * @Date: 2020-09-01 20:06
-* @Description:
+* @Description: 字符串压缩
 **/
 
 func ZipString(s []byte) (string, error) {
