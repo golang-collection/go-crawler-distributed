@@ -8,4 +8,3 @@ package crawerConfig
 const BookDetailUrl = "bookDetailURL"
 const BookDetail = "bookDetail"
 const TagUrl = "tagURL"
-const StartUrl = "https://book.douban.com/tag/"

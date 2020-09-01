@@ -2,3 +2,51 @@
 {"level":"error","ts":1598950244.680811,"msg":"elastic save error","error":"elastic: Error 400 (Bad Request): failed to parse [type=mapper_parsing_exception]"}
 {"level":"error","ts":1598951818.762501,"msg":"elastic create index error","error":"elastic: Error 400 (Bad Request): Failed to parse content to map [type=parse_exception]"}
 {"level":"error","ts":1598951895.2449348,"msg":"elastic create index error","error":"elastic: Error 400 (Bad Request): Failed to parse content to map [type=parse_exception]"}
+{"level":"info","ts":1598956343.75007,"msg":"fetching","tags":"https://tech.meituan.com/"}
+{"level":"info","ts":1598956401.3590531,"msg":"fetching","tags":"https://tech.meituan.com/"}
+{"level":"info","ts":1598956467.65984,"msg":"fetching","tags":"https://tech.meituan.com/"}
+{"level":"info","ts":1598958837.087187,"msg":"fetching","ArticleList":"https://tech.meituan.com/"}
+{"level":"info","ts":1598958915.201153,"msg":"Ready to fetching","parser name":"ArticleUrlList"}
+{"level":"info","ts":1598958915.20238,"msg":"fetching","ArticleUrlList":"https://tech.meituan.com//page/1.html"}
+{"level":"error","ts":1598958915.4674518,"msg":"determine coder error","error":"EOF"}
+{"level":"info","ts":1598959054.2074292,"msg":"fetching","ArticleList":"https://tech.meituan.com/"}
+{"level":"info","ts":1598959315.800661,"msg":"Ready to fetching","parser name":"ArticleUrlList"}
+{"level":"info","ts":1598959315.802809,"msg":"fetching","ArticleUrlList":"https://tech.meituan.com//page/1.html"}
+{"level":"error","ts":1598959316.0693278,"msg":"determine coder error","error":"EOF"}
+{"level":"info","ts":1598959451.008746,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleList":"https://tech.meituan.com/"}
+{"level":"info","ts":1598959466.155612,"caller":"crawler/crawlOperation.go:31","msg":"Ready to fetching","parser name":"ArticleUrlList"}
+{"level":"info","ts":1598959466.157079,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleUrlList":"https://tech.meituan.com//page/1.html"}
+{"level":"error","ts":1598959466.3776908,"caller":"fetcher/fetcher.go:55","msg":"determine coder error","error":"EOF"}
+{"level":"info","ts":1598959565.742988,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleList":"https://tech.meituan.com/"}
+{"level":"info","ts":1598959588.72217,"caller":"crawler/crawlOperation.go:31","msg":"Ready to fetching","parser name":"ArticleUrlList"}
+{"level":"info","ts":1598959588.723497,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleUrlList":"https://tech.meituan.com//page/1.html"}
+{"level":"error","ts":1598959588.962157,"caller":"fetcher/fetcher.go:55","msg":"determine coder error","error":"EOF"}
+{"level":"info","ts":1598959590.7285929,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleUrlList":"https://tech.meituan.com//page/2.html"}
+{"level":"info","ts":1598959590.856016,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/04/16/intel-pause-mysql.html"}
+{"level":"info","ts":1598959590.876203,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/04/16/transformer-in-meituan.html"}
+{"level":"info","ts":1598959590.89476,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/04/09/doris-in-meituan-waimai.html"}
+{"level":"info","ts":1598959590.91435,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/04/02/java-pooling-pratice-in-meituan.html"}
+{"level":"info","ts":1598959590.933515,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/03/26/wsdm-2020-bert-lightgbm.html"}
+{"level":"info","ts":1598959590.953398,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/03/26/meituan-tech-corporate-recruitment.html"}
+{"level":"info","ts":1598959590.973569,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/03/19/design-pattern-practice-in-marketing.html"}
+{"level":"info","ts":1598959590.99232,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/03/12/cloud-native-security.html"}
+{"level":"info","ts":1598959591.015038,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/03/12/delivery-data-governance.html"}
+{"level":"info","ts":1598959591.035604,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/03/05/meituan-10-years.html"}
+{"level":"info","ts":1598959591.054282,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/02/27/meituan-waimai-micro-frontends-practice.html"}
+{"level":"info","ts":1598959591.072311,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/02/20/meituan-delivery-operations-research.html"}
+{"level":"info","ts":1598959591.0908642,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/02/13/meituan-waimai-continuous-delivery.html"}
+{"level":"info","ts":1598959591.108597,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/01/23/meituan-delivery-machine-learning.html"}
+{"level":"info","ts":1598959591.127384,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/01/23/meituan-vicface.html"}
+{"level":"info","ts":1598959591.14447,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/01/17/meituan-tech-blog-2019.html"}
+{"level":"info","ts":1598959591.161964,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2020/01/09/meituan-logan.html"}
+{"level":"info","ts":1598959591.1794071,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2019/12/26/meituan-bifrost.html"}
+{"level":"info","ts":1598959591.1980338,"caller":"parser/articleUrlList.go:29","msg":"fetching","url":"https://tech.meituan.com/2019/12/19/meituan-mrn-practice.html"}
+{"level":"info","ts":1598959701.0104342,"caller":"crawler/crawlOperation.go:31","msg":"Ready to fetching","parser name":"ArticleDetail"}
+{"level":"info","ts":1598959701.0109708,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/04/16/intel-pause-mysql.html"}
+{"level":"info","ts":1598959703.012437,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/04/16/transformer-in-meituan.html"}
+{"level":"info","ts":1598959705.016442,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/04/09/doris-in-meituan-waimai.html"}
+{"level":"info","ts":1598959707.021312,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/04/02/java-pooling-pratice-in-meituan.html"}
+{"level":"info","ts":1598959709.026227,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/03/26/wsdm-2020-bert-lightgbm.html"}
+{"level":"info","ts":1598959711.031543,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/03/26/meituan-tech-corporate-recruitment.html"}
+{"level":"info","ts":1598959713.034401,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/03/19/design-pattern-practice-in-marketing.html"}
+{"level":"info","ts":1598959715.037322,"caller":"crawler/crawlOperation.go:43","msg":"fetching","ArticleDetail":"https://tech.meituan.com/2020/03/12/cloud-native-security.html"}

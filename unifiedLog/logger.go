@@ -48,7 +48,7 @@ func init(){
 		zap.InfoLevel, // 日志级别
 	)
 
-	logger = zap.New(core)
+	logger = zap.New(core, zap.AddCaller())
 }
 
 func GetLogger() *zap.Logger {

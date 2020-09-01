@@ -48,3 +48,8 @@ func GetElasticUrl() (string, error){
 	elasticURL := viper.GetString("elastic.url")
 	return elasticURL, nil
 }
+
+func GetElasticIndex() (string, error){
+	elasticURL := viper.GetString("elastic.index")
+	return elasticURL, nil
+}
