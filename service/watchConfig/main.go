@@ -43,3 +43,8 @@ func GetRabbitMQUrl() (string, error) {
 	mqURL := "amqp://" + mqUser + ":" + mqPassword + "@"+mqHost+"/"
 	return mqURL, nil
 }
+
+func GetElasticUrl() (string, error){
+	elasticURL := viper.GetString("elastic.url")
+	return elasticURL, nil
+}

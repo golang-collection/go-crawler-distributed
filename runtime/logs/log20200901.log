@@ -1,0 +1,4 @@
+{"level":"error","ts":1598950227.851074,"msg":"elastic save error","error":"elastic: Error 400 (Bad Request): Invalid index name [testEls], must be lowercase [type=invalid_index_name_exception]"}
+{"level":"error","ts":1598950244.680811,"msg":"elastic save error","error":"elastic: Error 400 (Bad Request): failed to parse [type=mapper_parsing_exception]"}
+{"level":"error","ts":1598951818.762501,"msg":"elastic create index error","error":"elastic: Error 400 (Bad Request): Failed to parse content to map [type=parse_exception]"}
+{"level":"error","ts":1598951895.2449348,"msg":"elastic create index error","error":"elastic: Error 400 (Bad Request): Failed to parse content to map [type=parse_exception]"}
