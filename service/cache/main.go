@@ -26,7 +26,10 @@ func main() {
 	service.Init()
 
 	// 注册处理器
-	proto.RegisterRedisOperationHandler(service.Server(), new(server.CacheStruct))
+	err := proto.RegisterRedisOperationHandler(service.Server(), new(server.CacheStruct))
+	if err != nil{
+		logger.Error("cache service register error", zap.Error(err))
+	}
 
 	// 运行服务
 	if err := service.Run(); err != nil {

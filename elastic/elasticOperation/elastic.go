@@ -18,21 +18,22 @@ import (
 **/
 
 //判断index是否存在
-func IndexExist(index string){
+func IndexExist(index string) (bool, error) {
 	client := elasticTools.GetClient()
 
 	exist, err := client.IndexExists(index).Do(context.Background())
 	if err != nil{
 		unifiedLog.GetLogger().Error("elastic index exist error", zap.Error(err))
-		return
+		return exist, err
 	}
 	if !exist{
 		_, err := client.CreateIndex(index).BodyString(conf.Mapping).Do(context.Background())
 		if err != nil{
 			unifiedLog.GetLogger().Error("elastic create index error", zap.Error(err))
-			return
+			return false, err
 		}
 	}
+	return true, err
 }
 
 //保存信息
