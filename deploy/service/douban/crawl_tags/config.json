@@ -1,0 +1,20 @@
+{
+  "mysql": {
+    "user": "root",
+    "password": "example",
+    "host": "mysql:3306",
+    "db_name": "short_story"
+  },
+  "redis": {
+    "host": "redis:6379"
+  },
+  "rabbitmq": {
+    "user": "guest",
+    "password": "guest",
+    "host": "rabbitmq:5671"
+  },
+  "elastic": {
+    "url": "http://elastic_server:9200",
+    "index": "article"
+  }
+}

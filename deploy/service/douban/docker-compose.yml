@@ -5,19 +5,19 @@ services:
   crawl_list:
     build:
       context: crawl_list
-      dockerfile: crawl_list/Dockerfile
+      dockerfile: Dockerfile
 
   crawl_tags:
     build:
       context: crawl_tags
-      dockerfile: crawl_tags/Dockerfile
+      dockerfile: Dockerfile
 
   crawl_detail:
     build:
       context: crawl_detail
-      dockerfile: crawl_detail/Dockerfile
+      dockerfile: Dockerfile
 
   storage_detail:
     build:
       context: storage_detail
-      dockerfile: storage_detail/Dockerfile
+      dockerfile: Dockerfile

@@ -19,4 +19,4 @@ config/
 
 bin/
 
-config.json
+config/config.json
