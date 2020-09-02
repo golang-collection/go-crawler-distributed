@@ -6,18 +6,30 @@ services:
     build:
       context: crawl_list
       dockerfile: Dockerfile
+    networks:
+      - crawler
 
   crawl_tags:
     build:
       context: crawl_urllist
       dockerfile: Dockerfile
+    networks:
+      - crawler
 
   crawl_detail:
     build:
       context: crawl_detail
       dockerfile: Dockerfile
+    networks:
+      - crawler
 
   storage_detail:
     build:
       context: storage_detail
       dockerfile: Dockerfile
+    networks:
+      - crawler
+
+networks:
+  crawler:
+    external: true

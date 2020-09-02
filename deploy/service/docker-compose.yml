@@ -6,6 +6,8 @@ services:
     build:
       context: cache
       dockerfile: Dockerfile
+    networks:
+      - crawler
 
   elastic:
     build:
@@ -13,6 +15,8 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - elastic_server
+    networks:
+      - crawler
 
   redis:
     image: redis
@@ -21,6 +25,8 @@ services:
       - "6379:6379"
     volumes:
       - redis-data:/data
+    networks:
+      - crawler
 
   mysql:
     image: mysql
@@ -28,6 +34,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
+    networks:
+      - crawler
 
   elastic_server:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
@@ -38,6 +46,8 @@ services:
        - elastic-data:/data
     environment:
       - discovery.type=single-node
+    networks:
+      - crawler
 
   rabbitmq:
     image: rabbitmq:management
@@ -47,8 +57,14 @@ services:
       - "15672:15672"
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - crawler
 
 volumes:
   elastic-data:
   rabbitmq-data:
   redis-data:
+
+networks:
+  crawler:
+    external: true

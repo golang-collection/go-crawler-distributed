@@ -11,7 +11,7 @@
   "rabbitmq": {
     "user": "guest",
     "password": "guest",
-    "host": "rabbitmq:5671"
+    "host": "rabbitmq:5672"
   },
   "elastic": {
     "url": "http://elastic_server:9200",
