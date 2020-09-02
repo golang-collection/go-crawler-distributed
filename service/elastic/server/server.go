@@ -57,7 +57,7 @@ func (e *Elastic) SearchInfo(ctx context.Context, req *proto.SearchInfoRequest, 
 	result := make([]*proto.Article, l)
 
 	for i:=0 ;i<l; i++{
-		temp := tools.ArticleToProto(&articles[i])
+		temp := tools.ArticleToProto(articles[i])
 		result = append(result, temp)
 	}
 	res.Article = result

@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"github.com/micro/go-micro/v2"
 	"go-crawler-distributed/service/cache/proto"
+	"go-crawler-distributed/unifiedLog"
+	"go.uber.org/zap"
 )
 
 /**
@@ -42,10 +44,10 @@ func init(){
 func AddElementToSet(key string, value string) (int32 ,error) {
 	res, err :=  redisOP.AddElementToSet(context.TODO(), &proto.Request{Key: key, Value:value})
 	if err != nil{
-		fmt.Println(err)
+		unifiedLog.GetLogger().Error("add element client error", zap.Error(err))
 		return -1, err
 	}
-	return res.Result, err
+	return res.Result, nil
 }
 
 func ElementIsInSet(key string, value string) (bool, error){

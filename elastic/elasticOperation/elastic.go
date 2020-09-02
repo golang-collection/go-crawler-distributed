@@ -68,20 +68,20 @@ func GetInfo(table string, id string) (*model.Article, error) {
 }
 
 //搜索信息
-func SearchInfo(table string, fieldName string, fieldValue string)([]model.Article, error){
+func SearchInfo(table string, fieldName string, fieldValue string)([]*model.Article, error){
 	query := elastic.NewTermQuery(fieldName, fieldValue)
 	client := elasticTools.GetClient()
 	result, err := client.Search().Index(table).Query(query).Do(context.Background())
 	if err != nil{
 		return nil, err
 	}
-	articles := make([]model.Article, 0)
+	articles := make([]*model.Article, 0)
 	article := model.Article{}
 	total := result.TotalHits()
 	if total > 0{
 		for _, item := range result.Each(reflect.TypeOf(article)){
 			if t, ok := item.(model.Article); ok {
-				articles = append(articles, t)
+				articles = append(articles, &t)
 			}
 		}
 	}
