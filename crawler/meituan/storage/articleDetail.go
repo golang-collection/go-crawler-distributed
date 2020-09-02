@@ -4,6 +4,7 @@ import (
 	"go-crawler-distributed/elastic/client"
 	"go-crawler-distributed/model"
 	"go-crawler-distributed/service/watchConfig"
+	"go-crawler-distributed/tools"
 )
 
 /**
@@ -13,13 +14,13 @@ import (
 **/
 
 
-
 func StorageArticle(contents []byte) error {
 	article := &model.Article{}
 	err := article.UnmarshalJSON(contents)
 	if err != nil {
 		return err
 	}
+	article.Content = tools.UnzipString(article.Content)
 
 	index, _ := watchConfig.GetElasticIndex()
 	_, err = client.SaveInfo(index, article)
