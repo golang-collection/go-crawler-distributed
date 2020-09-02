@@ -92,9 +92,12 @@ The sample of config.json.
 
 ## [douban](./crawer/douban)
 Parser：[parser](./crawler/douban/parser) uses css selectors for page parsing.
+![douban](./img/douban.png)
 
 ## [meituan](./crawer/meituan)
 Parser: [parser](./crawler/meituan/parser) uses css selectors for page parsing.
+
+![meituan](./img/meituan.png)
 
 # Framework
 
