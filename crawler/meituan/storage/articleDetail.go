@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"go-crawler-distributed/elastic/elasticOperation"
+	"go-crawler-distributed/elastic/client"
 	"go-crawler-distributed/model"
 	"go-crawler-distributed/service/watchConfig"
 )
@@ -22,6 +22,7 @@ func StorageArticle(contents []byte) error {
 	}
 
 	index, _ := watchConfig.GetElasticIndex()
-	_, err = elasticOperation.SaveInfo(index, article)
+	_, err = client.SaveInfo(index, article)
+	//_, err = elasticOperation.SaveInfo(index, article)
 	return err
 }

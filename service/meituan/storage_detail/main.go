@@ -29,7 +29,7 @@ func main() {
 	}
 
 	index, _ := watchConfig.GetElasticIndex()
-	elasticOperation.IndexExist(index)
+	_, _ = elasticOperation.IndexExist(index)
 
 
 	unifiedLog.GetLogger().Info("Ready to storage", zap.String("name", funcStorage.Name))
