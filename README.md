@@ -23,17 +23,21 @@ Distributed crawler projects, the project supports personalization page parser s
 - cache redis相关操作
 - config 存放配置文件
 - crawler 处理爬虫相关逻辑
+    - crawerConfig 爬虫对应的消息队列配置
     - douban 豆瓣网页解析
     - fetcher 网页抓取
+    - meituan 美团网页解析
     - persistence 定义用于保存数据的结构体
     - worker 具体的工作逻辑，通过它实现代码的解耦
     - crawlOperation 除存储外统一爬虫处理模块
 - db mysql操作
+- dependencies 项目依赖的环境相关的docker-compose文件
 - deploy 脚本
     - buildScript 部署脚本
     - deploy 直接启动项目的脚本
     - dockerBuildScript 构建docker镜像
     - service 用于存放服务的Dockerfile
+- elastic elastic的相关操作
 - model 结构体定义
 - mq 消息队列操作
 - runtime 日志文件
@@ -41,11 +45,20 @@ Distributed crawler projects, the project supports personalization page parser s
     - cache redis微服务通过grpc操作
       - proto 定义grpc的proto文件
       - server 定义grpc的服务端
+    - douban 豆瓣相关服务
+      - crawl_tags 用于爬取豆瓣的[tags](https://book.douban.com/tag/)，此页面为爬虫的起始界面
+      - crawl_list 用于爬取豆瓣的[list](https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+      - crawl_detail 用于爬取豆瓣的图书具体内容[detail](https://book.douban.com/subject/25955474/)
+      - storage_detail 用于存储豆瓣的图书具体内容，存储到MySQL中
+    - elastic elasticSearch微服务通过grpc操作
+      - proto 定义grpc的proto文件
+      - server 定义grpc的服务端
+    - meituan 美团相关服务
+      - crawl_tags 用于爬取美团的[list](https://tech.meituan.com/)，此页面为爬虫的起始界面
+      - crawl_list 用于爬取美团的[urllist](https://tech.meituan.com/page/2.html)
+      - crawl_detail 用于爬取美团技术文章的页面具体内容[detail](https://tech.meituan.com/2020/04/23/octo-watt.html)
+      - storage_detail 用于存储美团技术文章的具体内容，存储到ElasticSearch中
     - watchConfig 配置相关
-    - crawl_tags 用于爬取豆瓣的[tags](https://book.douban.com/tag/)，此页面为爬虫的起始界面
-    - crawl_list 用于爬取豆瓣的[list](https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
-    - crawl_detail 用于爬取豆瓣的图书具体内容[detail](https://book.douban.com/subject/25955474/)
-    - storage_detail 用于存储豆瓣的图书具体内容
 - tools 小工具
 - unifiedLog 统一日志操作
 
@@ -55,18 +68,22 @@ The sample of config.json.
 ```json
 {
   "mysql": {
-    "user": "",
-    "password": "",
-    "host": "",
-    "db_name": ""
+    "user": "root",
+    "password": "example",
+    "host": "mysql:3306",
+    "db_name": "short_story"
   },
   "redis": {
-    "host": ""
+    "host": "redis:6379"
   },
   "rabbitmq": {
-    "user": "",
-    "password": "",
-    "host": ""
+    "user": "guest",
+    "password": "guest",
+    "host": "rabbitmq:5672"
+  },
+  "elastic": {
+    "url": "http://elastic_server:9200",
+    "index": "article"
   }
 }
 ```
@@ -74,7 +91,10 @@ The sample of config.json.
 # Parser
 
 ## [douban](./crawer/douban)
-Parser：[parser](./crawler/douban/parser)uses css selectors for page parsing.
+Parser：[parser](./crawler/douban/parser) uses css selectors for page parsing.
+
+## [meituan](./crawer/meituan)
+Parser: [parser](./crawler/meituan/parser) uses css selectors for page parsing.
 
 # Framework
 
@@ -100,7 +120,6 @@ Deploying projects locally or in the cloud provides two ways:
 - ElasticSearch
 - Others [go.mod](./go.mod)
 
-*If you do not have the dependencies, you can quickly deploy through [Docker Compose](./dependencies/docker-compose.yml). By doing so, you don't even have to configure RabbitMQ , Redis, MySQL and ElasticSearch.*
 
 # Quick Start
 
@@ -110,15 +129,25 @@ Please open the command line prompt and execute the command below. Make sure you
 git clone https://github.com/Knowledge-Precipitation-Tribe/go-crawler-distributed
 cd go-crawler-distributed/deploy/buildScript
 bash linux_build
-cd ../../
+cd ../
+docker network create -d bridge crawler
 docker-compose up -d
 ```
 
-Next, you can look into the `docker-compose.yml` (with detailed config params).
+The above command has started the basic services, including Redis, elasticSearch, RabbitMQ, and mysql. RPC services for Redis and elasticSearch are also included.
+
+You can then switch to the douban or meituan folder and launch the service with the following command.
+
+
+Like:
+```bash
+cd meituan
+docker-compose up -d
+```
 
 # Run
 
-## Docker
+## Basic services
 
 Please use `docker-compose` to one-click to start up. Create a file named `docker-compose.yml` and input the code below.
 
@@ -129,33 +158,123 @@ services:
 
   cache:
     build:
-      context: deploy/service/cache
+      context: cache
       dockerfile: Dockerfile
+    networks:
+      - crawler
+
+  elastic:
+    build:
+      context: elastic
+      dockerfile: Dockerfile
+    depends_on:
+      - elastic_server
+    networks:
+      - crawler
+
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - crawler
+
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    networks:
+      - crawler
+
+  elastic_server:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+       - elastic-data:/data
+    environment:
+      - discovery.type=single-node
+    networks:
+      - crawler
+
+  rabbitmq:
+    image: rabbitmq:management
+    hostname: myrabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - crawler
+
+volumes:
+  elastic-data:
+  rabbitmq-data:
+  redis-data:
+
+networks:
+  crawler:
+    external: true
+```
+
+Then execute the command below, and the basic service will start up. 
+
+```bash
+docker-compose up -d
+```
+
+The above command has started the basic services, including Redis, elasticSearch, RabbitMQ, and mysql. RPC services for Redis and elasticSearch are also included.
+
+## crawler service
+
+Create a docker-composite.yml file under the meituan or douban folder.
+
+```yaml
+version: "3"
+
+services:
 
   crawl_list:
     build:
-      context: deploy/service/crawl_list
+      context: crawl_list
       dockerfile: Dockerfile
-    depends_on:
-      - cache
+    networks:
+      - crawler
 
   crawl_tags:
     build:
-      context: deploy/service/crawl_tags
+      context: crawl_urllist
       dockerfile: Dockerfile
+    networks:
+      - crawler
 
   crawl_detail:
     build:
-      context: deploy/service/crawl_detail
+      context: crawl_detail
       dockerfile: Dockerfile
+    networks:
+      - crawler
 
   storage_detail:
     build:
-      context: deploy/service/storage_detail
-      dockerfile: Dockerfile  
+      context: storage_detail
+      dockerfile: Dockerfile
+    networks:
+      - crawler
+
+networks:
+  crawler:
+    external: true
 ```
 
-Then execute the command below, and the project will start up. 
+Then execute the command below, and the crawler service will start up. 
 
 ```bash
 docker-compose up -d
@@ -167,11 +286,12 @@ If you want to start multiple crawler nodes you can use the following command.
 docker-compose up --scale crawl_list=3 -d
 ```
 
-## Direct
+## Direct 
+Start the service directly, but be aware that you need to rely on redis, RabbitMQ and other services
 
 ```bash
 cd deploy/deploy/
-bash start-all-direct.sh
+bash start-meituan-direct.sh
 ```
 
 # Appendix
