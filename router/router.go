@@ -43,7 +43,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	crawl := g.Group("/crawler")
 	{
 		crawl.POST("/douban", crawler.StartDoubanCrawler)
-		crawl.POST("/meituan", crawler.StartmeituanCrawler)
+		crawl.POST("/meituan", crawler.StartMeituanCrawler)
 	}
 
 	return g

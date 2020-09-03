@@ -1,0 +1,41 @@
+definitions:
+  handler.Response:
+    properties:
+      code:
+        type: integer
+      data:
+        type: object
+      message:
+        type: string
+    type: object
+info:
+  contact: {}
+  license: {}
+paths:
+  /start/douban:
+    post:
+      consumes:
+      - application/json
+      description: start new crawler of douban
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/handler.Response'
+      summary: start new crawler of douban
+  /start/meituan:
+    post:
+      consumes:
+      - application/json
+      description: start new crawler of meituan
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"OK","data":null}'
+          schema:
+            $ref: '#/definitions/handler.Response'
+      summary: start new crawler of meituan
+swagger: "2.0"

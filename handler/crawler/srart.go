@@ -2,6 +2,10 @@ package crawler
 
 import (
 	"github.com/gin-gonic/gin"
+	"go-crawler-distributed/crawler"
+	"go-crawler-distributed/crawler/crawerConfig"
+	p1 "go-crawler-distributed/crawler/douban/parser"
+	p2 "go-crawler-distributed/crawler/meituan/parser"
 	"go-crawler-distributed/handler"
 )
 
@@ -19,6 +23,7 @@ import (
 // @Router /start/douban [Post]
 func StartDoubanCrawler(c *gin.Context){
 
+	crawler.Crawl("", crawerConfig.TagUrl, "tags", p1.ParseTagList)
 	handler.SendResponse(c, nil, nil)
 }
 
@@ -28,7 +33,8 @@ func StartDoubanCrawler(c *gin.Context){
 // @Produce  json
 // @Success 200 {object} handler.Response "{"code":0,"message":"OK","data":null}"
 // @Router /start/meituan [Post]
-func StartmeituanCrawler(c *gin.Context){
+func StartMeituanCrawler(c *gin.Context){
 
+	crawler.Crawl("", crawerConfig.ArticleList, "ArticleList", p2.ParseArticleList)
 	handler.SendResponse(c, nil, nil)
 }

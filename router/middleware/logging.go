@@ -11,7 +11,6 @@ import (
 	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
 	"io/ioutil"
-	"regexp"
 	"time"
 )
 
@@ -36,11 +35,6 @@ func Logging() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		start := time.Now().UTC()
 		path := c.Request.URL.Path
-
-		reg := regexp.MustCompile("(/v1/user|/login)")
-		if !reg.MatchString(path) {
-			return
-		}
 
 		// Skip for the health check requests.
 		if path == "/sd/health" || path == "/sd/ram" || path == "/sd/cpu" || path == "/sd/disk" {

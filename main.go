@@ -21,13 +21,12 @@ import (
 **/
 
 var port string
-var cfg = pflag.StringP("config", "c", "", "config file path")
 
 func main() {
 	pflag.Parse()
 
 	//init config
-	if err := watchConfig.Init(*cfg); err != nil {
+	if err := watchConfig.Init("remote"); err != nil {
 		unifiedLog.GetLogger().Error("init config error", zap.Error(err))
 		panic(err)
 	}

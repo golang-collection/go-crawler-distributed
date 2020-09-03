@@ -25,3 +25,24 @@
 {"level":"info","ts":1599138435.061271,"caller":"go-crawler-distributed/main.go:55","msg":"The router has been deployed successfully."}
 {"level":"info","ts":1599138636.502082,"caller":"go-crawler-distributed/main.go:60","msg":"Start to listening the incoming requests on http address:80"}
 {"level":"info","ts":1599138636.502998,"caller":"go-crawler-distributed/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599139091.3797052,"caller":"go-crawler-distributed/main.go:60","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","ts":1599139091.38011,"caller":"go-crawler-distributed/main.go:74","msg":"Waiting for the router, retry in 1 second."}
+{"level":"info","ts":1599139092.383136,"caller":"go-crawler-distributed/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599139152.289682,"caller":"go-crawler-distributed/main.go:59","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","ts":1599139152.290331,"caller":"go-crawler-distributed/main.go:55","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599139280.684051,"caller":"go-crawler-distributed/main.go:59","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","ts":1599139280.6847842,"caller":"go-crawler-distributed/main.go:55","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599139284.7845812,"caller":"crawler/srart.go:23","msg":"hello"}
+{"level":"info","ts":1599139284.7847528,"caller":"middleware/logging.go:85","msg":"206µs         | ::1          | POST /crawler/douban | {code: 0, message: OK}"}
+{"level":"info","ts":1599139297.865451,"caller":"crawler/srart.go:23","msg":"hello"}
+{"level":"info","ts":1599139297.865576,"caller":"middleware/logging.go:85","msg":"112µs         | ::1          | POST /crawler/douban | {code: 0, message: OK}"}
+{"level":"error","ts":1599139317.1380658,"caller":"middleware/logging.go:76","msg":"response body can not unmarshal to model.Response struct, body: ","error":"unexpected end of JSON input"}
+{"level":"info","ts":1599139317.138127,"caller":"middleware/logging.go:85","msg":"23µs          | ::1          | GET /crawler/douban | {code: 10001, message: unexpected end of JSON input}"}
+{"level":"info","ts":1599139342.248828,"caller":"go-crawler-distributed/main.go:59","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","ts":1599139342.251342,"caller":"go-crawler-distributed/main.go:55","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599139350.5489101,"caller":"middleware/logging.go:85","msg":"157µs         | ::1          | POST /crawler/douban | {code: 0, message: OK}"}
+{"level":"error","ts":1599139356.386137,"caller":"middleware/logging.go:76","msg":"response body can not unmarshal to model.Response struct, body: ","error":"unexpected end of JSON input"}
+{"level":"info","ts":1599139356.386283,"caller":"middleware/logging.go:85","msg":"31µs          | ::1          | GET /crawler/douban | {code: 10001, message: unexpected end of JSON input}"}
+{"level":"info","ts":1599139372.5075011,"caller":"middleware/logging.go:85","msg":"78µs          | ::1          | POST /crawler/douban | {code: 0, message: OK}"}
+{"level":"info","ts":1599139430.021745,"caller":"middleware/logging.go:85","msg":"45µs          | ::1          | POST /crawler/douban | {code: 0, message: OK}"}
+{"level":"info","ts":1599139434.016512,"caller":"middleware/logging.go:85","msg":"28µs          | ::1          | POST /crawler/douban | {code: 0, message: OK}"}
