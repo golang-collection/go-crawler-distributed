@@ -6,7 +6,7 @@ package crawerConfig
 * @Description:
 **/
 
-//const StartUrl = "https://book.douban.com/tag/"
-const StartUrl = "https://tech.meituan.com/"
+const StartUrl = "https://book.douban.com/tag/"
+//const StartUrl = "https://tech.meituan.com/"
 
 const StopTAG = "finish"
