@@ -23,7 +23,7 @@ import (
 // @Router /start/douban [Post]
 func StartDoubanCrawler(c *gin.Context){
 
-	crawler.Crawl("", crawerConfig.TagUrl, "tags", p1.ParseTagList)
+	go crawler.Crawl("", crawerConfig.TagUrl, "tags", p1.ParseTagList)
 	handler.SendResponse(c, nil, nil)
 }
 
@@ -35,6 +35,6 @@ func StartDoubanCrawler(c *gin.Context){
 // @Router /start/meituan [Post]
 func StartMeituanCrawler(c *gin.Context){
 
-	crawler.Crawl("", crawerConfig.ArticleList, "ArticleList", p2.ParseArticleList)
+	go crawler.Crawl("", crawerConfig.ArticleList, "ArticleList", p2.ParseArticleList)
 	handler.SendResponse(c, nil, nil)
 }
