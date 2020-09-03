@@ -3,6 +3,7 @@ package watchConfig
 import (
 	"github.com/spf13/viper"
 	_ "github.com/spf13/viper/remote"
+	"go-crawler-distributed/config"
 	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
 )
@@ -16,21 +17,21 @@ import (
 var logger = unifiedLog.GetLogger()
 
 func init() {
-	//err := viper.AddRemoteProvider("consul", config.ConsulURL, config.ConsulConfigPath)
-	//if err != nil {
-	//	logger.Error("read config",zap.Error(err))
-	//	return
-	//}
-	//viper.SetConfigType("json") // Need to explicitly set this to json
-	//if err := viper.ReadRemoteConfig(); err != nil {
-	//	logger.Error("read config",zap.Error(err))
-	//	return
-	//}
-	viper.SetConfigFile("config/config.json") //文件名
-	err := viper.ReadInConfig()               // 会查找和读取配置文件
-	if err != nil {                           // Handle errors reading the config file
-		logger.Error("viper read config error", zap.Error(err))
+	err := viper.AddRemoteProvider("consul", config.ConsulURL, config.ConsulConfigPath)
+	if err != nil {
+		logger.Error("read config",zap.Error(err))
+		return
 	}
+	viper.SetConfigType("json") // Need to explicitly set this to json
+	if err := viper.ReadRemoteConfig(); err != nil {
+		logger.Error("read config",zap.Error(err))
+		return
+	}
+	//viper.SetConfigFile("config/config.json") //文件名
+	//err := viper.ReadInConfig()               // 会查找和读取配置文件
+	//if err != nil {                           // Handle errors reading the config file
+	//	logger.Error("viper read config error", zap.Error(err))
+	//}
 }
 
 func GetMysqlUrl() (string, error) {
