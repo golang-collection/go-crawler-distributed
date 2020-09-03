@@ -15,14 +15,13 @@ import (
 **/
 
 func ParseBookList(contents []byte, queueName string, url string) {
+	//初始化消息队列
+	bookDetailURL := mqTools.NewRabbitMQSimple(queueName)
 
 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
 	if err != nil {
 		logger.Error("new doc reader error", zap.Error(err))
 	}
-
-	//初始化消息队列
-	bookDetailURL := mqTools.NewRabbitMQSimple(queueName)
 
 	result := dom.Find("a[title]")
 	result.Each(func(i int, selection *goquery.Selection) {
@@ -38,5 +37,4 @@ func ParseBookList(contents []byte, queueName string, url string) {
 			bookDetailURL.PublishSimple(href)
 		}
 	})
-
 }

@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"go-crawler-distributed/crawler/crawerConfig"
 	"go-crawler-distributed/mq/mqTools"
 	"go-crawler-distributed/unifiedLog"
 	"go.uber.org/zap"
@@ -26,4 +27,6 @@ func ParseArticleList(contents []byte, queueName string, url string) {
 		logger.Info("fetching", zap.String("url", url))
 		articleList.PublishSimple(url)
 	}
+
+	articleList.PublishSimple(crawerConfig.StopTAG)
 }

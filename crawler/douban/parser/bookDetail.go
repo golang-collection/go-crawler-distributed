@@ -22,14 +22,14 @@ var priceRe = regexp.MustCompile(`[0-9]+[.]?[0-9]*`)
 
 
 func ParseBookDetail(contents []byte, queueName string, url string) {
+	//初始化消息队列
+	bookDetail := mqTools.NewRabbitMQSimple(queueName)
 
 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
 	if err != nil {
 		logger.Error("new doc reader error", zap.Error(err))
 	}
 
-	//初始化消息队列
-	bookDetail := mqTools.NewRabbitMQSimple(queueName)
 	book := &model.Book{}
 	book.Url = url
 
@@ -37,11 +37,9 @@ func ParseBookDetail(contents []byte, queueName string, url string) {
 	result := dom.Find("img[title]")
 	img, _ := result.Attr("src")
 	book.Img = img
-	//fmt.Println(img)
 	//书名
 	title, _ := result.Attr("alt")
 	book.Title = title
-	//fmt.Println(title)
 
 	//图书信息
 	allSubmatch := re.FindAllSubmatch(contents, -1)
@@ -104,7 +102,6 @@ func ParseBookDetail(contents []byte, queueName string, url string) {
 	result = dom.Find("strong")
 	score, _ := strconv.ParseFloat(strings.TrimSpace(result.Text()), 64)
 	book.Score = score
-	//fmt.Println(score)
 
 	//评价人数
 	result = dom.Find("a[class=rating_people]")
@@ -116,7 +113,6 @@ func ParseBookDetail(contents []byte, queueName string, url string) {
 		comments, _ := strconv.Atoi(comment)
 		book.Comments = comments
 	}
-	//fmt.Println(comments)
 
 	//短评
 	result = dom.Find("div[class=indent]+p")

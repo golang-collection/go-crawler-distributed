@@ -8,3 +8,5 @@ package crawerConfig
 
 //const StartUrl = "https://book.douban.com/tag/"
 const StartUrl = "https://tech.meituan.com/"
+
+const StopTAG = "finish"

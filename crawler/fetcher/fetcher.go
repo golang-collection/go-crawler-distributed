@@ -26,6 +26,10 @@ var logger = unifiedLog.GetLogger()
 func Fetch(url string) ([]byte, error) {
 	client := &http.Client{}
 	request, err := http.NewRequest("GET", url, nil)
+	if err != nil{
+		logger.Error("new request error", zap.Error(err))
+		return nil, err
+	}
 
 	request.Header.Add("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36")
 

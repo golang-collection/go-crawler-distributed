@@ -16,13 +16,15 @@ import (
 **/
 
 func ParseArticleDetail(contents []byte, queueName string, url string) {
+	//初始化消息队列
+	articleDetail := mqTools.NewRabbitMQSimple(queueName)
+
 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
 	if err != nil {
 		logger.Error("new doc reader error", zap.Error(err))
 	}
 
-	//初始化消息队列
-	articleDetail := mqTools.NewRabbitMQSimple(queueName)
+
 	article := &model.Article{}
 
 	result := dom.Find("a[rel=bookmark]")

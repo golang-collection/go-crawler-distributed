@@ -14,13 +14,13 @@ import (
 **/
 
 func ParseArticleUrlList(contents []byte, queueName string, _ string) {
+	//初始化消息队列
+	articleUrlList := mqTools.NewRabbitMQSimple(queueName)
+
 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
 	if err != nil {
 		logger.Error("new doc reader error", zap.Error(err))
 	}
-
-	//初始化消息队列
-	articleUrlList := mqTools.NewRabbitMQSimple(queueName)
 
 	result := dom.Find("a[rel=bookmark]")
 	result.Each(func(i int, selection *goquery.Selection) {
