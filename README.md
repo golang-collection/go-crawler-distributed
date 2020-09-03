@@ -63,30 +63,51 @@ Distributed crawler projects, the project supports personalization page parser s
 - unifiedLog 统一日志操作
 
 # 配置文件
-You need to customize your configuration. Create the config.json file under the config folder in the project root directory.
+You need to customize your configuration. Create the config.json file under the config folder in the project root directory or add a config in Consul.
+
 The sample of config.json.
 ```json
 {
   "mysql": {
     "user": "root",
     "password": "example",
-    "host": "mysql:3306",
+    "host": "127.0.0.1:3306",
     "db_name": "short_story"
   },
   "redis": {
-    "host": "redis:6379"
+    "host": "127.0.0.1:6379"
   },
   "rabbitmq": {
     "user": "guest",
     "password": "guest",
-    "host": "rabbitmq:5672"
+    "host": "127.0.0.1:5672"
   },
   "elastic": {
-    "url": "http://elastic_server:9200",
+    "url": "http://127.0.0.1:9200",
     "index": "article"
   }
 }
 ```
+
+Viper reads the remote configuration file.
+![config](./img/consul_config.png)
+
+```go
+func init() {
+	err := viper.AddRemoteProvider("consul", config.ConsulURL, config.ConsulConfigPath)
+	if err != nil {
+		logger.Error("read config",zap.Error(err))
+		return
+	}
+	viper.SetConfigType("json") // Need to explicitly set this to json
+	if err := viper.ReadRemoteConfig(); err != nil {
+		logger.Error("read config",zap.Error(err))
+		return
+	}
+}
+```
+
+More detail: [watchConfig](./service/watchConfig)
 
 # Parser
 
@@ -102,6 +123,9 @@ Parser: [parser](./crawler/meituan/parser) uses css selectors for page parsing.
 # Framework
 
 ![framework](./img/framework.png)
+
+Register the micro service in Consul.
+![service](./img/consul_service.png)
 
 # Architecture
 
@@ -121,6 +145,7 @@ Deploying projects locally or in the cloud provides two ways:
 - MySQL 5.7
 - RabbitMQ management
 - ElasticSearch
+- Consul
 - Others [go.mod](./go.mod)
 
 
@@ -137,7 +162,7 @@ docker network create -d bridge crawler
 docker-compose up -d
 ```
 
-The above command has started the basic services, including Redis, elasticSearch, RabbitMQ, and mysql. RPC services for Redis and elasticSearch are also included.
+The above command has started the basic services, including Consul, Redis, elasticSearch, RabbitMQ, and mysql. RPC services for Redis and elasticSearch are also included.
 
 You can then switch to the douban or meituan folder and launch the service with the following command.
 
@@ -216,6 +241,38 @@ services:
       - rabbitmq-data:/var/lib/rabbitmq
     networks:
       - crawler
+
+  consul1:
+    image: consul
+    restart: always
+    ports:
+      - "8500:8500"
+      - "8300:8300"
+      - "8301:8301"
+      - "8302:8302"
+      - "8600:8600"
+    command: agent -server -bootstrap-expect 2 -ui -bind=0.0.0.0 -client=0.0.0.0
+    networks:
+      - crawler
+
+  consul2:
+    image: consul
+    restart: always
+    ports:
+      - "8501:8500"
+    command: agent -server -ui -bind=0.0.0.0 -client=0.0.0.0 -join consul1
+    networks:
+      - crawler
+
+  consul3:
+    image: consul
+    restart: always
+    ports:
+      - "8502:8500"
+    command: agent -server -ui -bind=0.0.0.0 -client=0.0.0.0 -join consul1
+    networks:
+      - crawler
+
 
 volumes:
   elastic-data:

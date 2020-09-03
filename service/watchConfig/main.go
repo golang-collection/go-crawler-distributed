@@ -27,11 +27,6 @@ func init() {
 		logger.Error("read config",zap.Error(err))
 		return
 	}
-	//viper.SetConfigFile("config/config.json") //文件名
-	//err := viper.ReadInConfig()               // 会查找和读取配置文件
-	//if err != nil {                           // Handle errors reading the config file
-	//	logger.Error("viper read config error", zap.Error(err))
-	//}
 }
 
 func GetMysqlUrl() (string, error) {
