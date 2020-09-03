@@ -5,6 +5,7 @@ go 1.13
 require (
 	github.com/PuerkitoBio/goquery v1.5.1
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d // indirect
+	github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/garyburd/redigo v1.6.2
 	github.com/gin-gonic/gin v1.6.3
@@ -22,6 +23,7 @@ require (
 	github.com/spf13/viper v1.7.1
 	github.com/streadway/amqp v1.0.0
 	github.com/swaggo/gin-swagger v1.2.0
+	github.com/swaggo/swag v1.5.1
 	github.com/willf/pad v0.0.0-20200313202418-172aa767f2a4
 	go.uber.org/zap v1.13.0
 	golang.org/x/net v0.0.0-20200520182314-0ba52f642ac2

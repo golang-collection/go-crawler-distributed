@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
+	_ "go-crawler-distributed/docs"
 	"go-crawler-distributed/handler/crawler"
 	"go-crawler-distributed/handler/sd"
 	"go-crawler-distributed/router/middleware"
