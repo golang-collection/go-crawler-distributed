@@ -60,6 +60,38 @@ services:
     networks:
       - crawler
 
+  consul1:
+    image: consul
+    restart: always
+    ports:
+      - "8500:8500"
+      - "8300:8300"
+      - "8301:8301"
+      - "8302:8302"
+      - "8600:8600"
+    command: agent -server -bootstrap-expect 2 -ui -bind=0.0.0.0 -client=0.0.0.0
+    networks:
+      - crawler
+
+  consul2:
+    image: consul
+    restart: always
+    ports:
+      - "8501:8500"
+    command: agent -server -ui -bind=0.0.0.0 -client=0.0.0.0 -join consul1
+    networks:
+      - crawler
+
+  consul3:
+    image: consul
+    restart: always
+    ports:
+      - "8502:8500"
+    command: agent -server -ui -bind=0.0.0.0 -client=0.0.0.0 -join consul1
+    networks:
+      - crawler
+
+
 volumes:
   elastic-data:
   rabbitmq-data:

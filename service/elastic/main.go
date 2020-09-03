@@ -2,6 +2,8 @@ package main
 
 import (
 	"github.com/micro/go-micro/v2"
+	"github.com/micro/go-micro/v2/registry"
+	"github.com/micro/go-plugins/registry/consul/v2"
 	"go-crawler-distributed/service/elastic/proto"
 	"go-crawler-distributed/service/elastic/server"
 	"go-crawler-distributed/unifiedLog"
@@ -16,7 +18,14 @@ import (
 **/
 
 func main() {
+	reg := consul.NewRegistry(func(options *registry.Options) {
+		options.Addrs = []string{
+			"127.0.0.1:8500",
+		}
+	})
+
 	service := micro.NewService(
+		micro.Registry(reg),
 		micro.Name("go.micro.service.elastic"),
 		micro.RegisterTTL(time.Second*10),
 		micro.RegisterInterval(time.Second*5),

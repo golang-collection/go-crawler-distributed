@@ -9,6 +9,7 @@ require (
 	github.com/jinzhu/gorm v1.9.15
 	github.com/mailru/easyjson v0.7.6
 	github.com/micro/go-micro/v2 v2.9.1
+	github.com/micro/go-plugins/registry/consul/v2 v2.9.1
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	github.com/olivere/elastic/v7 v7.0.20
 	github.com/spf13/viper v1.7.1

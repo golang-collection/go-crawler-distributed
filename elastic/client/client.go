@@ -3,6 +3,8 @@ package client
 import (
 	"context"
 	"github.com/micro/go-micro/v2"
+	"github.com/micro/go-micro/v2/registry"
+	"github.com/micro/go-plugins/registry/consul/v2"
 	"go-crawler-distributed/model"
 	"go-crawler-distributed/service/elastic/proto"
 	"go-crawler-distributed/tools"
@@ -19,7 +21,14 @@ import (
 var elasticOP proto.ElasticOperationService
 
 func init(){
+	reg := consul.NewRegistry(func(options *registry.Options) {
+		options.Addrs = []string{
+			"127.0.0.1:8500",
+		}
+	})
+
 	service := micro.NewService(
+		micro.Registry(reg),
 		micro.Name("go.micro.service.elastic.client"),
 	)
 	service.Init()
