@@ -4,6 +4,7 @@ go 1.13
 
 require (
 	github.com/PuerkitoBio/goquery v1.5.1
+	github.com/fsnotify/fsnotify v1.4.7
 	github.com/garyburd/redigo v1.6.2
 	github.com/golang/protobuf v1.4.2
 	github.com/jinzhu/gorm v1.9.15

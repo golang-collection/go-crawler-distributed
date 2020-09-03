@@ -4,6 +4,7 @@ import (
 	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-micro/v2/registry"
 	"github.com/micro/go-plugins/registry/consul/v2"
+	"go-crawler-distributed/config"
 	"go-crawler-distributed/service/cache/proto"
 	"go-crawler-distributed/service/cache/server"
 	"go-crawler-distributed/unifiedLog"
@@ -22,7 +23,7 @@ var logger = unifiedLog.GetLogger()
 func main() {
 	reg := consul.NewRegistry(func(options *registry.Options) {
 		options.Addrs = []string{
-			"127.0.0.1:8500",
+			config.ConsulURL,
 		}
 	})
 
