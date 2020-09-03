@@ -1,0 +1,27 @@
+{"level":"info","ts":1599135173.023803,"caller":"go-crawler-distributed/main.go:63","msg":"Start to listening the incoming requests on http address"}
+{"level":"info","ts":1599135173.024024,"caller":"go-crawler-distributed/main.go:77","msg":"Waiting for the router, retry in 1 second."}
+{"level":"info","ts":1599135174.027168,"caller":"go-crawler-distributed/main.go:77","msg":"Waiting for the router, retry in 1 second."}
+{"level":"error","ts":1599135175.0304499,"caller":"go-crawler-distributed/main.go:48","msg":"The router has no response, or it might took too long to start up.","error":"cannot connect to the router"}
+{"level":"info","ts":1599135175.030547,"caller":"go-crawler-distributed/main.go:50","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599135271.372229,"caller":"go-crawler-distributed/main.go:63","msg":"Start to listening the incoming requests on http address"}
+{"level":"info","ts":1599135271.37375,"caller":"go-crawler-distributed/main.go:77","msg":"Waiting for the router, retry in 1 second."}
+{"level":"info","ts":1599135272.378335,"caller":"go-crawler-distributed/main.go:77","msg":"Waiting for the router, retry in 1 second."}
+{"level":"error","ts":1599135273.382932,"caller":"go-crawler-distributed/main.go:48","msg":"The router has no response, or it might took too long to start up.","error":"cannot connect to the router"}
+{"level":"info","ts":1599135273.3831072,"caller":"go-crawler-distributed/main.go:50","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599135412.002368,"caller":"go-crawler-distributed/main.go:50","msg":"Start to listening the incoming requests on http address"}
+{"level":"info","ts":1599135412.0026538,"caller":"go-crawler-distributed/main.go:64","msg":"Waiting for the router, retry in 1 second."}
+{"level":"info","ts":1599135413.003941,"caller":"go-crawler-distributed/main.go:64","msg":"Waiting for the router, retry in 1 second."}
+{"level":"error","ts":1599135414.008427,"caller":"go-crawler-distributed/main.go:45","msg":"The router has no response, or it might took too long to start up.","error":"cannot connect to the router"}
+{"level":"info","ts":1599135414.008512,"caller":"go-crawler-distributed/main.go:47","msg":"The router has been deployed successfully."}
+{"level":"error","ts":1599135703.2563798,"caller":"go-crawler-distributed/main.go:31","msg":"init config error","error":"Config File \"config\" Not Found in \"[/Users/super/develop/go-crawler-distributed/conf]\""}
+{"level":"info","ts":1599135801.239102,"caller":"go-crawler-distributed/main.go:58","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","ts":1599135801.239406,"caller":"go-crawler-distributed/main.go:72","msg":"Waiting for the router, retry in 1 second."}
+{"level":"info","ts":1599135802.2419991,"caller":"go-crawler-distributed/main.go:55","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599137335.842229,"caller":"go-crawler-distributed/main.go:58","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","ts":1599137335.8435462,"caller":"go-crawler-distributed/main.go:72","msg":"Waiting for the router, retry in 1 second."}
+{"level":"info","ts":1599137336.84772,"caller":"go-crawler-distributed/main.go:55","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599138434.054423,"caller":"go-crawler-distributed/main.go:59","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","ts":1599138434.054733,"caller":"go-crawler-distributed/main.go:73","msg":"Waiting for the router, retry in 1 second."}
+{"level":"info","ts":1599138435.061271,"caller":"go-crawler-distributed/main.go:55","msg":"The router has been deployed successfully."}
+{"level":"info","ts":1599138636.502082,"caller":"go-crawler-distributed/main.go:60","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","ts":1599138636.502998,"caller":"go-crawler-distributed/main.go:56","msg":"The router has been deployed successfully."}
