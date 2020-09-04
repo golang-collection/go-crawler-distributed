@@ -119,7 +119,9 @@ More detail: [watchConfig](./service/watchConfig)
 # Parser
 
 ## [douban](./crawer/douban)
+
 Parser：[parser](./crawler/douban/parser) uses css selectors for page parsing.
+
 ![douban](./img/douban.png)
 
 ## [meituan](./crawer/meituan)
@@ -132,6 +134,7 @@ Parser: [parser](./crawler/meituan/parser) uses css selectors for page parsing.
 ![framework](./img/framework.png)
 
 Register the micro service in Consul.
+
 ![service](./img/consul_service.png)
 
 # Architecture
@@ -188,6 +191,7 @@ docker-compose up -d
 ```
 
 swagger ui:
+
 ![swagger](./img/swagger.png)
 
 
@@ -196,10 +200,15 @@ swagger ui:
 - 6379: redis
 - 3306: mysql
 - 9200, 9300: elasticSearch
+
 ![elasticSearch](./img/elasticsearch.png)
+
 - 5672, 15672: rabbitMQ
+
 ![rabbitmq](./img/rabbitmq.png)
+
 - 8500: consul
+
 ![consul](./img/consul.png)
 
 # Run
