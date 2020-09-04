@@ -37,9 +37,13 @@ Distributed crawler projects, the project supports personalization page parser s
     - deploy 直接启动项目的脚本
     - dockerBuildScript 构建docker镜像
     - service 用于存放服务的Dockerfile
+- docs swagger文档
 - elastic elastic的相关操作
+- handler 构建RestfulAPI
 - model 结构体定义
 - mq 消息队列操作
+- pkg 通用包
+- router 构建路由
 - runtime 日志文件
 - service 微服务
     - cache redis微服务通过grpc操作
@@ -61,6 +65,8 @@ Distributed crawler projects, the project supports personalization page parser s
     - watchConfig 配置相关
 - tools 小工具
 - unifiedLog 统一日志操作
+- main.go 项目统一入口
+
 
 # 配置文件
 You need to customize your configuration. Create the config.json file under the config folder in the project root directory or add a config in Consul.
@@ -90,6 +96,7 @@ The sample of config.json.
 ```
 
 Viper reads the remote configuration file.
+
 ![config](./img/consul_config.png)
 
 ```go
@@ -164,14 +171,36 @@ docker-compose up -d
 
 The above command has started the basic services, including Consul, Redis, elasticSearch, RabbitMQ, and mysql. RPC services for Redis and elasticSearch are also included.
 
-You can then switch to the douban or meituan folder and launch the service with the following command.
-
-
-Like:
 ```bash
-cd meituan
 docker-compose up -d
 ```
+
+```go
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (7 handlers)
+[GIN-debug] GET    /sd/health                --> go-crawler-distributed/handler/sd.HealthCheck (7 handlers)
+[GIN-debug] GET    /sd/disk                  --> go-crawler-distributed/handler/sd.DiskCheck (7 handlers)
+[GIN-debug] GET    /sd/cpu                   --> go-crawler-distributed/handler/sd.CPUCheck (7 handlers)
+[GIN-debug] GET    /sd/ram                   --> go-crawler-distributed/handler/sd.RAMCheck (7 handlers)
+[GIN-debug] POST   /crawler/douban           --> go-crawler-distributed/handler/crawler.StartDoubanCrawler (7 handlers)
+[GIN-debug] POST   /crawler/meituan          --> go-crawler-distributed/handler/crawler.StartMeituanCrawler (7 handlers)
+{"level":"info","time":"2020-09-04T11:29:14.954+0800","linenum":"go-crawler-distributed/main.go:59","msg":"Start to listening the incoming requests on http address:80"}
+{"level":"info","time":"2020-09-04T11:29:14.956+0800","linenum":"go-crawler-distributed/main.go:55","msg":"The router has been deployed successfully."}
+```
+
+swagger ui:
+![swagger](./img/swagger.png)
+
+
+# Port
+
+- 6379: redis
+- 3306: mysql
+- 9200, 9300: elasticSearch
+![elasticSearch](./img/elasticsearch.png)
+- 5672, 15672: rabbitMQ
+![rabbitmq](./img/rabbitmq.png)
+- 8500: consul
+![consul](./img/consul.png)
 
 # Run
 
