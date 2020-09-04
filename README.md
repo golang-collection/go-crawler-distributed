@@ -19,7 +19,7 @@ Distributed crawler projects, the project supports personalization page parser s
 分布式爬虫项目，本项目支持个性化定制页面解析器二次开发，项目整体采用微服务架构，通过消息队列实现消息的异步发送，使用到的框架包括：redigo, gorm, goquery, easyjson, viper, amqp, zap, go-micro，并通过Docker实现容器化部署，中间爬虫节点支持水平拓展。
 
 # 目录结构
-
+```go
 - cache redis相关操作
 - config 存放配置文件
 - crawler 处理爬虫相关逻辑
@@ -66,7 +66,7 @@ Distributed crawler projects, the project supports personalization page parser s
 - tools 小工具
 - unifiedLog 统一日志操作
 - main.go 项目统一入口
-
+```
 
 # 配置文件
 You need to customize your configuration. Create the config.json file under the config folder in the project root directory or add a config in Consul.
