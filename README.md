@@ -392,6 +392,9 @@ cd deploy/deploy/
 bash start-meituan-direct.sh
 ```
 
+# 注意
+本项目是通过go-micro的方式将其封装为了微服务，但是个人认为对于一个单独的redis来说不应该将其封装为微服务，微服务的划分应该是从业务的角度出发。
+
 # Appendix
 
 - docker安装：[https://docs.docker.com/](https://docs.docker.com/)
