@@ -9,7 +9,6 @@
 <a href="https://github.com/golang-collection/go-crawler-distributed/blob/master/LICENSE">     <img border="0" src="https://img.shields.io/github/license/golang-collection/go-crawler-distributed" /> </a>
 <a href="https://github.com/golang-collection/Urban-computing-papers/blob/master/wechat.md">     <img border="0" src="https://camo.githubusercontent.com/013c283843363c72b1463af208803bfbd5746292/687474703a2f2f6a617977636a6c6f76652e6769746875622e696f2f73622f69636f2f7765636861742e737667" /> </a>
 </div>
-
 ---
 
 Github：[https://github.com/golang-collection/go-crawler-distributed](https://github.com/golang-collection/go-crawler-distributed)
@@ -399,6 +398,7 @@ bash start-meituan-direct.sh
 
 - docker安装：[https://docs.docker.com/](https://docs.docker.com/)
 - docker-compose安装：[https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
+- 爬虫合集：[https://github.com/facert/awesome-spider](https://github.com/facert/awesome-spider)
 
 # License
 
