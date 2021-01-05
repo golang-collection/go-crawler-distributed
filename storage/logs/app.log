@@ -1,0 +1,6 @@
+2021/01/05 14:40:51 {"callers":["/Users/super/develop/go-crawler-distributed/main.go: 50 main.init.0"],"level":"info","message":"Start to listening the incoming requests on http address :8000","time":1609828851791435000}
+2021/01/05 14:40:52 {"callers":["/Users/super/develop/go-crawler-distributed/main.go: 50 main.init.0"],"level":"info","message":"Waiting for the server, retry in 1 second.","time":1609828852792686000}
+2021/01/05 14:40:53 {"callers":["/Users/super/develop/go-crawler-distributed/main.go: 50 main.init.0"],"level":"info","message":"Waiting for the server, retry in 1 second.","time":1609828853796683000}
+2021/01/05 14:40:54 {"callers":["/Users/super/develop/go-crawler-distributed/main.go: 50 main.init.0"],"level":"info","message":"Waiting for the server, retry in 1 second.","time":1609828854800877000}
+2021/01/05 14:40:54 {"callers":["/Users/super/develop/go-crawler-distributed/main.go: 50 main.init.0"],"level":"error","message":"The server has no response, or it might took too long to start up.","time":1609828854800972000}
+2021/01/05 14:40:54 {"callers":["/Users/super/develop/go-crawler-distributed/main.go: 50 main.init.0"],"level":"info","message":"The server has been deployed successfully.","time":1609828854801009000}
