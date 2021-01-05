@@ -17,4 +17,5 @@
 
 bin/
 
-config/config.json
+configs/
+.DS_Store
