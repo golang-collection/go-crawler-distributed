@@ -1,9 +1,9 @@
-package mapping
+package conf
 
 /**
 * @Author: super
-* @Date: 2021-01-05 15:15
-* @Description:
+* @Date: 2020-09-01 17:01
+* @Description: 用于存储与elastic的映射
 **/
 
 const Mapping = `

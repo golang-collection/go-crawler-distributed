@@ -1,21 +1,36 @@
 package parser
 
 import (
+	"context"
+	"go-crawler-distributed/global"
+	"go-crawler-distributed/internal/crawler/crawerConfig"
+	"go-crawler-distributed/pkg/mq"
 	"strconv"
 )
 
 /**
 * @Author: super
-* @Date: 2021-01-05 15:10
+* @Date: 2020-09-01 16:00
 * @Description:
 **/
 
-
-func ParseArticleList(contents []byte, url string) ([]string, error){
-	result := make([]string, 0)
-	for i := 2; i<22;i++{
-		url := "https://tech.meituan.com//page/"+ strconv.Itoa(i) +".html"
-		result = append(result, url)
+func ParseArticleList(contents []byte, queueName string, url string) {
+	err := mq.Publish(queueName, []byte(url))
+	if err != nil {
+		global.Logger.Error(context.Background(), err)
 	}
-	return result, nil
+	global.Logger.Infof(context.Background(), "url: %s", url)
+
+	for i := 2; i < 22; i++ {
+		url := "https://tech.meituan.com//page/" + strconv.Itoa(i) + ".html"
+		global.Logger.Infof(context.Background(), "url: %s", url)
+		err = mq.Publish(queueName, []byte(url))
+		if err != nil {
+			global.Logger.Error(context.Background(), err)
+		}
+	}
+	err = mq.Publish(queueName, []byte(crawerConfig.StopTAG))
+	if err != nil {
+		global.Logger.Error(context.Background(), err)
+	}
 }

@@ -1,23 +1,27 @@
 package parser
 
 import (
+	"context"
 	"github.com/PuerkitoBio/goquery"
+	"go-crawler-distributed/global"
 	"go-crawler-distributed/internal/model"
+	"go-crawler-distributed/pkg/mq"
 	"go-crawler-distributed/pkg/util"
 	"strings"
 )
 
 /**
 * @Author: super
-* @Date: 2021-01-05 15:12
+* @Date: 2020-09-01 19:09
 * @Description:
 **/
 
-func ParseArticleDetail(contents []byte, url string) ([]string, error) {
+func ParseArticleDetail(contents []byte, queueName string, url string) {
 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(contents)))
 	if err != nil {
-		return []string{}, err
+		global.Logger.Error(context.Background(), err)
 	}
+
 	article := &model.Article{}
 
 	result := dom.Find("a[rel=bookmark]")
@@ -27,8 +31,8 @@ func ParseArticleDetail(contents []byte, url string) ([]string, error) {
 	article.Title = title
 
 	s, err := util.ZipString(contents)
-	if err != nil{
-		return []string{}, err
+	if err != nil {
+		global.Logger.Error(context.Background(), err)
 	}
 	article.Content = s
 
@@ -38,15 +42,15 @@ func ParseArticleDetail(contents []byte, url string) ([]string, error) {
 		article.Genres = append(article.Genres, tag)
 	})
 
-	articles := make([]string, 0)
-
 	//Article结构体转json
 	bytes, err := article.MarshalJSON()
 	if err != nil {
-		return []string{}, err
+		global.Logger.Error(context.Background(), err)
 	} else {
-		articleJson := string(bytes)
-		articles = append(articles, articleJson)
+		//将解析到的图书详细信息URL放到消息队列
+		err = mq.Publish(queueName, bytes)
+		if err != nil {
+			global.Logger.Error(context.Background(), err)
+		}
 	}
-	return articles, nil
 }

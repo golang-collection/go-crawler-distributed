@@ -15,6 +15,11 @@ type Article struct {
 	Content string   `json:"content"`
 }
 
+// TableName sets the insert table name for this struct type
+func (a *Article) TableName() string {
+	return "articles"
+}
+
 func (article Article) String() string {
 	return fmt.Sprintf("title: %s\n"+
 		"url: %s\n"+

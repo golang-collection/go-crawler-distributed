@@ -16,18 +16,20 @@ import (
 
 /**
 * @Author: super
-* @Date: 2021-01-05 14:58
+* @Date: 2020-08-14 13:47
 * @Description:
 **/
 
 func Fetch(url string) ([]byte, error) {
 	client := &http.Client{}
 	request, err := http.NewRequest("GET", url, nil)
-	if err != nil{
-		global.Logger.Error(context.Background(), "new request error: ", err)
+	if err != nil {
+		global.Logger.Error(context.Background(), err)
 		return nil, err
 	}
+
 	request.Header.Add("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36")
+
 	resp, err := client.Do(request)
 	if err != nil {
 		return nil, err
@@ -51,7 +53,7 @@ func Fetch(url string) ([]byte, error) {
 func determineEncoding(r io.Reader) encoding.Encoding {
 	bytes, err := bufio.NewReader(r).Peek(1024)
 	if err != nil {
-		global.Logger.Error(context.Background(), "determine coder error", err)
+		global.Logger.Error(context.Background(), err)
 		//默认UTF8编码
 		return unicode.UTF8
 	}

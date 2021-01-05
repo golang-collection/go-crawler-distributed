@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+
+service ElasticOperation {
+    rpc IndexExist(IndexExistRequest)  returns (IndexExistResponse) {}
+	rpc SaveInfo(SaveInfoRequest) returns (SaveInfoResponse) {}
+	rpc GetInfo(GetInfoRequest) returns (GetInfoResponse) {}
+	rpc SearchInfo(SearchInfoRequest) returns (SearchInfoResponse) {}
+}
+
+message Article{
+    string title = 1;
+    string url = 2;
+    repeated string genres = 3;
+    string content = 4;
+}
+
+message IndexExistRequest {
+	string index = 1;
+}
+
+message IndexExistResponse{
+    bool exist = 1;
+}
+
+message SaveInfoRequest{
+   string  table = 1;
+   Article article = 2;
+}
+
+message SaveInfoResponse{
+   string result = 1;
+}
+
+message GetInfoRequest{
+   string table = 1;
+   string id = 2;
+}
+
+message GetInfoResponse{
+   Article article = 1;
+}
+
+message SearchInfoRequest{
+   string table = 1;
+   string fieldName = 2;
+   string fieldValue = 3;
+}
+
+message SearchInfoResponse{
+   repeated Article article = 1;
+}

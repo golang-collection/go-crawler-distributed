@@ -1,0 +1,17 @@
+package main
+
+import (
+	"go-crawler-distributed/internal/crawler"
+	"go-crawler-distributed/internal/crawler/crawerConfig"
+	"go-crawler-distributed/internal/crawler/meituan/storage"
+)
+
+/**
+* @Author: super
+* @Date: 2020-09-01 19:37
+* @Description:
+**/
+
+func main() {
+	crawler.Crawl(crawerConfig.ArticleDetail, "", "storageArticleDetail", storage.StorageArticle)
+}

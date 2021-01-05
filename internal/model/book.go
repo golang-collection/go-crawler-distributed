@@ -28,6 +28,11 @@ type Book struct {
 	Url          string  `gorm:"column:url" json:"url"`
 }
 
+// TableName sets the insert table name for this struct type
+func (book *Book) TableName() string {
+	return "books"
+}
+
 func (book Book) String() string {
 	return fmt.Sprintf("book_id: %d\n"+
 		"title: %s\n"+

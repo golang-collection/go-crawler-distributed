@@ -4,14 +4,10 @@ import "go-crawler-distributed/internal/crawler/fetcher"
 
 /**
 * @Author: super
-* @Date: 2021-01-05 15:03
+* @Date: 2020-08-16 07:55
 * @Description:
 **/
-
-func Worker(r Request) ([]string, error){
-	contents, err := fetcher.Fetch(r.Url)
-	if err != nil{
-		return []string{}, err
-	}
-	return r.Parser.Parse(contents, r.Url)
+func Worker(r Request) {
+	contents, _ := fetcher.Fetch(r.Url)
+	r.Parser.Parse(contents, r.Url)
 }

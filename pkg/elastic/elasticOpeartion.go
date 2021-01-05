@@ -2,6 +2,9 @@ package elastic
 
 import (
 	"context"
+	"github.com/olivere/elastic/v7"
+	"go-crawler-distributed/internal/model"
+	"reflect"
 
 	"go-crawler-distributed/global"
 )
@@ -61,4 +64,40 @@ func SaveInfo(table string, data interface{}) (string, error) {
 		return "", err
 	}
 	return response.Id, nil
+}
+
+//获取信息
+func GetInfo(table string, id string) (*model.Article, error) {
+	client := global.ElasticEngine
+	result, err := client.Get().Index(table).Id(id).Do(context.Background())
+	if err != nil {
+		return nil, err
+	}
+	article := &model.Article{}
+	err = article.UnmarshalJSON(result.Source)
+	if err != nil {
+		return nil, err
+	}
+	return article, nil
+}
+
+//搜索信息
+func SearchInfo(table string, fieldName string, fieldValue string) ([]*model.Article, error) {
+	query := elastic.NewTermQuery(fieldName, fieldValue)
+	client := global.ElasticEngine
+	result, err := client.Search().Index(table).Query(query).Do(context.Background())
+	if err != nil {
+		return nil, err
+	}
+	articles := make([]*model.Article, 0)
+	article := model.Article{}
+	total := result.TotalHits()
+	if total > 0 {
+		for _, item := range result.Each(reflect.TypeOf(article)) {
+			if t, ok := item.(model.Article); ok {
+				articles = append(articles, &t)
+			}
+		}
+	}
+	return articles, nil
 }
