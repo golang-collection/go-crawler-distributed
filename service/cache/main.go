@@ -2,14 +2,16 @@ package main
 
 import (
 	"context"
+	"time"
+
 	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-micro/v2/registry"
 	"github.com/micro/go-plugins/registry/consul/v2"
+
 	"go-crawler-distributed/configs"
 	"go-crawler-distributed/global"
 	"go-crawler-distributed/service/cache/proto"
 	"go-crawler-distributed/service/cache/server"
-	"time"
 )
 
 /**

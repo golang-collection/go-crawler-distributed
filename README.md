@@ -9,6 +9,7 @@
 <a href="https://github.com/golang-collection/go-crawler-distributed/blob/master/LICENSE">     <img border="0" src="https://img.shields.io/github/license/golang-collection/go-crawler-distributed" /> </a>
 <a href="https://github.com/golang-collection/Urban-computing-papers/blob/master/wechat.md">     <img border="0" src="https://camo.githubusercontent.com/013c283843363c72b1463af208803bfbd5746292/687474703a2f2f6a617977636a6c6f76652e6769746875622e696f2f73622f69636f2f7765636861742e737667" /> </a>
 </div>
+
 ---
 
 Github：[https://github.com/golang-collection/go-crawler-distributed](https://github.com/golang-collection/go-crawler-distributed)
@@ -19,8 +20,7 @@ Distributed crawler projects, the project supports personalization page parser s
 
 # 目录结构
 ```go
-- cache redis相关操作
-- config 存放配置文件
+- configs 存放配置文件
 - crawler 处理爬虫相关逻辑
     - crawerConfig 爬虫对应的消息队列配置
     - douban 豆瓣网页解析
@@ -29,21 +29,13 @@ Distributed crawler projects, the project supports personalization page parser s
     - persistence 定义用于保存数据的结构体
     - worker 具体的工作逻辑，通过它实现代码的解耦
     - crawlOperation 除存储外统一爬虫处理模块
-- db mysql操作
 - dependencies 项目依赖的环境相关的docker-compose文件
 - deploy 脚本
     - buildScript 部署脚本
     - deploy 直接启动项目的脚本
     - dockerBuildScript 构建docker镜像
     - service 用于存放服务的Dockerfile
-- docs swagger文档
-- elastic elastic的相关操作
-- handler 构建RestfulAPI
-- model 结构体定义
-- mq 消息队列操作
 - pkg 通用包
-- router 构建路由
-- runtime 日志文件
 - service 微服务
     - cache redis微服务通过grpc操作
       - proto 定义grpc的proto文件
@@ -62,13 +54,10 @@ Distributed crawler projects, the project supports personalization page parser s
       - crawl_detail 用于爬取美团技术文章的页面具体内容[detail](https://tech.meituan.com/2020/04/23/octo-watt.html)
       - storage_detail 用于存储美团技术文章的具体内容，存储到ElasticSearch中
     - watchConfig 配置相关
-- tools 小工具
-- unifiedLog 统一日志操作
-- main.go 项目统一入口
 ```
 
 # 配置文件
-You need to customize your configuration. Create the config.json file under the config folder in the project root directory or add a config in Consul.
+You need to customize your configuration. Create the config.json file under the configs folder in the project root directory or add a config in Consul.
 
 The sample of config.json.
 ```json
