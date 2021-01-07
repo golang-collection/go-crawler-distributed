@@ -126,6 +126,14 @@ func setupSetting() error {
 	if err != nil {
 		return err
 	}
+	err = newSetting.ReadSection("Consul", &global.ConsulSetting)
+	if err != nil {
+		return err
+	}
+	err = newSetting.ReadSection("Tracer", &global.TracerSetting)
+	if err != nil {
+		return err
+	}
 
 	global.AppSetting.DefaultContextTimeout *= time.Second
 	global.ServerSetting.ReadTimeout *= time.Second
@@ -185,7 +193,7 @@ func setupLogger() error {
 }
 
 func setupTracer() error {
-	jaegerTracer, _, err := tracer.NewJaegerTracer("bedtimeStory", "127.0.0.1:6831")
+	jaegerTracer, _, err := tracer.NewJaegerTracer(global.TracerSetting.ServiceName, global.TracerSetting.Host)
 	if err != nil {
 		return err
 	}

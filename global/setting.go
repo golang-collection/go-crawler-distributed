@@ -21,4 +21,6 @@ var (
 	EmailSetting    *setting.EmailSettingS
 	JWTSetting      *setting.JWTSettingS
 	Logger          *logger.Logger
+	ConsulSetting   *setting.ConsulSettingS
+	TracerSetting   *setting.TracerSettingS
 )

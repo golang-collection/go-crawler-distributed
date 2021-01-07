@@ -78,6 +78,16 @@ type ElasticSettingS struct {
 	Index string
 }
 
+type ConsulSettingS struct {
+	Url        string
+	ConfigPath string
+}
+
+type TracerSettingS struct {
+	ServiceName string
+	Host        string
+}
+
 var sections = make(map[string]interface{})
 
 func (s *Setting) ReadSection(k string, v interface{}) error {
