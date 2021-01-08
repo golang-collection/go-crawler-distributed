@@ -1,4 +1,4 @@
-package main
+package init
 
 import (
 	"flag"
@@ -75,10 +75,6 @@ func init() {
 	if err != nil {
 		log.Printf("init.snowflak err: %v\n", err)
 	}
-}
-
-func main() {
-
 }
 
 func setupFlag() error {

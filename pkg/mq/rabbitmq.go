@@ -19,8 +19,8 @@ var notifyClose chan *amqp.Error
 // Init : 初始化MQ连接信息
 func NewRabbitMQEngine(rabbitMQSetting *setting.RabbitMQSettingS) (*global.RabbitMQ, error) {
 	rabbit := &global.RabbitMQ{}
-	if err := initChannel(rabbit, rabbitMQSetting); err!= nil {
-		if rabbit.Channel != nil{
+	if err := initChannel(rabbit, rabbitMQSetting); err != nil {
+		if rabbit.Channel != nil {
 			rabbit.Channel.NotifyClose(notifyClose)
 		}
 		return nil, err

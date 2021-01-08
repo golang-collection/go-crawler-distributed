@@ -8,8 +8,8 @@ import (
 	"github.com/micro/go-micro/v2/registry"
 	"github.com/micro/go-plugins/registry/consul/v2"
 
-	"go-crawler-distributed/configs"
 	"go-crawler-distributed/global"
+	_ "go-crawler-distributed/init"
 	"go-crawler-distributed/service/cache/proto"
 	"go-crawler-distributed/service/cache/server"
 )
@@ -23,7 +23,7 @@ import (
 func main() {
 	reg := consul.NewRegistry(func(options *registry.Options) {
 		options.Addrs = []string{
-			configs.ConsulURL,
+			global.ConsulSetting.Url,
 		}
 	})
 

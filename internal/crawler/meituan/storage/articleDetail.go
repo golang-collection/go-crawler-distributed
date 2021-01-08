@@ -24,7 +24,6 @@ func StorageArticle(contents []byte, _ string, _ string) {
 	}
 	article.Content = util.UnzipString(article.Content)
 
-
 	index := global.ElasticSetting.Index
 	_, _ = client.IndexExist(index)
 	_, err = client.SaveInfo(index, article)

@@ -1,8 +1,10 @@
 package main
 
 import (
+	_ "go-crawler-distributed/init"
 	"go-crawler-distributed/internal/crawler"
 	"go-crawler-distributed/internal/crawler/crawerConfig"
+	"go-crawler-distributed/internal/crawler/meituan/parser"
 )
 
 /**
