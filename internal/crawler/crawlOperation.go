@@ -44,6 +44,7 @@ func getMessage(sourceMQ string, funcParser *worker.FuncParser, isStorage bool) 
 
 	var wg sync.WaitGroup
 	for d := range messages {
+		d.Ack(false)
 		if string(d.Body) == crawerConfig.StopTAG {
 			break
 		} else {
