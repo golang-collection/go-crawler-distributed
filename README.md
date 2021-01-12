@@ -21,21 +21,41 @@ Distributed crawler projects, the project supports personalization page parser s
 # 目录结构
 ```go
 - configs 存放配置文件
-- crawler 处理爬虫相关逻辑
-    - crawerConfig 爬虫对应的消息队列配置
-    - douban 豆瓣网页解析
-    - fetcher 网页抓取
-    - meituan 美团网页解析
-    - persistence 定义用于保存数据的结构体
-    - worker 具体的工作逻辑，通过它实现代码的解耦
-    - crawlOperation 除存储外统一爬虫处理模块
 - dependencies 项目依赖的环境相关的docker-compose文件
 - deploy 脚本
     - buildScript 部署脚本
     - deploy 直接启动项目的脚本
     - dockerBuildScript 构建docker镜像
     - service 用于存放服务的Dockerfile
+    - crawlOperation 除存储外统一爬虫处理模块
+- global 存放全局统一配置
+- init 项目初始化
+    - 使用方式 在引入包前面添加 _
+- internal 内部包
+    - crawler 处理爬虫相关逻辑
+        - crawerConfig 爬虫对应的消息队列配置
+        - douban 豆瓣网页解析
+        - fetcher 网页抓取
+        - meituan 美团网页解析
+        - persistence 定义用于保存数据的结构体
+        - worker 具体的工作逻辑，通过它实现代码的解耦
+    - dao 与数据库交互
+    - model 模型
 - pkg 通用包
+    - cache 缓存相关 redis
+    - consistentHash 一致性Hash
+    - db 数据库操作
+    - elastic ElasticSearch操作
+    - email 邮件相关
+    - errcode 全局统一错误配置
+    - file 文件相关
+    - idGenerator snowflake生成全局ID
+    - logger 日志
+    - mq 消息队列
+    - setting 对应配置文件
+    - tracer 调用链追踪
+    - upload 文件上传
+    - util 相关工具
 - service 微服务
     - cache redis微服务通过grpc操作
       - proto 定义grpc的proto文件
@@ -53,7 +73,6 @@ Distributed crawler projects, the project supports personalization page parser s
       - crawl_list 用于爬取美团的[urllist](https://tech.meituan.com/page/2.html)
       - crawl_detail 用于爬取美团技术文章的页面具体内容[detail](https://tech.meituan.com/2020/04/23/octo-watt.html)
       - storage_detail 用于存储美团技术文章的具体内容，存储到ElasticSearch中
-    - watchConfig 配置相关
 ```
 
 # 配置文件
