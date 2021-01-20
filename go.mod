@@ -11,17 +11,15 @@ require (
 	github.com/garyburd/redigo v1.6.2
 	github.com/gin-contrib/cors v1.3.1 // indirect
 	github.com/gin-gonic/gin v1.6.3
-	github.com/go-playground/locales v0.13.0
-	github.com/go-playground/universal-translator v0.17.0
-	github.com/go-playground/validator/v10 v10.2.0
 	github.com/golang/protobuf v1.4.2
 	github.com/jinzhu/gorm v1.9.16
-	github.com/juju/ratelimit v1.0.1
+	github.com/juju/ratelimit v1.0.1 // indirect
 	github.com/mailru/easyjson v0.7.6
 	github.com/micro/go-micro/v2 v2.9.1
 	github.com/micro/go-plugins/registry/consul/v2 v2.9.1
 	github.com/olivere/elastic/v7 v7.0.22
 	github.com/opentracing/opentracing-go v1.2.0
+	github.com/robfig/cron/v3 v3.0.1
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	github.com/spf13/viper v1.7.1
 	github.com/streadway/amqp v1.0.0
@@ -29,7 +27,6 @@ require (
 	github.com/uber/jaeger-client-go v2.25.0+incompatible
 	github.com/uber/jaeger-lib v2.4.0+incompatible // indirect
 	go.uber.org/atomic v1.6.0 // indirect
-	go.uber.org/zap v1.13.0
 	golang.org/x/net v0.0.0-20200625001655-4c5254603344
 	golang.org/x/text v0.3.3
 	google.golang.org/protobuf v1.23.0
