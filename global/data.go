@@ -27,4 +27,6 @@ var (
 	ElasticEngine  *elastic.Client
 	MongoDBEngine  *mongo.Client
 	EtcdEngine     *clientv3.Client
+	EtcdKV         clientv3.KV
+	EtcdLease      clientv3.Lease
 )

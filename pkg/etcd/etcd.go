@@ -12,7 +12,7 @@ import (
 * @Description:
 **/
 
-func NewEtcdEngine(etcdSetting *setting.EtcdSettingS) (client *clientv3.Client, err error) {
+func NewEtcdEngine(etcdSetting *setting.EtcdSettingS) (client *clientv3.Client, kv clientv3.KV, lease clientv3.Lease, err error) {
 	config := clientv3.Config{
 		Endpoints:   []string{etcdSetting.Endpoint},
 		DialTimeout: time.Duration(etcdSetting.DialTimeout) * time.Millisecond,
@@ -20,5 +20,8 @@ func NewEtcdEngine(etcdSetting *setting.EtcdSettingS) (client *clientv3.Client, 
 	if client, err = clientv3.New(config); err != nil {
 		return
 	}
+	kv = clientv3.NewKV(client)
+	lease = clientv3.NewLease(client)
 	return
 }
+
