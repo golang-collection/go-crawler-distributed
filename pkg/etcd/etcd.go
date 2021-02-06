@@ -24,4 +24,3 @@ func NewEtcdEngine(etcdSetting *setting.EtcdSettingS) (client *clientv3.Client, 
 	lease = clientv3.NewLease(client)
 	return
 }
-

@@ -40,6 +40,9 @@ func NewRouter() *gin.Engine {
 	jobGroup := r.Group("/job")
 	{
 		jobGroup.POST("/save", job.SaveJob)
+		jobGroup.POST("/delete", job.DeleteJob)
+		jobGroup.GET("/list", job.ListJobs)
+		jobGroup.POST("/kill", job.KillJob)
 	}
 
 	return r
