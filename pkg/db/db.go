@@ -2,6 +2,7 @@ package db
 
 import (
 	"fmt"
+	"go-crawler-distributed/global"
 	"go-crawler-distributed/pkg/otgorm"
 	"go-crawler-distributed/pkg/setting"
 	"time"
@@ -35,9 +36,9 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 		return nil, err
 	}
 
-	//if global.ServerSetting.RunMode == "debug" {
-	//	db.LogMode(true)
-	//}
+	if global.ServerSetting.RunMode == "debug" {
+		db.LogMode(true)
+	}
 	db.SingularTable(true)
 	db.Callback().Create().Replace("gorm:update_time_stamp", updateTimeStampForCreateCallback)
 	db.Callback().Update().Replace("gorm:update_time_stamp", updateTimeStampForUpdateCallback)

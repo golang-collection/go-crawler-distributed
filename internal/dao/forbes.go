@@ -3,9 +3,9 @@ package dao
 import (
 	"errors"
 	"github.com/jinzhu/gorm"
+	"go-crawler-distributed/pkg/app"
 
 	"go-crawler-distributed/internal/model"
-	"go-crawler-distributed/pkg/app"
 )
 
 /**

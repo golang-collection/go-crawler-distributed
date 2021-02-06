@@ -1,7 +1,7 @@
-package init
+package initConf
 
 import (
-	"flag"
+	"go-crawler-distributed/pkg/mongoDB"
 	"log"
 	"strings"
 	"time"
@@ -24,68 +24,74 @@ import (
 * @Date: 2021-01-05 14:25
 * @Description:
 **/
-var (
-	config    string
-	isVersion bool
-)
-
-func init() {
-	//读取命令行参数
-	err := setupFlag()
-	if err != nil {
-		log.Printf("init.setupFlag err: %v\n", err)
-	}
+func Init(config string) {
 	//初始化配置
-	err = setupSetting()
+	err := setupSetting(config)
 	if err != nil {
 		log.Printf("init setupSetting err: %v\n", err)
+	}else{
+		log.Printf("初始化配置信息成功")
 	}
 	//初始化日志
 	err = setupLogger()
 	if err != nil {
 		log.Printf("init setupLogger err: %v\n", err)
+	}else{
+		log.Printf("初始化logger成功")
 	}
 	//初始化数据库
 	err = setupDBEngine()
 	if err != nil {
 		log.Printf("init setupDBEngine err: %v\n", err)
+	}else{
+		log.Printf("初始化数据库成功")
 	}
 	//初始化redis
 	err = setupCacheEngine()
 	if err != nil {
 		log.Printf("init setupCacheEngine err: %v\n", err)
+	}else{
+		log.Printf("初始化cache成功")
 	}
 	//初始化RabbitMQ
 	err = setupRabbitMQEngine()
 	if err != nil {
 		log.Printf("init setupRabbitMQEngine err: %v\n", err)
+	}else{
+		log.Printf("初始化消息队列成功")
 	}
 	//初始化elastic
-	err = setupElasticEngine()
+	//err = setupElasticEngine()
+	//if err != nil {
+	//	log.Printf("init setupElasticEngine err: %v\n", err)
+	//}else{
+	//  log.Printf("初始化elastic成功")
+	//}
+	//
+	//初始化mongoDB
+	err = setupMongoDBEngine()
 	if err != nil {
-		log.Printf("init setupElasticEngine err: %v\n", err)
+		log.Printf("init setupMongoDBEngine err: %v\n", err)
+	}else{
+		log.Printf("初始化mongoDb成功")
 	}
 	//初始化追踪
 	err = setupTracer()
 	if err != nil {
 		log.Printf("init.setupTracer err: %v\n", err)
+	}else{
+		log.Printf("初始化Tracer成功")
 	}
 	//初始化ID生成器
 	err = idGenerator.InitSnowflake()
 	if err != nil {
 		log.Printf("init.snowflak err: %v\n", err)
+	}else{
+		log.Printf("初始化idGenerator成功")
 	}
 }
 
-func setupFlag() error {
-	flag.StringVar(&config, "config", "configs/", "指定要使用的配置文件路径")
-	flag.BoolVar(&isVersion, "version", false, "编译信息")
-	flag.Parse()
-
-	return nil
-}
-
-func setupSetting() error {
+func setupSetting(config string) error {
 	newSetting, err := setting.NewSetting(strings.Split(config, ",")...)
 	if err != nil {
 		return err
@@ -123,6 +129,10 @@ func setupSetting() error {
 		return err
 	}
 	err = newSetting.ReadSection("Consul", &global.ConsulSetting)
+	if err != nil {
+		return err
+	}
+	err = newSetting.ReadSection("MongoDB", &global.MongoDBSetting)
 	if err != nil {
 		return err
 	}
@@ -169,6 +179,15 @@ func setupRabbitMQEngine() error {
 func setupElasticEngine() error {
 	var err error
 	global.ElasticEngine, err = elastic.NewElasticEngine(global.ElasticSetting)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func setupMongoDBEngine() error {
+	var err error
+	global.MongoDBEngine, err = mongoDB.NewMongoDBEngine(global.MongoDBSetting)
 	if err != nil {
 		return err
 	}

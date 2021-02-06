@@ -6,7 +6,6 @@ import (
 	"github.com/micro/go-micro/v2/registry"
 	"github.com/micro/go-plugins/registry/consul/v2"
 	"go-crawler-distributed/global"
-	_ "go-crawler-distributed/init"
 	"go-crawler-distributed/service/cache/proto"
 )
 

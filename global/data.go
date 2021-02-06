@@ -5,6 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/olivere/elastic/v7"
 	"github.com/streadway/amqp"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 /**
@@ -23,4 +24,5 @@ var (
 	RedisEngine    *redis.Pool
 	RabbitMQEngine *RabbitMQ
 	ElasticEngine  *elastic.Client
+	MongoDBEngine  *mongo.Client
 )

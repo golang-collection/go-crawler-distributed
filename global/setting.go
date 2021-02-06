@@ -22,5 +22,6 @@ var (
 	JWTSetting      *setting.JWTSettingS
 	Logger          *logger.Logger
 	ConsulSetting   *setting.ConsulSettingS
+	MongoDBSetting      *setting.MongoDBSettingS
 	TracerSetting   *setting.TracerSettingS
 )
