@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"go-crawler-distributed/global"
 	"go-crawler-distributed/internal/middleware"
+	"go-crawler-distributed/internal/routers/job"
 	"go-crawler-distributed/internal/routers/sd"
 )
 
@@ -36,9 +37,9 @@ func NewRouter() *gin.Engine {
 		svcd.GET("/ram", sd.RAMCheck)
 	}
 
-	job := r.Group("/job")
+	jobGroup := r.Group("/job")
     {
-		job.POST("/save", )
+		jobGroup.POST("/save", job.SaveJob)
 	}
 
 	return r

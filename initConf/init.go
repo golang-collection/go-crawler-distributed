@@ -1,6 +1,7 @@
 package initConf
 
 import (
+	"go-crawler-distributed/pkg/etcd"
 	"go-crawler-distributed/pkg/mongoDB"
 	"log"
 	"strings"
@@ -75,6 +76,13 @@ func Init(config string) {
 	}else{
 		log.Printf("初始化mongoDb成功")
 	}
+	//初始化etcd
+	err = setupEtcdEngine()
+	if err != nil {
+		log.Printf("init setupEtcdEngine err: %v\n", err)
+	}else{
+		log.Printf("初始化etcd成功")
+	}
 	//初始化追踪
 	err = setupTracer()
 	if err != nil {
@@ -136,6 +144,10 @@ func setupSetting(config string) error {
 	if err != nil {
 		return err
 	}
+	err = newSetting.ReadSection("Etcd", &global.EtcdSetting)
+	if err != nil {
+		return err
+	}
 	err = newSetting.ReadSection("Tracer", &global.TracerSetting)
 	if err != nil {
 		return err
@@ -188,6 +200,15 @@ func setupElasticEngine() error {
 func setupMongoDBEngine() error {
 	var err error
 	global.MongoDBEngine, err = mongoDB.NewMongoDBEngine(global.MongoDBSetting)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func setupEtcdEngine() error {
+	var err error
+	global.EtcdEngine, err = etcd.NewEtcdEngine(global.EtcdSetting)
 	if err != nil {
 		return err
 	}

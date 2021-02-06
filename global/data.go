@@ -1,6 +1,7 @@
 package global
 
 import (
+	"github.com/coreos/etcd/clientv3"
 	"github.com/garyburd/redigo/redis"
 	"github.com/jinzhu/gorm"
 	"github.com/olivere/elastic/v7"
@@ -25,4 +26,5 @@ var (
 	RabbitMQEngine *RabbitMQ
 	ElasticEngine  *elastic.Client
 	MongoDBEngine  *mongo.Client
+	EtcdEngine *clientv3.Client
 )

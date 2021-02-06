@@ -23,5 +23,6 @@ var (
 	Logger          *logger.Logger
 	ConsulSetting   *setting.ConsulSettingS
 	MongoDBSetting      *setting.MongoDBSettingS
+	EtcdSetting      *setting.EtcdSettingS
 	TracerSetting   *setting.TracerSettingS
 )
