@@ -95,8 +95,8 @@ type MongoDBSettingS struct {
 }
 
 type EtcdSettingS struct {
-	Endpoint         string
-	DialTimeout     int
+	Endpoint    string
+	DialTimeout int
 }
 
 var sections = make(map[string]interface{})

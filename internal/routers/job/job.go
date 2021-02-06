@@ -12,7 +12,7 @@ import (
 **/
 
 // 将任务保存到etcd中
-func SaveJob(c *gin.Context){
+func SaveJob(c *gin.Context) {
 	response := app.NewResponse(c)
-
+	response.ToResponse(nil, "", 0)
 }

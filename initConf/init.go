@@ -30,35 +30,35 @@ func Init(config string) {
 	err := setupSetting(config)
 	if err != nil {
 		log.Printf("init setupSetting err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化配置信息成功")
 	}
 	//初始化日志
 	err = setupLogger()
 	if err != nil {
 		log.Printf("init setupLogger err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化logger成功")
 	}
 	//初始化数据库
 	err = setupDBEngine()
 	if err != nil {
 		log.Printf("init setupDBEngine err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化数据库成功")
 	}
 	//初始化redis
 	err = setupCacheEngine()
 	if err != nil {
 		log.Printf("init setupCacheEngine err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化cache成功")
 	}
 	//初始化RabbitMQ
 	err = setupRabbitMQEngine()
 	if err != nil {
 		log.Printf("init setupRabbitMQEngine err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化消息队列成功")
 	}
 	//初始化elastic
@@ -73,28 +73,28 @@ func Init(config string) {
 	err = setupMongoDBEngine()
 	if err != nil {
 		log.Printf("init setupMongoDBEngine err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化mongoDb成功")
 	}
 	//初始化etcd
 	err = setupEtcdEngine()
 	if err != nil {
 		log.Printf("init setupEtcdEngine err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化etcd成功")
 	}
 	//初始化追踪
 	err = setupTracer()
 	if err != nil {
 		log.Printf("init.setupTracer err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化Tracer成功")
 	}
 	//初始化ID生成器
 	err = idGenerator.InitSnowflake()
 	if err != nil {
 		log.Printf("init.snowflak err: %v\n", err)
-	}else{
+	} else {
 		log.Printf("初始化idGenerator成功")
 	}
 }

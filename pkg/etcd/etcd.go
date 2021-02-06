@@ -12,12 +12,12 @@ import (
 * @Description:
 **/
 
-func NewEtcdEngine(etcdSetting *setting.EtcdSettingS) (client *clientv3.Client, err error){
+func NewEtcdEngine(etcdSetting *setting.EtcdSettingS) (client *clientv3.Client, err error) {
 	config := clientv3.Config{
-		Endpoints:[]string{etcdSetting.Endpoint},
-		DialTimeout:time.Duration(etcdSetting.DialTimeout),
+		Endpoints:   []string{etcdSetting.Endpoint},
+		DialTimeout: time.Duration(etcdSetting.DialTimeout) * time.Millisecond,
 	}
-	if client, err = clientv3.New(config); err != nil{
+	if client, err = clientv3.New(config); err != nil {
 		return
 	}
 	return

@@ -26,5 +26,5 @@ var (
 	RabbitMQEngine *RabbitMQ
 	ElasticEngine  *elastic.Client
 	MongoDBEngine  *mongo.Client
-	EtcdEngine *clientv3.Client
+	EtcdEngine     *clientv3.Client
 )

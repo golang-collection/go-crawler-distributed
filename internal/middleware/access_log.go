@@ -6,7 +6,6 @@ import (
 	"go-crawler-distributed/pkg/logger"
 	"time"
 
-
 	"github.com/gin-gonic/gin"
 )
 

@@ -38,7 +38,7 @@ func NewRouter() *gin.Engine {
 	}
 
 	jobGroup := r.Group("/job")
-    {
+	{
 		jobGroup.POST("/save", job.SaveJob)
 	}
 

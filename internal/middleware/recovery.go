@@ -8,7 +8,6 @@ import (
 	"go-crawler-distributed/pkg/errcode"
 	"time"
 
-
 	"github.com/gin-gonic/gin"
 )
 

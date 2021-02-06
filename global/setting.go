@@ -22,7 +22,7 @@ var (
 	JWTSetting      *setting.JWTSettingS
 	Logger          *logger.Logger
 	ConsulSetting   *setting.ConsulSettingS
-	MongoDBSetting      *setting.MongoDBSettingS
-	EtcdSetting      *setting.EtcdSettingS
+	MongoDBSetting  *setting.MongoDBSettingS
+	EtcdSetting     *setting.EtcdSettingS
 	TracerSetting   *setting.TracerSettingS
 )

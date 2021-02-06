@@ -26,7 +26,7 @@ var (
 
 func init() {
 	err := setupFlag()
-	if err != nil{
+	if err != nil {
 		log.Printf("init setupSetting err: %v\n", err)
 	}
 	initConf.Init(config)
