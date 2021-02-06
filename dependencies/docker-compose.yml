@@ -73,15 +73,15 @@ services:
       - "8502:8500"
     command: agent -server -ui -bind=0.0.0.0 -client=0.0.0.0 -join consul1
 
-  proxy:
-    image: traefik
-    command: --api --docker --docker.domain=docker.localhost --logLevel=DEBUG
-    ports:
-      - "80:80"
-      - "8080:8080"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik.toml:/root/go-crawler/traefik.toml
+#  proxy:
+#    image: traefik
+#    command: --api --docker --docker.domain=docker.localhost --logLevel=DEBUG
+#    ports:
+#      - "80:80"
+#      - "8080:8080"
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#      - ./traefik.toml:/root/go-crawler/traefik.toml
 
   jaeger:
     image: jaegertracing/all-in-one:1.16
