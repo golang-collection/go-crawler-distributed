@@ -208,7 +208,7 @@ func setupMongoDBEngine() error {
 
 func setupEtcdEngine() error {
 	var err error
-	global.EtcdEngine, global.EtcdKV, global.EtcdLease, err = etcd.NewEtcdEngine(global.EtcdSetting)
+	global.EtcdEngine, global.EtcdKV, global.EtcdLease, global.EtcdWatcher, err = etcd.NewEtcdEngine(global.EtcdSetting)
 	if err != nil {
 		return err
 	}

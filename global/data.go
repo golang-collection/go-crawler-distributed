@@ -29,4 +29,5 @@ var (
 	EtcdEngine     *clientv3.Client
 	EtcdKV         clientv3.KV
 	EtcdLease      clientv3.Lease
+	EtcdWatcher    clientv3.Watcher
 )
