@@ -25,9 +25,9 @@ func (job *Job) Run() {
 // 任务调度计划
 type JobSchedulePlan struct {
 	Job      *Job          // 要调度的任务信息
-	Expr     string        //cron_expr表达式
-	Schedule cron.Schedule //cron_expr表达式
-	NextTime time.Time     //下次调度时间
+	Expr     string        // cron_expr表达式
+	Schedule cron.Schedule // cron_expr表达式
+	NextTime time.Time     // 下次调度时间
 }
 
 type JobExecuteInfo struct {
@@ -35,7 +35,7 @@ type JobExecuteInfo struct {
 	PlanTime   time.Time          // 理论上的调度时间
 	RealTime   time.Time          // 实际的调度时间
 	CancelCtx  context.Context    // 任务command的context
-	CancelFunc context.CancelFunc //  用于取消command执行的cancel函数
+	CancelFunc context.CancelFunc // 用于取消command执行的cancel函数
 }
 
 // 变化事件

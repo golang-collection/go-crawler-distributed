@@ -16,11 +16,11 @@ import (
 
 func main() {
 	initConf.Init("/Users/super/develop/go-crawler-distributed/configs/")
-	if err := worker.NewScheduler(); err != nil{
+	if err := worker.NewScheduler(); err != nil {
 		fmt.Println(err)
 		return
 	}
-	if err := worker.WatchJobs(context.Background()); err != nil{
+	if err := worker.WatchJobs(context.Background()); err != nil {
 		fmt.Println(err)
 		return
 	}

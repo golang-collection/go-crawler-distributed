@@ -1,7 +1,6 @@
 package worker
 
 import (
-	"fmt"
 	"go-crawler-distributed/internal/crontab/common"
 	"time"
 )
@@ -13,8 +12,9 @@ import (
 **/
 
 type Scheduler struct {
-	JobEventChan chan *common.JobEvent
-	JobPlanTable map[string]*common.JobSchedulePlan //任务调度计划表
+	JobEventChan      chan *common.JobEvent
+	JobPlanTable      map[string]*common.JobSchedulePlan //任务调度计划表
+	jobExecutingTable map[string]*common.JobExecuteInfo
 }
 
 var (
@@ -43,27 +43,32 @@ func (s *Scheduler) handleJobEvent(jobEvent *common.JobEvent) {
 	}
 }
 
+// 任务虽然被调度了，但是可能因为一些原因执行很久，加入1s执行一次的任务，单次任务执行了1分钟
+// 当前任务就会被调度60次却只执行1次
+func (s *Scheduler) TryStartJob(jobPlan *common.JobSchedulePlan) {
+
+}
+
 func (s *Scheduler) TrySchedule() (scheduleAfter time.Duration) {
-	var(
-		jobPlan *common.JobSchedulePlan
-		now time.Time
+	var (
+		jobPlan  *common.JobSchedulePlan
+		now      time.Time
 		nearTime *time.Time
 	)
 
-	if len(s.JobPlanTable) == 0{
+	if len(s.JobPlanTable) == 0 {
 		scheduleAfter = 1 * time.Second
 		return
 	}
 
 	now = time.Now()
-	for _, jobPlan = range s.JobPlanTable{
-		if jobPlan.NextTime.Before(now) || jobPlan.NextTime.Equal(now){
-			//todo:执行任务
-			fmt.Println("执行任务", jobPlan.Job.Name)
+	for _, jobPlan = range s.JobPlanTable {
+		if jobPlan.NextTime.Before(now) || jobPlan.NextTime.Equal(now) {
+			s.TryStartJob(jobPlan)
 			jobPlan.NextTime = jobPlan.Schedule.Next(now)
 		}
 
-		if nearTime == nil || jobPlan.NextTime.Before(*nearTime){
+		if nearTime == nil || jobPlan.NextTime.Before(*nearTime) {
 			nearTime = &jobPlan.NextTime
 		}
 	}
@@ -73,7 +78,7 @@ func (s *Scheduler) TrySchedule() (scheduleAfter time.Duration) {
 
 func (s *Scheduler) schedulerLoop() {
 	var (
-		jobEvent *common.JobEvent
+		jobEvent      *common.JobEvent
 		scheduleAfter time.Duration
 		scheduleTimer *time.Timer
 	)
@@ -103,6 +108,7 @@ func NewScheduler() (err error) {
 	GlobalScheduler = &Scheduler{
 		JobEventChan: make(chan *common.JobEvent, 10000),
 		JobPlanTable: make(map[string]*common.JobSchedulePlan),
+		jobExecutingTable:make(map[string]*common.JobExecuteInfo),
 	}
 	go GlobalScheduler.schedulerLoop()
 	return
