@@ -210,11 +210,13 @@
             // 保存任务
             $('#save-job').on('click', function() {
                 var jobInfo = {name: $('#edit-name').val(), command: $('#edit-command').val(), cronExpr: $('#edit-cronExpr').val()}
+                console.log({job: JSON.stringify(jobInfo)})
                 $.ajax({
                     url: 'http://localhost:8000/job/save',
                     type: 'post',
                     dataType: 'json',
-                    data: {job: JSON.stringify(jobInfo)},
+                    data: JSON.stringify(jobInfo),
+                    contentType: "application/json",
                     complete: function() {
                         window.location.reload()
                     }

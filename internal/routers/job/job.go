@@ -1,6 +1,7 @@
 package job
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"go-crawler-distributed/global"
 	"go-crawler-distributed/internal/crontab/common"
@@ -19,6 +20,11 @@ import (
 
 // 将任务保存到etcd中
 func SaveJob(c *gin.Context) {
+	name, _ := c.GetPostForm("name")
+	fmt.Println("1", c.Param("name"))
+	fmt.Println("2", name)
+	fmt.Println("3", c.PostForm("name"))
+	fmt.Println()
 	param := service.SaveJobRequest{}
 	response := app.NewResponse(c)
 	valid, errs := app.BindAndValid(c, &param)

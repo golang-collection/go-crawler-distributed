@@ -2,7 +2,7 @@ package common
 
 import (
 	"context"
-	"os/exec"
+	"github.com/robfig/cron/v3"
 	"strings"
 	"time"
 )
@@ -19,13 +19,15 @@ type Job struct {
 	CronExpr string `json:"cron_expr"`
 }
 
-func (job *Job)Run(){
+func (job *Job) Run() {
 }
 
+// 任务调度计划
 type JobSchedulePlan struct {
-	Job      *Job      // 要调度的任务信息
-	Expr     string    //cron_expr表达式
-	NextTime time.Time //下次调度时间
+	Job      *Job          // 要调度的任务信息
+	Expr     string        //cron_expr表达式
+	Schedule cron.Schedule //cron_expr表达式
+	NextTime time.Time     //下次调度时间
 }
 
 type JobExecuteInfo struct {
@@ -66,42 +68,43 @@ func ExtractKillerName(killerKey string) string {
 func BuildJobEvent(eventType int, job *Job) (jobEvent *JobEvent) {
 	return &JobEvent{
 		EventType: eventType,
-		Job: job,
+		Job:       job,
 	}
 }
 
 // 构造任务执行计划
 func BuildJobSchedulePlan(job *Job) (jobSchedulePlan *JobSchedulePlan, err error) {
 	var (
-		expr *cronexpr.Expression
+		schedule cron.Schedule
 	)
 
 	// 解析JOB的cron表达式
-	if expr, err = cronexpr.Parse(job.CronExpr); err != nil {
+	if schedule, err = cron.ParseStandard(job.CronExpr); err != nil {
 		return
 	}
 
 	// 生成任务调度计划对象
 	jobSchedulePlan = &JobSchedulePlan{
-		Job: job,
-		Expr: expr,
-		NextTime: expr.Next(time.Now()),
+		Job:      job,
+		Expr:     job.CronExpr,
+		Schedule: schedule,
+		NextTime: schedule.Next(time.Now()),
 	}
 	return
 }
 
 // 构造执行状态信息
-func BuildJobExecuteInfo(jobSchedulePlan *JobSchedulePlan) (jobExecuteInfo *JobExecuteInfo){
+func BuildJobExecuteInfo(jobSchedulePlan *JobSchedulePlan) (jobExecuteInfo *JobExecuteInfo) {
 	jobExecuteInfo = &JobExecuteInfo{
-		Job: jobSchedulePlan.Job,
+		Job:      jobSchedulePlan.Job,
 		PlanTime: jobSchedulePlan.NextTime, // 计算调度时间
-		RealTime: time.Now(), // 真实调度时间
+		RealTime: time.Now(),               // 真实调度时间
 	}
 	jobExecuteInfo.CancelCtx, jobExecuteInfo.CancelFunc = context.WithCancel(context.TODO())
 	return
 }
 
 // 提取worker的IP
-func ExtractWorkerIP(regKey string) (string) {
+func ExtractWorkerIP(regKey string) string {
 	return strings.TrimPrefix(regKey, JOB_WORKER_DIR)
 }

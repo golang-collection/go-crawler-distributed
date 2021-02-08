@@ -19,46 +19,49 @@ func WatchJobs(ctx context.Context) (err error) {
 	if err != nil {
 		return err
 	}
-	for i := 0; i<len(getResp.Kvs);i++{
+	for i := 0; i < len(getResp.Kvs); i++ {
 		job := &common.Job{}
 		err := job.UnmarshalJSON(getResp.Kvs[i].Value)
-		if err == nil{
-			common.BuildJobEvent(common.JOB_EVENT_SAVE, job)
-			//todo:添加到任务调度器
+		if err == nil {
+			jobEvent := common.BuildJobEvent(common.JOB_EVENT_SAVE, job)
+			//添加到任务调度器
+			GlobalScheduler.PushJobEvent(jobEvent)
 		}
 	}
 
 	revision := getResp.Header.Revision
 
 	go func(watchStartRevision int64) {
-		watchChan := global.EtcdWatcher.Watch(ctx, common.JOB_SAVE_DIR, clientv3.WithRev(watchStartRevision), clientv3.WithPrefix())
-		for watchResp := range watchChan{
-			for _, watchEvent := range watchResp.Events{
+		watchChan := global.EtcdWatcher.Watch(ctx, common.JOB_SAVE_DIR,
+			clientv3.WithRev(watchStartRevision),
+			clientv3.WithPrefix())
+		for watchResp := range watchChan {
+			for _, watchEvent := range watchResp.Events {
 				var jobEvent *common.JobEvent
 				switch watchEvent.Type {
 				case mvccpb.PUT:
 					job := &common.Job{}
 					err := job.UnmarshalJSON(watchEvent.Kv.Value)
-					if err != nil{
+					if err != nil {
 						continue
 					}
 					jobEvent = common.BuildJobEvent(common.JOB_EVENT_SAVE, job)
 				case mvccpb.DELETE:
 					jobName := common.ExtractJobName(string(watchEvent.Kv.Key))
 					job := &common.Job{
-						Name:jobName,
+						Name: jobName,
 					}
 					jobEvent = common.BuildJobEvent(common.JOB_EVENT_DELETE, job)
 				}
-				//todo:将变化情况推送给调度器
-
+				//将变化情况推送给调度器
+				GlobalScheduler.PushJobEvent(jobEvent)
 			}
 		}
 	}(revision + 1)
 	return
 }
 
-func watchKiller(ctx context.Context){
+func WatchKiller(ctx context.Context) {
 	go func() {
 		// 监听/cron/killer/目录的变化
 		watchChan := global.EtcdWatcher.Watch(ctx, common.JOB_KILLER_DIR, clientv3.WithPrefix())
@@ -70,7 +73,8 @@ func watchKiller(ctx context.Context){
 					jobName := common.ExtractKillerName(string(watchEvent.Kv.Key))
 					job := &common.Job{Name: jobName}
 					jobEvent := common.BuildJobEvent(common.JOB_EVENT_KILL, job)
-					// todo:事件推给scheduler
+					// 事件推给scheduler
+					GlobalScheduler.PushJobEvent(jobEvent)
 				case mvccpb.DELETE: // killer标记过期, 被自动删除
 				}
 			}

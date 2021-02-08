@@ -12,12 +12,12 @@ import (
 **/
 
 type JobLocker struct {
-	jobName string
+	jobName    string
 	cancelFunc context.CancelFunc
-	leaseId clientv3.LeaseID
-	isLocked bool
+	leaseId    clientv3.LeaseID
+	isLocked   bool
 }
 
-func InitJobLocker(){
+func InitJobLocker() {
 
 }
