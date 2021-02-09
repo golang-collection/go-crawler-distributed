@@ -88,7 +88,7 @@ func (s *Scheduler) TrySchedule() (scheduleAfter time.Duration) {
 	return
 }
 
-func (s *Scheduler) handleJobResult(result *common.JobExecuteResult){
+func (s *Scheduler) handleJobResult(result *common.JobExecuteResult) {
 	delete(s.JobExecutingTable, result.ExecuteInfo.Job.Name)
 	fmt.Println("执行任务", result.ExecuteInfo.Job.Name, string(result.Output), result.Err)
 }
@@ -98,7 +98,7 @@ func (s *Scheduler) schedulerLoop() {
 		jobEvent      *common.JobEvent
 		scheduleAfter time.Duration
 		scheduleTimer *time.Timer
-		jobResult *common.JobExecuteResult
+		jobResult     *common.JobExecuteResult
 	)
 
 	scheduleAfter = s.TrySchedule()
@@ -111,8 +111,8 @@ func (s *Scheduler) schedulerLoop() {
 			//对内存中的任务进行增删改查
 			s.handleJobEvent(jobEvent)
 		case <-scheduleTimer.C:
-		case jobResult = <- s.JobResultChan://监听任务执行结果
-		    s.handleJobResult(jobResult)
+		case jobResult = <-s.JobResultChan: //监听任务执行结果
+			s.handleJobResult(jobResult)
 		}
 		scheduleAfter = s.TrySchedule()
 		scheduleTimer.Reset(scheduleAfter)
@@ -123,8 +123,8 @@ func (s *Scheduler) PushJobEvent(jobEvent *common.JobEvent) {
 	s.JobEventChan <- jobEvent
 }
 
-func (s *Scheduler) PushJobResult(jobResult *common.JobExecuteResult){
-	s.JobResultChan<-jobResult
+func (s *Scheduler) PushJobResult(jobResult *common.JobExecuteResult) {
+	s.JobResultChan <- jobResult
 }
 
 func NewScheduler() (err error) {
@@ -132,7 +132,7 @@ func NewScheduler() (err error) {
 		JobEventChan:      make(chan *common.JobEvent, 10000),
 		JobPlanTable:      make(map[string]*common.JobSchedulePlan),
 		JobExecutingTable: make(map[string]*common.JobExecuteInfo),
-		JobResultChan:make(chan *common.JobExecuteResult, 1000),
+		JobResultChan:     make(chan *common.JobExecuteResult, 1000),
 	}
 	go GlobalScheduler.schedulerLoop()
 	return

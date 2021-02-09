@@ -81,3 +81,8 @@ func WatchKiller(ctx context.Context) {
 		}
 	}()
 }
+
+func CreateJobLocker(jobName string) (jobLocker *JobLocker) {
+	jobLocker = NewJobLocker(jobName)
+	return
+}
