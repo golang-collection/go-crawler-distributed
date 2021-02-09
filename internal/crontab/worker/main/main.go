@@ -20,6 +20,10 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	if err := worker.NewExecutor(); err != nil {
+		fmt.Println(err)
+		return
+	}
 	if err := worker.WatchJobs(context.Background()); err != nil {
 		fmt.Println(err)
 		return

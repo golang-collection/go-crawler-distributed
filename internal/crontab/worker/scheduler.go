@@ -1,6 +1,7 @@
 package worker
 
 import (
+	"fmt"
 	"go-crawler-distributed/internal/crontab/common"
 	"time"
 )
@@ -14,7 +15,8 @@ import (
 type Scheduler struct {
 	JobEventChan      chan *common.JobEvent
 	JobPlanTable      map[string]*common.JobSchedulePlan //任务调度计划表
-	jobExecutingTable map[string]*common.JobExecuteInfo
+	JobExecutingTable map[string]*common.JobExecuteInfo
+	JobResultChan     chan *common.JobExecuteResult // 任务结果队列
 }
 
 var (
@@ -46,7 +48,17 @@ func (s *Scheduler) handleJobEvent(jobEvent *common.JobEvent) {
 // 任务虽然被调度了，但是可能因为一些原因执行很久，加入1s执行一次的任务，单次任务执行了1分钟
 // 当前任务就会被调度60次却只执行1次
 func (s *Scheduler) TryStartJob(jobPlan *common.JobSchedulePlan) {
-
+	var (
+		jobExcuteInfo *common.JobExecuteInfo
+		jobExcuting   bool
+	)
+	if jobExcuteInfo, jobExcuting = s.JobExecutingTable[jobPlan.Job.Name]; jobExcuting {
+		return
+	}
+	jobExcuteInfo = common.BuildJobExecuteInfo(jobPlan)
+	s.JobExecutingTable[jobPlan.Job.Name] = jobExcuteInfo
+	fmt.Println("执行任务", jobExcuteInfo.Job.Name, jobExcuteInfo.PlanTime, jobExcuteInfo.RealTime)
+	GlobalExecutor.ExecuteJob(jobExcuteInfo)
 }
 
 func (s *Scheduler) TrySchedule() (scheduleAfter time.Duration) {
@@ -76,11 +88,17 @@ func (s *Scheduler) TrySchedule() (scheduleAfter time.Duration) {
 	return
 }
 
+func (s *Scheduler) handleJobResult(result *common.JobExecuteResult){
+	delete(s.JobExecutingTable, result.ExecuteInfo.Job.Name)
+	fmt.Println("执行任务", result.ExecuteInfo.Job.Name, string(result.Output), result.Err)
+}
+
 func (s *Scheduler) schedulerLoop() {
 	var (
 		jobEvent      *common.JobEvent
 		scheduleAfter time.Duration
 		scheduleTimer *time.Timer
+		jobResult *common.JobExecuteResult
 	)
 
 	scheduleAfter = s.TrySchedule()
@@ -93,7 +111,8 @@ func (s *Scheduler) schedulerLoop() {
 			//对内存中的任务进行增删改查
 			s.handleJobEvent(jobEvent)
 		case <-scheduleTimer.C:
-
+		case jobResult = <- s.JobResultChan://监听任务执行结果
+		    s.handleJobResult(jobResult)
 		}
 		scheduleAfter = s.TrySchedule()
 		scheduleTimer.Reset(scheduleAfter)
@@ -104,11 +123,16 @@ func (s *Scheduler) PushJobEvent(jobEvent *common.JobEvent) {
 	s.JobEventChan <- jobEvent
 }
 
+func (s *Scheduler) PushJobResult(jobResult *common.JobExecuteResult){
+	s.JobResultChan<-jobResult
+}
+
 func NewScheduler() (err error) {
 	GlobalScheduler = &Scheduler{
-		JobEventChan: make(chan *common.JobEvent, 10000),
-		JobPlanTable: make(map[string]*common.JobSchedulePlan),
-		jobExecutingTable:make(map[string]*common.JobExecuteInfo),
+		JobEventChan:      make(chan *common.JobEvent, 10000),
+		JobPlanTable:      make(map[string]*common.JobSchedulePlan),
+		JobExecutingTable: make(map[string]*common.JobExecuteInfo),
+		JobResultChan:make(chan *common.JobExecuteResult, 1000),
 	}
 	go GlobalScheduler.schedulerLoop()
 	return
