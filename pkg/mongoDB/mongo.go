@@ -17,10 +17,11 @@ import (
 
 func NewMongoDBEngine(mongoDbSetting *setting.MongoDBSettingS) (*mongo.Client, error) {
 	var client *mongo.Client
+	var err error
 	ctx, _ := context.WithTimeout(context.Background(), time.Duration(mongoDbSetting.Timeout)*time.Second)
 	opt := options.Client().ApplyURI(mongoDbSetting.Url)
 	opt.SetMaxPoolSize(mongoDbSetting.MaxPoolSize)
-	if client, err := mongo.Connect(ctx, opt); err != nil {
+	if client, err = mongo.Connect(ctx, opt); err != nil {
 		return nil, err
 	} else {
 		ctx2, _ := context.WithTimeout(context.Background(), time.Duration(mongoDbSetting.Timeout)*time.Second)

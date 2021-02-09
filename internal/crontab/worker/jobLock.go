@@ -2,7 +2,6 @@ package worker
 
 import (
 	"context"
-	"errors"
 	"github.com/coreos/etcd/clientv3"
 	"go-crawler-distributed/global"
 	"go-crawler-distributed/internal/crontab/common"
@@ -72,7 +71,7 @@ func (jobLocker *JobLocker) TryLock() (err error) {
 	}
 
 	if !txnResp.Succeeded {
-		err = errors.New("锁被占用")
+		err = common.ERR_LOCK_ALREDAY_REQUIRED
 		cancelFunc()
 		global.EtcdLease.Revoke(context.TODO(), leaseId)
 		return

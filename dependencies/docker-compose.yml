@@ -20,7 +20,7 @@ services:
   mongo:
     image: mongo
     environment:
-      - MONGO_INITDB_DATABASE=urban
+      - MONGO_INITDB_DATABASE=cron
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:

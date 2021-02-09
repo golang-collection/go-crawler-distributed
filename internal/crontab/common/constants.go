@@ -1,10 +1,14 @@
 package common
 
+import "errors"
+
 /**
 * @Author: super
 * @Date: 2021-02-06 19:56
 * @Description:
 **/
+
+var ERR_LOCK_ALREDAY_REQUIRED = errors.New("锁被占用")
 
 const (
 	// 任务保存目录

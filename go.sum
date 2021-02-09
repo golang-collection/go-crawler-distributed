@@ -201,6 +201,7 @@ github.com/gin-gonic/gin v1.6.3 h1:ahKqKTFpO5KTPHxWZjEdPScmYaGtLo8Y4DMHoEsnp14=
 github.com/gin-gonic/gin v1.6.3/go.mod h1:75u5sXoLsGZoRN5Sgbi1eraJ4GU3++wFwWzhwvtwp4M=
 github.com/gliderlabs/ssh v0.2.2 h1:6zsha5zo/TWhRhwqCD3+EarCAgZ2yN28ipRnGPnwkI0=
 github.com/gliderlabs/ssh v0.2.2/go.mod h1:U7qILu1NlMHj9FlMhZLlkCdDnU1DBEAqr0aevW3Awn0=
+github.com/go-acme/lego/v3 v3.4.0 h1:deB9NkelA+TfjGHVw8J7iKl/rMtffcGMWSMmptvMv0A=
 github.com/go-acme/lego/v3 v3.4.0/go.mod h1:xYbLDuxq3Hy4bMUT1t9JIuz6GWIWb3m5X+TeTHYaT7M=
 github.com/go-cmd/cmd v1.0.5/go.mod h1:y8q8qlK5wQibcw63djSl/ntiHUHXHGdCkPk0j4QeW4s=
 github.com/go-critic/go-critic v0.5.2/go.mod h1:cc0+HvdE3lFpqLecgqMaJcvWWH77sLdBp+wLGPM1Yyo=

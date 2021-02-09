@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"go-crawler-distributed/initConf"
 	"go-crawler-distributed/internal/crontab/worker"
+	"log"
 	"time"
 )
 
@@ -17,15 +17,19 @@ import (
 func main() {
 	initConf.Init("/Users/super/develop/go-crawler-distributed/configs/")
 	if err := worker.NewScheduler(); err != nil {
-		fmt.Println(err)
+		log.Printf("init NewScheduler err: %v\n", err)
 		return
 	}
 	if err := worker.NewExecutor(); err != nil {
-		fmt.Println(err)
+		log.Printf("init NewExecutor err: %v\n", err)
+		return
+	}
+	if err := worker.NewLogSink(); err != nil {
+		log.Printf("init NewLogSink err: %v\n", err)
 		return
 	}
 	if err := worker.WatchJobs(context.Background()); err != nil {
-		fmt.Println(err)
+		log.Printf("init WatchJobs err: %v\n", err)
 		return
 	}
 	worker.WatchKiller(context.Background())

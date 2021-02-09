@@ -27,8 +27,8 @@ var (
 func (s *Scheduler) handleJobEvent(jobEvent *common.JobEvent) {
 	var (
 		jobSchedulePlan *common.JobSchedulePlan
-		jobExcuteInfo *common.JobExecuteInfo
-		jobExcuting bool
+		jobExcuteInfo   *common.JobExecuteInfo
+		jobExcuting     bool
 		jobExisted      bool
 		err             error
 	)
@@ -46,7 +46,7 @@ func (s *Scheduler) handleJobEvent(jobEvent *common.JobEvent) {
 		}
 	case common.JOB_EVENT_KILL:
 		//通过context取消任务
-		if jobExcuteInfo, jobExcuting = s.JobExecutingTable[jobEvent.Job.Name]; jobExcuting{
+		if jobExcuteInfo, jobExcuting = s.JobExecutingTable[jobEvent.Job.Name]; jobExcuting {
 			jobExcuteInfo.CancelFunc()
 		}
 	}
@@ -97,7 +97,24 @@ func (s *Scheduler) TrySchedule() (scheduleAfter time.Duration) {
 
 func (s *Scheduler) handleJobResult(result *common.JobExecuteResult) {
 	delete(s.JobExecutingTable, result.ExecuteInfo.Job.Name)
-	fmt.Println("执行任务", result.ExecuteInfo.Job.Name, string(result.Output), result.Err)
+
+	//生成执行日志
+	if result.Err != common.ERR_LOCK_ALREDAY_REQUIRED {
+		jobLog := &common.JobLog{
+			JobName:      result.ExecuteInfo.Job.Name,
+			Command:      result.ExecuteInfo.Job.Command,
+			Output:       string(result.Output),
+			PlanTime:     result.ExecuteInfo.PlanTime.UnixNano() / 1000 / 1000,
+			ScheduleTime: result.ExecuteInfo.RealTime.UnixNano() / 1000 / 1000,
+			StartTime:    result.StartTime.UnixNano() / 1000 / 1000,
+			EndTime:      result.EndTime.UnixNano() / 1000 / 1000,
+		}
+		if result.Err != nil {
+			jobLog.Err = result.Err.Error()
+		} else {
+			jobLog.Err = ""
+		}
+	}
 }
 
 func (s *Scheduler) schedulerLoop() {
