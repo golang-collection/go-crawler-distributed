@@ -27,6 +27,8 @@ var (
 func (s *Scheduler) handleJobEvent(jobEvent *common.JobEvent) {
 	var (
 		jobSchedulePlan *common.JobSchedulePlan
+		jobExcuteInfo *common.JobExecuteInfo
+		jobExcuting bool
 		jobExisted      bool
 		err             error
 	)
@@ -41,6 +43,11 @@ func (s *Scheduler) handleJobEvent(jobEvent *common.JobEvent) {
 	case common.JOB_EVENT_DELETE:
 		if jobSchedulePlan, jobExisted = s.JobPlanTable[jobEvent.Job.Name]; jobExisted {
 			delete(s.JobPlanTable, jobEvent.Job.Name)
+		}
+	case common.JOB_EVENT_KILL:
+		//通过context取消任务
+		if jobExcuteInfo, jobExcuting = s.JobExecutingTable[jobEvent.Job.Name]; jobExcuting{
+			jobExcuteInfo.CancelFunc()
 		}
 	}
 }

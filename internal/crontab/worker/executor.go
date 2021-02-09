@@ -2,6 +2,7 @@ package worker
 
 import (
 	"go-crawler-distributed/internal/crontab/common"
+	"math/rand"
 	"os/exec"
 	"time"
 )
@@ -39,6 +40,8 @@ func (e *Executor) ExecuteJob(info *common.JobExecuteInfo) {
 
 		result.StartTime = time.Now()
 
+		// 随机睡眠(0~1s),防止单个节点总是抢占任务
+		time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
 		err = jobLocker.TryLock()
 		defer jobLocker.Unlock()
 
