@@ -33,6 +33,7 @@ func main() {
 		return
 	}
 	worker.WatchKiller(context.Background())
+	go worker.KeepOnline()
 
 	// 正常退出
 	for {

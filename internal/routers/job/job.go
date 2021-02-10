@@ -115,3 +115,14 @@ func JobLog(c *gin.Context) {
 	}
 	response.ToResponse(result, "获取日志列表成功", http.StatusOK)
 }
+
+func WorkerList(c *gin.Context) {
+	response := app.NewResponse(c)
+	workers, err := master.ListWorkers()
+	if err != nil {
+		global.Logger.Errorf(c, "appWorkerList err: %v", err)
+		response.ToErrorResponse(errcode.ErrorWorkerListFail)
+		return
+	}
+	response.ToResponse(workers, "获取worker列表成功", http.StatusOK)
+}

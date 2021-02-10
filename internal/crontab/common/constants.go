@@ -9,6 +9,7 @@ import "errors"
 **/
 
 var ERR_LOCK_ALREDAY_REQUIRED = errors.New("锁被占用")
+var ERR_NO_LOCAL_IP_FOUND = errors.New("没有找到网卡IP")
 
 const (
 	// 任务保存目录

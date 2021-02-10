@@ -45,6 +45,7 @@ func NewRouter() *gin.Engine {
 		jobGroup.POST("/kill", job.KillJob)
 		jobGroup.GET("/log", job.JobLog)
 	}
+	r.GET("/worker/list", job.WorkerList)
 
 	return r
 }

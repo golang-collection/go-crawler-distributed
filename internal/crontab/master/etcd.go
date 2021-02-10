@@ -3,6 +3,7 @@ package master
 import (
 	"context"
 	"github.com/coreos/etcd/clientv3"
+	"github.com/coreos/etcd/mvcc/mvccpb"
 	"go-crawler-distributed/global"
 	"go-crawler-distributed/internal/crontab/common"
 )
@@ -71,5 +72,29 @@ func EtcdKillJob(ctx context.Context, name string) (err error) {
 	}
 	leaseId := leaseResp.ID
 	_, err = global.EtcdKV.Put(ctx, killerKey, "", clientv3.WithLease(leaseId))
+	return
+}
+
+func ListWorkers()(workerArr []string, err error){
+	var (
+		getResp *clientv3.GetResponse
+		kv *mvccpb.KeyValue
+		workerIP string
+	)
+
+	// 初始化数组
+	workerArr = make([]string, 0)
+
+	// 获取目录下所有Kv
+	if getResp, err = global.EtcdKV.Get(context.TODO(), common.JOB_WORKER_DIR, clientv3.WithPrefix()); err != nil {
+		return
+	}
+
+	// 解析每个节点的IP
+	for _, kv = range getResp.Kvs {
+		// kv.Key : /cron/workers/192.168.2.1
+		workerIP = common.ExtractWorkerIP(string(kv.Key))
+		workerArr = append(workerArr, workerIP)
+	}
 	return
 }

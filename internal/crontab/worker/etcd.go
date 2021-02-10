@@ -4,8 +4,11 @@ import (
 	"context"
 	"github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/mvcc/mvccpb"
+	"github.com/go-acme/lego/v3/log"
 	"go-crawler-distributed/global"
 	"go-crawler-distributed/internal/crontab/common"
+	"net"
+	"time"
 )
 
 /**
@@ -80,6 +83,90 @@ func WatchKiller(ctx context.Context) {
 			}
 		}
 	}()
+}
+
+// 获取本机网卡IP
+func getLocalIP() (ipv4 string, err error) {
+	var (
+		addrs []net.Addr
+		addr net.Addr
+		ipNet *net.IPNet // IP地址
+		isIpNet bool
+	)
+	// 获取所有网卡
+	if addrs, err = net.InterfaceAddrs(); err != nil {
+		return
+	}
+	// 取第一个非lo的网卡IP
+	for _, addr = range addrs {
+		// 这个网络地址是IP地址: ipv4, ipv6
+		if ipNet, isIpNet = addr.(*net.IPNet); isIpNet && !ipNet.IP.IsLoopback() {
+			// 跳过IPV6
+			if ipNet.IP.To4() != nil {
+				ipv4 = ipNet.IP.String()	// 192.168.1.1
+				return
+			}
+		}
+	}
+	err = common.ERR_NO_LOCAL_IP_FOUND
+	return
+}
+
+func KeepOnline(){
+	var (
+		ip string
+		regKey string
+		leaseGrantResp *clientv3.LeaseGrantResponse
+		err error
+		keepAliveChan <- chan *clientv3.LeaseKeepAliveResponse
+		keepAliveResp *clientv3.LeaseKeepAliveResponse
+		cancelCtx context.Context
+		cancelFunc context.CancelFunc
+	)
+	ip, err = getLocalIP()
+	if err != nil{
+		log.Println("ip获取失败", err)
+		return
+	}
+	for {
+		// 注册路径
+		regKey = common.JOB_WORKER_DIR + ip
+
+		cancelFunc = nil
+
+		// 创建租约
+		if leaseGrantResp, err = global.EtcdLease.Grant(context.TODO(), 10); err != nil {
+			goto RETRY
+		}
+
+		// 自动续租
+		if keepAliveChan, err = global.EtcdLease.KeepAlive(context.TODO(), leaseGrantResp.ID); err != nil {
+			goto RETRY
+		}
+
+		cancelCtx, cancelFunc = context.WithCancel(context.TODO())
+
+		// 注册到etcd
+		if _, err = global.EtcdKV.Put(cancelCtx, regKey, "", clientv3.WithLease(leaseGrantResp.ID)); err != nil {
+			goto RETRY
+		}
+
+		// 处理续租应答
+		for {
+			select {
+			case keepAliveResp = <- keepAliveChan:
+				if keepAliveResp == nil {	// 续租失败
+					goto RETRY
+				}
+			}
+		}
+
+	RETRY:
+		time.Sleep(1 * time.Second)
+		if cancelFunc != nil {
+			cancelFunc()
+		}
+	}
 }
 
 func CreateJobLocker(jobName string) (jobLocker *JobLocker) {
