@@ -2,10 +2,10 @@ package worker
 
 import (
 	"context"
-	"github.com/go-acme/lego/v3/log"
 	"go-crawler-distributed/global"
 	"go-crawler-distributed/internal/crontab/common"
 	"go.mongodb.org/mongo-driver/mongo"
+	"log"
 	"time"
 )
 
@@ -30,18 +30,19 @@ func (l *LogSink) SaveLogs(batch *common.LogBatch) {
 	if err != nil {
 		log.Println("saveLogs", err)
 	}
+	log.Println("saveLogs")
 }
 
 func (l *LogSink) writeLoop() {
 	var (
-		log          *common.JobLog
+		jobLog       *common.JobLog
 		logBatch     *common.LogBatch // 当前的批次
 		commitTimer  *time.Timer
 		timeoutBatch *common.LogBatch // 超时批次
 	)
 	for {
 		select {
-		case log = <-l.LogChan:
+		case jobLog = <-l.LogChan:
 			if logBatch == nil {
 				logBatch = &common.LogBatch{}
 				// 让这个批次超时自动提交(给1秒的时间）
@@ -56,7 +57,7 @@ func (l *LogSink) writeLoop() {
 			}
 
 			// 把新日志追加到批次中
-			logBatch.Logs = append(logBatch.Logs, log)
+			logBatch.Logs = append(logBatch.Logs, jobLog)
 
 			// 如果批次满了, 就立即发送
 			if len(logBatch.Logs) >= 100 {
@@ -77,6 +78,15 @@ func (l *LogSink) writeLoop() {
 			// 清空logBatch
 			logBatch = nil
 		}
+	}
+}
+
+// 发送日志
+func (l *LogSink) Append(jobLog *common.JobLog) {
+	select {
+	case l.LogChan <- jobLog:
+	default:
+		// 队列满了就丢弃
 	}
 }
 

@@ -7,7 +7,8 @@ package errcode
 **/
 
 var (
-	ErrorSaveFail   = NewError(30060001, "存储数据到ETCD失败")
-	ErrorDeleteFail = NewError(30060002, "ETCD删除数据失败")
-	ErrorListFail   = NewError(30060003, "ETCD获取数据列表失败")
+	ErrorSaveFail    = NewError(30060001, "存储数据到ETCD失败")
+	ErrorDeleteFail  = NewError(30060002, "ETCD删除数据失败")
+	ErrorListFail    = NewError(30060003, "ETCD获取数据列表失败")
+	ErrorLogListFail = NewError(30060004, "获取日志列表失败")
 )

@@ -96,3 +96,22 @@ func KillJob(c *gin.Context) {
 	}
 	response.ToResponse(gin.H{}, "杀死任务成功", http.StatusOK)
 }
+
+func JobLog(c *gin.Context) {
+	param := service.JobLogRequest{}
+	pager := app.Pager{Page: app.GetPage(c), PageSize: app.GetPageSize(c)}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf(c, "app.BindAndValid errs: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+	result, err := service.GetLogList(&param, &pager)
+	if err != nil {
+		global.Logger.Errorf(c, "service.GetLogList err: %v", err)
+		response.ToErrorResponse(errcode.ErrorLogListFail)
+		return
+	}
+	response.ToResponse(result, "获取日志列表成功", http.StatusOK)
+}

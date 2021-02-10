@@ -114,6 +114,7 @@ func (s *Scheduler) handleJobResult(result *common.JobExecuteResult) {
 		} else {
 			jobLog.Err = ""
 		}
+		GlobalLogSink.Append(jobLog)
 	}
 }
 

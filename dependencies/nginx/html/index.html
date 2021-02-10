@@ -243,7 +243,7 @@
                     dataType: 'json',
                     data: {name: jobName},
                     success: function(resp) {
-                        if (resp.errno != 0) {
+                        if (resp.meta.status != 200) {
                             return
                         }
                         // 遍历日志
@@ -278,7 +278,7 @@
                     url: 'http://localhost:8000/worker/list',
                     dataType: 'json',
                     success: function(resp) {
-                        if (resp.errno != 0) {
+                        if (resp.meta.status != 200) {
                             return
                         }
 
