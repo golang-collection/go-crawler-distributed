@@ -2,6 +2,7 @@ package initConf
 
 import (
 	"go-crawler-distributed/pkg/etcd"
+	"go-crawler-distributed/pkg/ipParser"
 	"go-crawler-distributed/pkg/mongoDB"
 	"log"
 	"strings"
@@ -83,6 +84,13 @@ func Init(config string) {
 	} else {
 		log.Printf("初始化etcd成功")
 	}
+	//初始化ipParser
+	err = setupIpParser()
+	if err != nil {
+		log.Printf("init setupIpParser err: %v\n", err)
+	} else {
+		log.Printf("初始化ipParser成功")
+	}
 	//初始化追踪
 	err = setupTracer()
 	if err != nil {
@@ -148,6 +156,10 @@ func setupSetting(config string) error {
 	if err != nil {
 		return err
 	}
+	err = newSetting.ReadSection("IpParser", &global.IpParserSetting)
+	if err != nil {
+		return err
+	}
 	err = newSetting.ReadSection("Tracer", &global.TracerSetting)
 	if err != nil {
 		return err
@@ -209,6 +221,15 @@ func setupMongoDBEngine() error {
 func setupEtcdEngine() error {
 	var err error
 	global.EtcdEngine, global.EtcdKV, global.EtcdLease, global.EtcdWatcher, err = etcd.NewEtcdEngine(global.EtcdSetting)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func setupIpParser() error {
+	var err error
+	global.IpParser, err = ipParser.NewIpParser(global.IpParserSetting)
 	if err != nil {
 		return err
 	}

@@ -4,6 +4,7 @@ import (
 	"github.com/coreos/etcd/clientv3"
 	"github.com/garyburd/redigo/redis"
 	"github.com/jinzhu/gorm"
+	"github.com/kayon/iploc"
 	"github.com/olivere/elastic/v7"
 	"github.com/streadway/amqp"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -30,4 +31,5 @@ var (
 	EtcdKV         clientv3.KV
 	EtcdLease      clientv3.Lease
 	EtcdWatcher    clientv3.Watcher
+	IpParser *iploc.Locator
 )

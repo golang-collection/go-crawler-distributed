@@ -25,4 +25,5 @@ var (
 	MongoDBSetting  *setting.MongoDBSettingS
 	EtcdSetting     *setting.EtcdSettingS
 	TracerSetting   *setting.TracerSettingS
+	IpParserSetting   *setting.IpParserSettingS
 )
