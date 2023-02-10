@@ -31,10 +31,10 @@ require (
 	github.com/streadway/amqp v1.0.0
 	github.com/uber/jaeger-client-go v2.25.0+incompatible
 	github.com/uber/jaeger-lib v2.4.0+incompatible // indirect
-	go.mongodb.org/mongo-driver v1.4.6
+	go.mongodb.org/mongo-driver v1.5.1
 	go.uber.org/atomic v1.6.0 // indirect
 	golang.org/x/net v0.0.0-20200625001655-4c5254603344
-	golang.org/x/text v0.3.3
+	golang.org/x/text v0.3.5
 	google.golang.org/protobuf v1.23.0
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
